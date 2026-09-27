@@ -1,0 +1,30 @@
+{
+  "category": "navigation",
+  "description": "Pagination — a labelled nav with numbered page links, a current page, hover/focus states, and a disabled Previous control.",
+  "markup": "<nav class=\"ui-kit ui-pg\" aria-label=\"Pagination\">\n  <style>\n    .ui-pg { font-family: var(--font-family-body); font-size: var(--font-size-sm); }\n    .ui-pg__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); }\n    .ui-pg__link {\n      display: inline-flex; align-items: center; justify-content: center;\n      min-width: 2.25rem; padding: var(--space-2) var(--space-3);\n      color: var(--color-foreground); text-decoration: none; cursor: pointer;\n      border: 1px solid transparent; border-radius: var(--radius-button);\n      transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;\n    }\n    .ui-pg__link.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-pg__link.is-focus { outline: 2px solid var(--color-ring); outline-offset: 1px; }\n    .ui-pg__link[aria-current=\"page\"] { background: var(--color-primary); color: var(--color-primary-foreground); }\n    .ui-pg__link[aria-disabled=\"true\"] { color: var(--color-muted-foreground); opacity: 0.6; cursor: not-allowed; }\n    .ui-pg__ellipsis { min-width: 2.25rem; text-align: center; color: var(--color-muted-foreground); user-select: none; }\n  </style>\n  <ul class=\"ui-pg__list\">\n    <li><a class=\"ui-pg__link\" href=\"#\" aria-disabled=\"true\" tabindex=\"-1\">Previous</a></li>\n    <li><a class=\"ui-pg__link\" href=\"#\" aria-current=\"page\">1</a></li>\n    <li><a class=\"ui-pg__link is-hover\" href=\"#\">2</a></li>\n    <li><a class=\"ui-pg__link is-focus\" href=\"#\">3</a></li>\n    <li><a class=\"ui-pg__link\" href=\"#\">4</a></li>\n    <li class=\"ui-pg__ellipsis\" aria-hidden=\"true\">…</li>\n    <li><a class=\"ui-pg__link\" href=\"#\">12</a></li>\n    <li><a class=\"ui-pg__link\" href=\"#\">Next</a></li>\n  </ul>\n</nav>",
+  "name": "Structure/Pagination",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.foreground",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "color.primary",
+    "color.primary-foreground",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Disabled"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "category": "display",
+  "description": "Status badge — neutral plus the success/info/warning/danger status quartet, each on its paired token role.",
+  "markup": "<div class=\"ui-kit ui-badge\">\n  <style>\n    .ui-badge { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); font-family: var(--font-family-body); }\n    .ui-badge__pill {\n      display: inline-flex; align-items: center;\n      padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);\n      font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); line-height: 1.4;\n    }\n    .ui-badge__pill--neutral { background: var(--color-secondary); color: var(--color-secondary-foreground); }\n    .ui-badge__pill--success { background: var(--color-success); color: var(--color-success-foreground); }\n    .ui-badge__pill--info    { background: var(--color-info);    color: var(--color-info-foreground); }\n    .ui-badge__pill--warning { background: var(--color-warning); color: var(--color-warning-foreground); }\n    .ui-badge__pill--danger  { background: var(--color-danger);  color: var(--color-danger-foreground); }\n  </style>\n  <span class=\"ui-badge__pill ui-badge__pill--neutral\">Draft</span>\n  <span class=\"ui-badge__pill ui-badge__pill--success\">Active</span>\n  <span class=\"ui-badge__pill ui-badge__pill--info\">Beta</span>\n  <span class=\"ui-badge__pill ui-badge__pill--warning\">Trial ending</span>\n  <span class=\"ui-badge__pill ui-badge__pill--danger\">Past due</span>\n</div>",
+  "name": "Display/Badge",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.secondary",
+    "color.secondary-foreground",
+    "color.success",
+    "color.success-foreground",
+    "color.info",
+    "color.info-foreground",
+    "color.warning",
+    "color.warning-foreground",
+    "color.danger",
+    "color.danger-foreground",
+    "radius.full",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.xs",
+    "space.1",
+    "space.3"
+  ],
+  "variants": [
+    "Tone=Neutral",
+    "Tone=Success",
+    "Tone=Info",
+    "Tone=Warning",
+    "Tone=Danger",
+    "State=Default"
+  ]
+}

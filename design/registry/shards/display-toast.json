@@ -1,0 +1,38 @@
+{
+  "category": "feedback",
+  "description": "Toast notifications — neutral, success, and danger tones on a popover surface with overlay elevation and a named dismiss control.",
+  "markup": "<div class=\"ui-kit ui-toast\">\n  <style>\n    .ui-toast { display: grid; gap: var(--space-3); font-family: var(--font-family-body); max-width: 380px; }\n    .ui-toast__item {\n      display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: var(--space-3);\n      padding: var(--space-3) var(--space-4); border-radius: var(--radius-card);\n      background: var(--color-popover); color: var(--color-popover-foreground);\n      border: 1px solid var(--color-border); border-left-width: 3px;\n      box-shadow: var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) var(--elevation-overlay-color);\n    }\n    .ui-toast__item--neutral { border-left-color: var(--color-secondary); }\n    .ui-toast__item--success { border-left-color: var(--color-success); }\n    .ui-toast__item--danger  { border-left-color: var(--color-danger); }\n    .ui-toast__dot { width: 0.55em; height: 0.55em; margin-top: 0.4em; border-radius: var(--radius-full); }\n    .ui-toast__item--neutral .ui-toast__dot { background: var(--color-secondary); }\n    .ui-toast__item--success .ui-toast__dot { background: var(--color-success); }\n    .ui-toast__item--danger  .ui-toast__dot { background: var(--color-danger); }\n    .ui-toast__text { display: grid; gap: var(--space-1); }\n    .ui-toast__title { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-wrap: balance; }\n    .ui-toast__body { font-size: var(--font-size-xs); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }\n    .ui-toast__close {\n      font: inherit; line-height: 1; cursor: pointer; flex: none;\n      padding: var(--space-1); border-radius: var(--radius-button);\n      border: 1px solid transparent; background: transparent; color: var(--color-muted-foreground);\n    }\n  </style>\n  <div class=\"ui-toast__item ui-toast__item--neutral\" role=\"status\">\n    <span class=\"ui-toast__dot\" aria-hidden=\"true\"></span>\n    <div class=\"ui-toast__text\">\n      <p class=\"ui-toast__title\">Draft saved</p>\n      <p class=\"ui-toast__body\">Your changes are saved to this device.</p>\n    </div>\n    <button type=\"button\" class=\"ui-toast__close\" aria-label=\"Dismiss notification\">&times;</button>\n  </div>\n  <div class=\"ui-toast__item ui-toast__item--success\" role=\"status\">\n    <span class=\"ui-toast__dot\" aria-hidden=\"true\"></span>\n    <div class=\"ui-toast__text\">\n      <p class=\"ui-toast__title\">Design system published</p>\n      <p class=\"ui-toast__body\">Version three is now available to your team.</p>\n    </div>\n    <button type=\"button\" class=\"ui-toast__close\" aria-label=\"Dismiss notification\">&times;</button>\n  </div>\n  <div class=\"ui-toast__item ui-toast__item--danger\" role=\"alert\">\n    <span class=\"ui-toast__dot\" aria-hidden=\"true\"></span>\n    <div class=\"ui-toast__text\">\n      <p class=\"ui-toast__title\">Upload failed</p>\n      <p class=\"ui-toast__body\">The file exceeds the 25 MB limit &mdash; try a smaller export.</p>\n    </div>\n    <button type=\"button\" class=\"ui-toast__close\" aria-label=\"Dismiss notification\">&times;</button>\n  </div>\n</div>",
+  "name": "Display/Toast",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.popover",
+    "color.popover-foreground",
+    "color.border",
+    "color.muted-foreground",
+    "color.secondary",
+    "color.success",
+    "color.danger",
+    "elevation.overlay-offset-x",
+    "elevation.overlay-offset-y",
+    "elevation.overlay-blur",
+    "elevation.overlay-spread",
+    "elevation.overlay-color",
+    "radius.card",
+    "radius.full",
+    "radius.button",
+    "font-family.body",
+    "font-weight.semibold",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.3",
+    "space.4"
+  ],
+  "variants": [
+    "Tone=Neutral",
+    "Tone=Success",
+    "Tone=Danger",
+    "State=Default"
+  ]
+}

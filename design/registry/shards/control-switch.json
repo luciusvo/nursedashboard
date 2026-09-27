@@ -1,0 +1,30 @@
+{
+  "category": "form",
+  "description": "Toggle switch (accessible checkbox) with hover, focus, checked, and disabled states.",
+  "markup": "<div class=\"ui-kit ui-switch\">\n  <style>\n    .ui-switch { display: grid; gap: var(--space-2); font-family: var(--font-family-body); }\n    .ui-switch__cap { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-switch__item { display: inline-flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer; }\n    .ui-switch__input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }\n    .ui-switch__track {\n      position: relative; flex: none; width: 2.2em; height: 1.25em; border-radius: var(--radius-full);\n      background: var(--color-input); transition: background var(--duration-base) ease;\n    }\n    .ui-switch__thumb {\n      position: absolute; top: 50%; left: 0.15em; transform: translateY(-50%);\n      width: 0.95em; height: 0.95em; border-radius: var(--radius-full); background: var(--color-background);\n      transition: transform var(--duration-base) ease;\n    }\n    .ui-switch__input:checked + .ui-switch__track { background: var(--color-primary); }\n    .ui-switch__input:checked + .ui-switch__track .ui-switch__thumb { transform: translate(0.95em, -50%); }\n    .ui-switch__item.is-hover .ui-switch__track { background: color-mix(in srgb, var(--color-foreground) 20%, var(--color-input)); }\n    .ui-switch__item.is-focus .ui-switch__track { outline: 2px solid var(--color-ring); outline-offset: 2px; }\n    .ui-switch__item.is-disabled { opacity: 0.5; cursor: not-allowed; }\n  </style>\n  <p class=\"ui-switch__cap\">Security</p>\n  <label class=\"ui-switch__item\"><input class=\"ui-switch__input\" type=\"checkbox\"><span class=\"ui-switch__track\" aria-hidden=\"true\"><span class=\"ui-switch__thumb\"></span></span><span>Require two-factor auth</span></label>\n  <label class=\"ui-switch__item is-hover\"><input class=\"ui-switch__input\" type=\"checkbox\"><span class=\"ui-switch__track\" aria-hidden=\"true\"><span class=\"ui-switch__thumb\"></span></span><span>Require two-factor auth</span></label>\n  <label class=\"ui-switch__item is-focus\"><input class=\"ui-switch__input\" type=\"checkbox\"><span class=\"ui-switch__track\" aria-hidden=\"true\"><span class=\"ui-switch__thumb\"></span></span><span>Require two-factor auth</span></label>\n  <label class=\"ui-switch__item\"><input class=\"ui-switch__input\" type=\"checkbox\" checked><span class=\"ui-switch__track\" aria-hidden=\"true\"><span class=\"ui-switch__thumb\"></span></span><span>Auto-renew subscription</span></label>\n  <label class=\"ui-switch__item is-disabled\"><input class=\"ui-switch__input\" type=\"checkbox\" checked disabled><span class=\"ui-switch__track\" aria-hidden=\"true\"><span class=\"ui-switch__thumb\"></span></span><span>Managed by your admin</span></label>\n</div>",
+  "name": "Control/Switch",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.input",
+    "color.primary",
+    "color.background",
+    "color.foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "radius.full",
+    "font-family.body",
+    "font-size.xs",
+    "font-size.sm",
+    "space.2",
+    "space.3",
+    "duration.base"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Checked",
+    "State=Disabled"
+  ]
+}

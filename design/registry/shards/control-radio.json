@@ -1,0 +1,30 @@
+{
+  "category": "form",
+  "description": "Fieldset-grouped radios with hover, focus, checked, and disabled states.",
+  "markup": "<fieldset class=\"ui-kit ui-radio\">\n  <style>\n    .ui-radio { border: 0; margin: 0; padding: 0; display: grid; gap: var(--space-1); font-family: var(--font-family-body); }\n    .ui-radio__legend { padding: 0; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-radio__item {\n      display: inline-flex; align-items: center; gap: var(--space-3);\n      padding: var(--space-1) var(--space-2); border-radius: var(--radius-button);\n      font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer;\n    }\n    .ui-radio__dot { width: 1.05em; height: 1.05em; accent-color: var(--color-primary); }\n    .ui-radio__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-radio__item.is-focus .ui-radio__dot { outline: 2px solid var(--color-ring); outline-offset: 2px; }\n    .ui-radio__item.is-disabled { opacity: 0.5; cursor: not-allowed; }\n  </style>\n  <legend class=\"ui-radio__legend\">Billing cycle</legend>\n  <label class=\"ui-radio__item\"><input class=\"ui-radio__dot\" type=\"radio\" name=\"ui-radio-cycle\">Monthly</label>\n  <label class=\"ui-radio__item is-hover\"><input class=\"ui-radio__dot\" type=\"radio\" name=\"ui-radio-cycle\">Quarterly</label>\n  <label class=\"ui-radio__item is-focus\"><input class=\"ui-radio__dot\" type=\"radio\" name=\"ui-radio-cycle\">Biannual</label>\n  <label class=\"ui-radio__item\"><input class=\"ui-radio__dot\" type=\"radio\" name=\"ui-radio-cycle\" checked>Annual (save 20%)</label>\n  <label class=\"ui-radio__item is-disabled\"><input class=\"ui-radio__dot\" type=\"radio\" name=\"ui-radio-cycle\" disabled>Lifetime (sold out)</label>\n</fieldset>",
+  "name": "Control/Radio",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.primary",
+    "color.foreground",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Checked",
+    "State=Disabled"
+  ]
+}

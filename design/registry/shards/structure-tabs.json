@@ -1,0 +1,32 @@
+{
+  "category": "navigation",
+  "description": "Tabs — a roled tablist with aria-selected, showing default, hover, focus, and disabled tabs plus a linked panel.",
+  "markup": "<div class=\"ui-kit ui-tabs\">\n  <style>\n    .ui-tabs { font-family: var(--font-family-body); display: grid; gap: var(--space-4); }\n    .ui-tabs__list { display: flex; flex-wrap: wrap; gap: var(--space-1); border-bottom: 1px solid var(--color-border); }\n    .ui-tabs__tab {\n      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);\n      appearance: none; background: transparent; cursor: pointer; border: 0;\n      padding: var(--space-2) var(--space-3); border-bottom: 2px solid transparent; margin-bottom: -1px;\n      color: var(--color-muted-foreground); border-radius: var(--radius-sm) var(--radius-sm) 0 0;\n      transition: color var(--duration-fast) ease, background var(--duration-fast) ease;\n    }\n    .ui-tabs__tab[aria-selected=\"true\"] { color: var(--color-primary); border-bottom-color: var(--color-primary); }\n    .ui-tabs__tab.is-hover:not([aria-selected=\"true\"]) { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-tabs__tab.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }\n    .ui-tabs__tab[aria-disabled=\"true\"] { opacity: 0.45; cursor: not-allowed; }\n    .ui-tabs__panel { font-size: var(--font-size-sm); color: var(--color-foreground); line-height: 1.5; }\n  </style>\n  <div class=\"ui-tabs__list\" role=\"tablist\" aria-label=\"Account settings\">\n    <button type=\"button\" class=\"ui-tabs__tab\" role=\"tab\" id=\"ui-tabs-t1\" aria-selected=\"true\" aria-controls=\"ui-tabs-panel\">Overview</button>\n    <button type=\"button\" class=\"ui-tabs__tab\" role=\"tab\" id=\"ui-tabs-t2\" aria-selected=\"false\" aria-controls=\"ui-tabs-panel\" tabindex=\"-1\">Reports</button>\n    <button type=\"button\" class=\"ui-tabs__tab is-hover\" role=\"tab\" id=\"ui-tabs-t3\" aria-selected=\"false\" aria-controls=\"ui-tabs-panel\" tabindex=\"-1\">Members</button>\n    <button type=\"button\" class=\"ui-tabs__tab is-focus\" role=\"tab\" id=\"ui-tabs-t4\" aria-selected=\"false\" aria-controls=\"ui-tabs-panel\" tabindex=\"-1\">Billing</button>\n    <button type=\"button\" class=\"ui-tabs__tab\" role=\"tab\" id=\"ui-tabs-t5\" aria-selected=\"false\" aria-disabled=\"true\" tabindex=\"-1\">Archived</button>\n  </div>\n  <div class=\"ui-tabs__panel\" role=\"tabpanel\" id=\"ui-tabs-panel\" aria-labelledby=\"ui-tabs-t1\" tabindex=\"0\">\n    <p>Your workspace overview &mdash; usage, seats, and recent design-system activity.</p>\n  </div>\n</div>",
+  "name": "Structure/Tabs",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.border",
+    "color.muted-foreground",
+    "color.foreground",
+    "color.primary",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "radius.sm",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Disabled"
+  ]
+}

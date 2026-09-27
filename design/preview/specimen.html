@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>core-ds &mdash; Design System Specimen</title>
+<style>
+:root {
+  --base-black: #000000;
+  --base-white: #FFFFFF;
+  --chart-1: #727CD9;
+  --chart-2: #C25F93;
+  --chart-3: #C16F0E;
+  --chart-4: #639737;
+  --chart-5: #0098A5;
+  --color-accent: #EAEDFF;
+  --color-accent-foreground: #040026;
+  --color-background: #F2F5FC;
+  --color-border: #C5CBD6;
+  --color-card: #E4E8F0;
+  --color-card-foreground: #0B0D13;
+  --color-chart-1: #727CD9;
+  --color-chart-2: #C25F93;
+  --color-chart-3: #C16F0E;
+  --color-chart-4: #639737;
+  --color-chart-5: #0098A5;
+  --color-danger: #CB262C;
+  --color-danger-foreground: #FFFFFF;
+  --color-foreground: #0B0D13;
+  --color-info: #2367D3;
+  --color-info-foreground: #FFFFFF;
+  --color-input: #A5ABB8;
+  --color-muted: #C5CBD6;
+  --color-muted-foreground: #4F5662;
+  --color-popover: #E4E8F0;
+  --color-popover-foreground: #0B0D13;
+  --color-primary: #6366F1;
+  --color-primary-foreground: #000000;
+  --color-primary-hover: #7D87FF;
+  --color-ring: #6366F1;
+  --color-scrim: #020306;
+  --color-secondary: #C5CBD6;
+  --color-secondary-foreground: #0B0D13;
+  --color-sidebar: #E4E8F0;
+  --color-sidebar-accent: #EAEDFF;
+  --color-sidebar-accent-foreground: #040026;
+  --color-sidebar-border: #C5CBD6;
+  --color-sidebar-foreground: #0B0D13;
+  --color-sidebar-primary: #6366F1;
+  --color-sidebar-primary-foreground: #000000;
+  --color-sidebar-ring: #6366F1;
+  --color-success: #007B54;
+  --color-success-foreground: #FFFFFF;
+  --color-warning: #A66900;
+  --color-warning-foreground: #FFFFFF;
+  --danger-50: #FFF1EF;
+  --danger-100: #FFDEDB;
+  --danger-200: #FFB3AC;
+  --danger-300: #FF7C74;
+  --danger-400: #EF4444;
+  --danger-500: #CB262C;
+  --danger-600: #A00A19;
+  --danger-700: #73000B;
+  --danger-800: #480003;
+  --danger-900: #250000;
+  --danger-950: #110000;
+  --duration-base: 200ms;
+  --duration-fast: 150ms;
+  --duration-slow: 300ms;
+  --elevation-card-blur: 2px;
+  --elevation-card-color: #080D17;
+  --elevation-card-offset-x: 0px;
+  --elevation-card-offset-y: 1px;
+  --elevation-card-spread: 0px;
+  --elevation-overlay-blur: 24px;
+  --elevation-overlay-color: #080D17;
+  --elevation-overlay-offset-x: 0px;
+  --elevation-overlay-offset-y: 12px;
+  --elevation-overlay-spread: 0px;
+  --font-family-body: Inter, system-ui, sans-serif;
+  --font-family-display: Inter, system-ui, sans-serif;
+  --font-size-2xl: 25px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+  --font-size-lg: 20px;
+  --font-size-md: 18px;
+  --font-size-sm: 16px;
+  --font-size-xl: 22px;
+  --font-size-xs: 14px;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --info-50: #EAF2FF;
+  --info-100: #D5E5FF;
+  --info-200: #A5C8FF;
+  --info-300: #6FA6FF;
+  --info-400: #3B82F6;
+  --info-500: #2367D3;
+  --info-600: #104BA7;
+  --info-700: #043279;
+  --info-800: #001B4D;
+  --info-900: #000927;
+  --info-950: #000114;
+  --motion-base: 200ms;
+  --motion-fast: 150ms;
+  --neutral-50: #F2F5FC;
+  --neutral-100: #E4E8F0;
+  --neutral-200: #C5CBD6;
+  --neutral-300: #A5ABB8;
+  --neutral-400: #868D9B;
+  --neutral-500: #6B7280;
+  --neutral-600: #4F5662;
+  --neutral-700: #363B45;
+  --neutral-800: #1E222A;
+  --neutral-900: #0B0D13;
+  --neutral-950: #020306;
+  --primary-50: #FAFBFF;
+  --primary-100: #EAEDFF;
+  --primary-200: #C6CFFF;
+  --primary-300: #A0ACFF;
+  --primary-400: #7D87FF;
+  --primary-500: #6366F1;
+  --primary-600: #4946C9;
+  --primary-700: #322A9A;
+  --primary-800: #1D126A;
+  --primary-900: #0C023E;
+  --primary-950: #040026;
+  --radius-button: 6px;
+  --radius-card: 10px;
+  --radius-full: 9999px;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow-lg-blur: 24px;
+  --shadow-lg-color: #080D17;
+  --shadow-lg-offset-x: 0px;
+  --shadow-lg-offset-y: 12px;
+  --shadow-lg-spread: 0px;
+  --shadow-md-blur: 8px;
+  --shadow-md-color: #080D17;
+  --shadow-md-offset-x: 0px;
+  --shadow-md-offset-y: 4px;
+  --shadow-md-spread: 0px;
+  --shadow-sm-blur: 2px;
+  --shadow-sm-color: #080D17;
+  --shadow-sm-offset-x: 0px;
+  --shadow-sm-offset-y: 1px;
+  --shadow-sm-spread: 0px;
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-component: 16px;
+  --space-inline: 8px;
+  --space-section: 40px;
+  --success-50: #AFFFD8;
+  --success-100: #87F7C4;
+  --success-200: #54DAA2;
+  --success-300: #10B981;
+  --success-400: #009868;
+  --success-500: #007B54;
+  --success-600: #005C3E;
+  --success-700: #003F29;
+  --success-800: #002415;
+  --success-900: #000E06;
+  --success-950: #000401;
+  --text-body-font-family: Inter, system-ui, sans-serif;
+  --text-body-font-size: 18px;
+  --text-body-font-weight: 400;
+  --text-body-letter-spacing: 0px;
+  --text-body-line-height: 1.5;
+  --text-caption-font-family: Inter, system-ui, sans-serif;
+  --text-caption-font-size: 16px;
+  --text-caption-font-weight: 400;
+  --text-caption-letter-spacing: 0px;
+  --text-caption-line-height: 1.4;
+  --text-heading-font-family: Inter, system-ui, sans-serif;
+  --text-heading-font-size: 25px;
+  --text-heading-font-weight: 600;
+  --text-heading-letter-spacing: 0px;
+  --text-heading-line-height: 1.2;
+  --warning-50: #FFFBF7;
+  --warning-100: #FFECD6;
+  --warning-200: #FFC785;
+  --warning-300: #F59E0B;
+  --warning-400: #CB8100;
+  --warning-500: #A66900;
+  --warning-600: #7E4E00;
+  --warning-700: #593500;
+  --warning-800: #371E00;
+  --warning-900: #1A0C00;
+  --warning-950: #0A0300;
+}
+
+/* ── Specimen chrome — every value resolves through the compiled semantic tier ── */
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--color-background); color: var(--color-foreground);
+  font-family: var(--font-family-body); font-size: var(--font-size-sm);
+  line-height: 1.55; padding: 56px 24px 96px;
+}
+main { max-width: 1040px; margin: 0 auto; }
+:focus-visible { outline: 2px solid var(--color-ring, var(--color-primary)); outline-offset: 2px; }
+h1 { font-family: var(--font-family-display); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); letter-spacing: -0.02em; }
+.meta { color: var(--color-muted-foreground); font-size: var(--font-size-xs); }
+.muted { color: var(--color-muted-foreground); }
+.lead { max-width: 660px; margin-top: 14px; }
+.badge-aa {
+  display: inline-block; padding: 2px 10px; border-radius: var(--radius-full);
+  background: var(--color-success); color: var(--color-success-foreground);
+  font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold);
+}
+section { margin-top: 64px; }
+.kicker {
+  font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold);
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-muted-foreground);
+  border-bottom: 1px solid var(--color-border); padding-bottom: 8px; margin-bottom: 20px;
+}
+.section-note { color: var(--color-muted-foreground); font-size: var(--font-size-xs); margin: 18px 0 10px; }
+
+/* Color pairs */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--color-border); border-radius: var(--radius-card); overflow: hidden; background: var(--color-card); }
+.swatch .chip { height: 76px; display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); }
+.swatch .info { padding: 8px 12px; font-size: var(--font-size-xs); color: var(--color-card-foreground); }
+.swatch .info code { color: var(--color-muted-foreground); font-family: ui-monospace, Menlo, monospace; }
+
+/* Typography ramp */
+.type-row { display: flex; align-items: baseline; gap: 20px; padding: 10px 0; border-bottom: 1px dashed var(--color-border); }
+.type-row .tag { width: 150px; flex: none; }
+
+/* Shape, depth, motion */
+.chips { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+.rchip { background: var(--color-card); border: 1px solid var(--color-border); padding: 18px 22px; font-size: var(--font-size-xs); color: var(--color-card-foreground); }
+.echip { background: var(--color-card); border-radius: var(--radius-card); padding: 18px 22px; font-size: var(--font-size-xs); color: var(--color-card-foreground); }
+.dchip { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-button); padding: 10px 14px; font-size: var(--font-size-xs); color: var(--color-card-foreground); font-family: ui-monospace, Menlo, monospace; }
+
+/* Components */
+.comp { margin-top: 36px; }
+.comp-kicker {
+  font-size: var(--font-size-md); font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground); border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
+}
+.comp-variants { margin-bottom: 16px; }
+.status-tag {
+  font-size: var(--font-size-xs); font-weight: var(--font-weight-medium);
+  padding: 1px 8px; border-radius: var(--radius-full);
+  background: var(--color-muted); color: var(--color-muted-foreground);
+}
+.ui-specimen__frame { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6); }
+
+/* Motion floor (taste-rubric): every animated fragment stops under reduced-motion. */
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Footer */
+.foot { margin-top: 72px; border-top: 1px solid var(--color-border); padding-top: 16px; }
+.foot code { font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">core-ds &middot; Design System Specimen</p>
+    <h1>core-ds</h1>
+    <p class="meta" style="margin-top:10px">generation 1 &middot; persona <strong>saas-aurora-minimal</strong> &middot; 160 tokens &middot; <span class="badge-aa">paired AA &mdash; 14 pairs &middot; 0 failures &middot; min 4.52:1</span></p>
+    <p class="lead">Modern AI web product landing page and interactive studio</p>
+  </header>
+  <section aria-labelledby="s-color">
+    <h2 class="kicker" id="s-color">Color &mdash; paired roles</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--color-accent);color:var(--color-accent-foreground)">Aa</div><div class="info">accent / accent-foreground<br><code>#EAEDFF / #040026 &middot; 17.48:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-card);color:var(--color-card-foreground)">Aa</div><div class="info">card / card-foreground<br><code>#E4E8F0 / #0B0D13 &middot; 15.82:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-danger);color:var(--color-danger-foreground)">Aa</div><div class="info">danger / danger-foreground<br><code>#CB262C / #FFFFFF &middot; 5.45:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-background);color:var(--color-foreground)">Aa</div><div class="info">background / foreground<br><code>#F2F5FC / #0B0D13 &middot; 17.8:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-info);color:var(--color-info-foreground)">Aa</div><div class="info">info / info-foreground<br><code>#2367D3 / #FFFFFF &middot; 5.31:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-muted);color:var(--color-muted-foreground)">Aa</div><div class="info">muted / muted-foreground<br><code>#C5CBD6 / #4F5662 &middot; 4.54:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-popover);color:var(--color-popover-foreground)">Aa</div><div class="info">popover / popover-foreground<br><code>#E4E8F0 / #0B0D13 &middot; 15.82:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-primary);color:var(--color-primary-foreground)">Aa</div><div class="info">primary / primary-foreground<br><code>#6366F1 / #000000 &middot; 4.7:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-secondary);color:var(--color-secondary-foreground)">Aa</div><div class="info">secondary / secondary-foreground<br><code>#C5CBD6 / #0B0D13 &middot; 11.92:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-sidebar-accent);color:var(--color-sidebar-accent-foreground)">Aa</div><div class="info">sidebar-accent / sidebar-accent-foreground<br><code>#EAEDFF / #040026 &middot; 17.48:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-sidebar);color:var(--color-sidebar-foreground)">Aa</div><div class="info">sidebar / sidebar-foreground<br><code>#E4E8F0 / #0B0D13 &middot; 15.82:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-sidebar-primary);color:var(--color-sidebar-primary-foreground)">Aa</div><div class="info">sidebar-primary / sidebar-primary-foreground<br><code>#6366F1 / #000000 &middot; 4.7:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-success);color:var(--color-success-foreground)">Aa</div><div class="info">success / success-foreground<br><code>#007B54 / #FFFFFF &middot; 5.3:1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-warning);color:var(--color-warning-foreground)">Aa</div><div class="info">warning / warning-foreground<br><code>#A66900 / #FFFFFF &middot; 4.52:1</code></div></div>
+    </div>
+    <p class="section-note">Unpaired structural roles &mdash; no foreground pairing (hairline, control border, focus ring, chart series).</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--color-border);color:var(--color-foreground)">border</div><div class="info">border <span class="muted">(unpaired)</span><br><code>#C5CBD6</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-input);color:var(--color-foreground)">input</div><div class="info">input <span class="muted">(unpaired)</span><br><code>#A5ABB8</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-ring);color:var(--color-foreground)">ring</div><div class="info">ring <span class="muted">(unpaired)</span><br><code>#6366F1</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-chart-1);color:var(--color-background)">1</div><div class="info">chart-1<br><code>#727CD9</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-chart-2);color:var(--color-background)">2</div><div class="info">chart-2<br><code>#C25F93</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-chart-3);color:var(--color-background)">3</div><div class="info">chart-3<br><code>#C16F0E</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-chart-4);color:var(--color-background)">4</div><div class="info">chart-4<br><code>#639737</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--color-chart-5);color:var(--color-background)">5</div><div class="info">chart-5<br><code>#0098A5</code></div></div>
+    </div>
+  </section>
+  <section aria-labelledby="s-type">
+    <h2 class="kicker" id="s-type">Typography &mdash; the size ramp</h2>
+    <div class="type-row"><span class="tag meta">xs &middot; 14px</span><span style="font-size:var(--font-size-xs)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">sm &middot; 16px</span><span style="font-size:var(--font-size-sm)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">md &middot; 18px</span><span style="font-size:var(--font-size-md)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">lg &middot; 20px</span><span style="font-size:var(--font-size-lg)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">xl &middot; 22px</span><span style="font-size:var(--font-size-xl)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">2xl &middot; 25px</span><span style="font-size:var(--font-size-2xl)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">3xl &middot; 28px</span><span style="font-size:var(--font-size-3xl)">The quick brown fox jumps over the lazy dog</span></div>
+    <div class="type-row"><span class="tag meta">4xl &middot; 32px</span><span style="font-size:var(--font-size-4xl)">The quick brown fox jumps over the lazy dog</span></div>
+  </section>
+  <section aria-labelledby="s-shape">
+    <h2 class="kicker" id="s-shape">Shape &amp; depth</h2>
+    <div class="chips">
+      <div class="rchip" style="border-radius:var(--radius-button)">radius-button &middot; 6px</div>
+      <div class="rchip" style="border-radius:var(--radius-card)">radius-card &middot; 10px</div>
+      <div class="rchip" style="border-radius:var(--radius-full)">radius-full &middot; 9999px</div>
+      <div class="rchip" style="border-radius:var(--radius-lg)">radius-lg &middot; 16px</div>
+      <div class="rchip" style="border-radius:var(--radius-md)">radius-md &middot; 10px</div>
+      <div class="rchip" style="border-radius:var(--radius-sm)">radius-sm &middot; 6px</div>
+      <div class="echip" style="box-shadow:var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) color-mix(in srgb, var(--elevation-card-color) 16%, transparent)">elevation.card</div>
+      <div class="echip" style="box-shadow:var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) color-mix(in srgb, var(--elevation-overlay-color) 16%, transparent)">elevation.overlay</div>
+      <div class="echip" style="box-shadow:var(--shadow-lg-offset-x) var(--shadow-lg-offset-y) var(--shadow-lg-blur) var(--shadow-lg-spread) color-mix(in srgb, var(--shadow-lg-color) 16%, transparent)">shadow.lg</div>
+      <div class="echip" style="box-shadow:var(--shadow-md-offset-x) var(--shadow-md-offset-y) var(--shadow-md-blur) var(--shadow-md-spread) color-mix(in srgb, var(--shadow-md-color) 16%, transparent)">shadow.md</div>
+      <div class="echip" style="box-shadow:var(--shadow-sm-offset-x) var(--shadow-sm-offset-y) var(--shadow-sm-blur) var(--shadow-sm-spread) color-mix(in srgb, var(--shadow-sm-color) 16%, transparent)">shadow.sm</div>
+    </div>
+  </section>
+  <section aria-labelledby="s-motion">
+    <h2 class="kicker" id="s-motion">Motion &mdash; durations</h2>
+    <div class="chips">
+      <div class="dchip">duration.base &middot; 200ms</div>
+      <div class="dchip">duration.fast &middot; 150ms</div>
+      <div class="dchip">duration.slow &middot; 300ms</div>
+      <div class="dchip">motion.base &middot; 200ms</div>
+      <div class="dchip">motion.fast &middot; 150ms</div>
+    </div>
+  </section>
+  <section aria-labelledby="s-components">
+    <h2 class="kicker" id="s-components">Components &mdash; from the registry</h2>
+    <article class="comp" aria-labelledby="c-control-button">
+      <h3 class="comp-kicker" id="c-control-button">1 · Control/Button <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Tone=Primary · Tone=Secondary · Tone=Danger · Size=Sm · Size=Md · Size=Lg · State=Default · State=Hover · State=Focus · State=Disabled · State=Loading</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-btn">
+  <style>
+    .ui-btn { display: grid; gap: var(--space-3); font-family: var(--font-family-body); }
+    .ui-btn__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+    .ui-btn__cap { min-width: 84px; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-btn__btn {
+      font-family: inherit; font-weight: var(--font-weight-medium); font-size: var(--font-size-sm);
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2) var(--space-4); border: 1px solid transparent;
+      border-radius: var(--radius-button); cursor: pointer;
+      transition: background var(--duration-fast) ease, filter var(--duration-fast) ease;
+    }
+    .ui-btn__btn--sm { padding: var(--space-1) var(--space-3); font-size: var(--font-size-xs); }
+    .ui-btn__btn--lg { padding: var(--space-3) var(--space-5); font-size: var(--font-size-md); }
+    .ui-btn__btn--primary { background: var(--color-primary); color: var(--color-primary-foreground); }
+    .ui-btn__btn--primary.is-hover { background: var(--color-primary-hover); }
+    .ui-btn__btn--secondary { background: var(--color-secondary); color: var(--color-secondary-foreground); }
+    .ui-btn__btn--secondary.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-btn__btn--danger { background: var(--color-danger); color: var(--color-danger-foreground); }
+    .ui-btn__btn--danger.is-hover { filter: brightness(0.92); }
+    /* Touch floor: real :hover only where hover exists — on touch it sticks after a tap. */
+    @media (hover: hover) {
+      .ui-btn__btn--primary:hover { background: var(--color-primary-hover); }
+      .ui-btn__btn--secondary:hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+      .ui-btn__btn--danger:hover { filter: brightness(0.92); }
+    }
+    .ui-btn__btn.is-focus, .ui-btn__btn:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+    .ui-btn__btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-btn__spin {
+      width: 1em; height: 1em; border-radius: var(--radius-full);
+      border: 2px solid currentColor; border-top-color: transparent;
+      animation: ui-btn-spin var(--duration-slow) linear infinite;
+    }
+    @keyframes ui-btn-spin { to { transform: rotate(360deg); } }
+    /* Motion floor: the spinner is decorative — it must stop for reduced-motion users. */
+    @media (prefers-reduced-motion: reduce) { .ui-btn__spin { animation: none; } }
+  </style>
+  <div class="ui-btn__row">
+    <span class="ui-btn__cap">Primary</span>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary">Save changes</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary is-hover">Save changes</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary is-focus">Save changes</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary" disabled>Save changes</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary" disabled aria-busy="true"><span class="ui-btn__spin" aria-hidden="true"></span>Saving</button>
+  </div>
+  <div class="ui-btn__row">
+    <span class="ui-btn__cap">Secondary</span>
+    <button type="button" class="ui-btn__btn ui-btn__btn--secondary">Cancel</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--secondary is-hover">Cancel</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--secondary is-focus">Cancel</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--secondary" disabled>Cancel</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--secondary" disabled aria-busy="true"><span class="ui-btn__spin" aria-hidden="true"></span>Working</button>
+  </div>
+  <div class="ui-btn__row">
+    <span class="ui-btn__cap">Danger</span>
+    <button type="button" class="ui-btn__btn ui-btn__btn--danger">Delete project</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--danger is-hover">Delete project</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--danger is-focus">Delete project</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--danger" disabled>Delete project</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--danger" disabled aria-busy="true"><span class="ui-btn__spin" aria-hidden="true"></span>Deleting</button>
+  </div>
+  <div class="ui-btn__row">
+    <span class="ui-btn__cap">Sizes</span>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary ui-btn__btn--sm">Small</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary ui-btn__btn--md">Medium</button>
+    <button type="button" class="ui-btn__btn ui-btn__btn--primary ui-btn__btn--lg">Large</button>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-checkbox">
+      <h3 class="comp-kicker" id="c-control-checkbox">2 · Control/Checkbox <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Checked · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-check">
+  <style>
+    .ui-check { display: grid; gap: var(--space-1); font-family: var(--font-family-body); }
+    .ui-check__hint { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-check__item {
+      display: inline-flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-1) var(--space-2); border-radius: var(--radius-button);
+      font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer;
+    }
+    .ui-check__box { width: 1.05em; height: 1.05em; accent-color: var(--color-primary); }
+    .ui-check__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-check__item.is-focus .ui-check__box { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+    .ui-check__item.is-disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+  <p class="ui-check__hint">Notifications</p>
+  <label class="ui-check__item"><input class="ui-check__box" type="checkbox">Email me product updates</label>
+  <label class="ui-check__item is-hover"><input class="ui-check__box" type="checkbox">Email me product updates</label>
+  <label class="ui-check__item is-focus"><input class="ui-check__box" type="checkbox">Email me product updates</label>
+  <label class="ui-check__item"><input class="ui-check__box" type="checkbox" checked>Subscribed to security alerts</label>
+  <label class="ui-check__item is-disabled"><input class="ui-check__box" type="checkbox" checked disabled>Enforced by your admin</label>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-combobox">
+      <h3 class="comp-kicker" id="c-control-combobox">3 · Control/Combobox <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Empty · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-cb">
+  <style>
+    .ui-cb { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-5); font-family: var(--font-family-body); }
+    .ui-cb__field { display: grid; gap: var(--space-1); align-content: start; }
+    .ui-cb__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }
+    .ui-cb__input {
+      font: inherit; font-size: var(--font-size-sm); width: 100%; appearance: none; -webkit-appearance: none;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);
+      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);
+      transition: border-color var(--duration-fast) ease;
+    }
+    .ui-cb__input.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }
+    .ui-cb__input[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-cb__list {
+      list-style: none; margin: var(--space-1) 0 0; padding: var(--space-1);
+      background: var(--color-popover); color: var(--color-popover-foreground);
+      border: 1px solid var(--color-border); border-radius: var(--radius-card);
+      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);
+    }
+    .ui-cb__opt { font-size: var(--font-size-sm); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); }
+    .ui-cb__opt[aria-selected="true"] { background: var(--color-accent); color: var(--color-accent-foreground); font-weight: var(--font-weight-medium); }
+    .ui-cb__opt.is-hover { background: var(--color-muted); }
+    .ui-cb__empty { margin: var(--space-1) 0 0; padding: var(--space-3); font-size: var(--font-size-sm); color: var(--color-muted-foreground); }
+  </style>
+  <div class="ui-cb__field">
+    <label class="ui-cb__label" for="ui-cb-1">Search fruit</label>
+    <input class="ui-cb__input is-focus" id="ui-cb-1" role="combobox" aria-expanded="true" aria-controls="ui-cb-list-1" aria-autocomplete="list" aria-activedescendant="ui-cb-o2" value="Ber">
+    <ul class="ui-cb__list" id="ui-cb-list-1" role="listbox" aria-label="Fruit">
+      <li class="ui-cb__opt" id="ui-cb-o1" role="option">Apple</li>
+      <li class="ui-cb__opt" id="ui-cb-o2" role="option" aria-selected="true">Berry</li>
+      <li class="ui-cb__opt is-hover" id="ui-cb-o3" role="option">Blueberry</li>
+    </ul>
+  </div>
+  <div class="ui-cb__field">
+    <label class="ui-cb__label" for="ui-cb-2">Search tags</label>
+    <input class="ui-cb__input" id="ui-cb-2" role="combobox" aria-expanded="true" aria-controls="ui-cb-list-2" aria-autocomplete="list" value="qz">
+    <div class="ui-cb__list" id="ui-cb-list-2" role="listbox" aria-label="Tags">
+      <p class="ui-cb__empty">No matches found</p>
+    </div>
+  </div>
+  <div class="ui-cb__field">
+    <label class="ui-cb__label" for="ui-cb-3">Assigned to</label>
+    <input class="ui-cb__input" id="ui-cb-3" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-disabled="true" value="Managed by SSO" disabled>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-input">
+      <h3 class="comp-kicker" id="c-control-input">4 · Control/Input <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Invalid · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-input">
+  <style>
+    .ui-input { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); font-family: var(--font-family-body); }
+    .ui-input__field { display: grid; gap: var(--space-1); }
+    .ui-input__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }
+    .ui-input__ctrl {
+      font: inherit; font-size: var(--font-size-sm); width: 100%;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);
+      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);
+      transition: border-color var(--duration-fast) ease;
+    }
+    .ui-input__ctrl.is-hover:not([disabled]) { border-color: color-mix(in srgb, var(--color-foreground) 35%, var(--color-input)); }
+    .ui-input__ctrl.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }
+    .ui-input__ctrl.is-invalid { border-color: var(--color-danger); }
+    .ui-input__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-input__help { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-input__help.is-error { color: var(--color-danger); }
+  </style>
+  <div class="ui-input__field">
+    <label class="ui-input__label" for="ui-input-default">Workspace name</label>
+    <input class="ui-input__ctrl" id="ui-input-default" type="text" value="Aurora Labs">
+    <p class="ui-input__help">Shown on invoices and exports.</p>
+  </div>
+  <div class="ui-input__field">
+    <label class="ui-input__label" for="ui-input-hover">Hovered</label>
+    <input class="ui-input__ctrl is-hover" id="ui-input-hover" type="text" value="ease-design">
+    <p class="ui-input__help">Border strengthens on pointer.</p>
+  </div>
+  <div class="ui-input__field">
+    <label class="ui-input__label" for="ui-input-focus">Focused</label>
+    <input class="ui-input__ctrl is-focus" id="ui-input-focus" type="text" value="ease-design">
+    <p class="ui-input__help">Ring at 35% strength.</p>
+  </div>
+  <div class="ui-input__field">
+    <label class="ui-input__label" for="ui-input-invalid">Invalid</label>
+    <input class="ui-input__ctrl is-invalid" id="ui-input-invalid" type="email" value="not-an-email" aria-invalid="true" aria-describedby="ui-input-invalid-err">
+    <p class="ui-input__help is-error" id="ui-input-invalid-err">Enter a valid email address.</p>
+  </div>
+  <div class="ui-input__field">
+    <label class="ui-input__label" for="ui-input-disabled">Disabled</label>
+    <input class="ui-input__ctrl" id="ui-input-disabled" type="text" value="Managed by SSO" disabled>
+    <p class="ui-input__help">Provisioned by your identity provider.</p>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-radio">
+      <h3 class="comp-kicker" id="c-control-radio">5 · Control/Radio <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Checked · State=Disabled</p>
+      <div class="ui-specimen__frame"><fieldset class="ui-kit ui-radio">
+  <style>
+    .ui-radio { border: 0; margin: 0; padding: 0; display: grid; gap: var(--space-1); font-family: var(--font-family-body); }
+    .ui-radio__legend { padding: 0; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-radio__item {
+      display: inline-flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-1) var(--space-2); border-radius: var(--radius-button);
+      font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer;
+    }
+    .ui-radio__dot { width: 1.05em; height: 1.05em; accent-color: var(--color-primary); }
+    .ui-radio__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-radio__item.is-focus .ui-radio__dot { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+    .ui-radio__item.is-disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+  <legend class="ui-radio__legend">Billing cycle</legend>
+  <label class="ui-radio__item"><input class="ui-radio__dot" type="radio" name="ui-radio-cycle">Monthly</label>
+  <label class="ui-radio__item is-hover"><input class="ui-radio__dot" type="radio" name="ui-radio-cycle">Quarterly</label>
+  <label class="ui-radio__item is-focus"><input class="ui-radio__dot" type="radio" name="ui-radio-cycle">Biannual</label>
+  <label class="ui-radio__item"><input class="ui-radio__dot" type="radio" name="ui-radio-cycle" checked>Annual (save 20%)</label>
+  <label class="ui-radio__item is-disabled"><input class="ui-radio__dot" type="radio" name="ui-radio-cycle" disabled>Lifetime (sold out)</label>
+</fieldset></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-select">
+      <h3 class="comp-kicker" id="c-control-select">6 · Control/Select <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Empty · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-select">
+  <style>
+    .ui-select { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); font-family: var(--font-family-body); }
+    .ui-select__field { display: grid; gap: var(--space-1); }
+    .ui-select__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }
+    .ui-select__wrap { position: relative; }
+    .ui-select__wrap::after {
+      content: ""; position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%);
+      width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+      border-top: 5px solid var(--color-muted-foreground); pointer-events: none;
+    }
+    .ui-select__ctrl {
+      font: inherit; font-size: var(--font-size-sm); width: 100%; appearance: none; -webkit-appearance: none;
+      padding: var(--space-2) var(--space-6) var(--space-2) var(--space-3); border-radius: var(--radius-button);
+      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);
+      transition: border-color var(--duration-fast) ease;
+    }
+    .ui-select__ctrl.is-hover:not([disabled]) { border-color: color-mix(in srgb, var(--color-foreground) 35%, var(--color-input)); }
+    .ui-select__ctrl.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }
+    .ui-select__ctrl.is-empty { color: var(--color-muted-foreground); }
+    .ui-select__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }
+  </style>
+  <div class="ui-select__field">
+    <label class="ui-select__label" for="ui-select-default">Plan</label>
+    <div class="ui-select__wrap">
+      <select class="ui-select__ctrl" id="ui-select-default"><option>Starter</option><option selected>Team</option><option>Enterprise</option></select>
+    </div>
+  </div>
+  <div class="ui-select__field">
+    <label class="ui-select__label" for="ui-select-hover">Hovered</label>
+    <div class="ui-select__wrap">
+      <select class="ui-select__ctrl is-hover" id="ui-select-hover"><option selected>Team</option><option>Enterprise</option></select>
+    </div>
+  </div>
+  <div class="ui-select__field">
+    <label class="ui-select__label" for="ui-select-focus">Focused</label>
+    <div class="ui-select__wrap">
+      <select class="ui-select__ctrl is-focus" id="ui-select-focus"><option selected>Team</option><option>Enterprise</option></select>
+    </div>
+  </div>
+  <div class="ui-select__field">
+    <label class="ui-select__label" for="ui-select-empty">Empty</label>
+    <div class="ui-select__wrap">
+      <select class="ui-select__ctrl is-empty" id="ui-select-empty"><option value="" disabled selected>Choose a plan</option><option>Starter</option><option>Team</option></select>
+    </div>
+  </div>
+  <div class="ui-select__field">
+    <label class="ui-select__label" for="ui-select-disabled">Disabled</label>
+    <div class="ui-select__wrap">
+      <select class="ui-select__ctrl" id="ui-select-disabled" disabled><option selected>Managed by SSO</option></select>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-switch">
+      <h3 class="comp-kicker" id="c-control-switch">7 · Control/Switch <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Checked · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-switch">
+  <style>
+    .ui-switch { display: grid; gap: var(--space-2); font-family: var(--font-family-body); }
+    .ui-switch__cap { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-switch__item { display: inline-flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer; }
+    .ui-switch__input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .ui-switch__track {
+      position: relative; flex: none; width: 2.2em; height: 1.25em; border-radius: var(--radius-full);
+      background: var(--color-input); transition: background var(--duration-base) ease;
+    }
+    .ui-switch__thumb {
+      position: absolute; top: 50%; left: 0.15em; transform: translateY(-50%);
+      width: 0.95em; height: 0.95em; border-radius: var(--radius-full); background: var(--color-background);
+      transition: transform var(--duration-base) ease;
+    }
+    .ui-switch__input:checked + .ui-switch__track { background: var(--color-primary); }
+    .ui-switch__input:checked + .ui-switch__track .ui-switch__thumb { transform: translate(0.95em, -50%); }
+    .ui-switch__item.is-hover .ui-switch__track { background: color-mix(in srgb, var(--color-foreground) 20%, var(--color-input)); }
+    .ui-switch__item.is-focus .ui-switch__track { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+    .ui-switch__item.is-disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+  <p class="ui-switch__cap">Security</p>
+  <label class="ui-switch__item"><input class="ui-switch__input" type="checkbox"><span class="ui-switch__track" aria-hidden="true"><span class="ui-switch__thumb"></span></span><span>Require two-factor auth</span></label>
+  <label class="ui-switch__item is-hover"><input class="ui-switch__input" type="checkbox"><span class="ui-switch__track" aria-hidden="true"><span class="ui-switch__thumb"></span></span><span>Require two-factor auth</span></label>
+  <label class="ui-switch__item is-focus"><input class="ui-switch__input" type="checkbox"><span class="ui-switch__track" aria-hidden="true"><span class="ui-switch__thumb"></span></span><span>Require two-factor auth</span></label>
+  <label class="ui-switch__item"><input class="ui-switch__input" type="checkbox" checked><span class="ui-switch__track" aria-hidden="true"><span class="ui-switch__thumb"></span></span><span>Auto-renew subscription</span></label>
+  <label class="ui-switch__item is-disabled"><input class="ui-switch__input" type="checkbox" checked disabled><span class="ui-switch__track" aria-hidden="true"><span class="ui-switch__thumb"></span></span><span>Managed by your admin</span></label>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-control-textarea">
+      <h3 class="comp-kicker" id="c-control-textarea">8 · Control/Textarea <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Invalid · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-textarea">
+  <style>
+    .ui-textarea { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-4); font-family: var(--font-family-body); }
+    .ui-textarea__field { display: grid; gap: var(--space-1); }
+    .ui-textarea__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }
+    .ui-textarea__ctrl {
+      font: inherit; font-size: var(--font-size-sm); width: 100%; min-height: var(--space-16); resize: vertical;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);
+      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);
+      transition: border-color var(--duration-fast) ease;
+    }
+    .ui-textarea__ctrl.is-hover:not([disabled]) { border-color: color-mix(in srgb, var(--color-foreground) 35%, var(--color-input)); }
+    .ui-textarea__ctrl.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }
+    .ui-textarea__ctrl.is-invalid { border-color: var(--color-danger); }
+    .ui-textarea__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-textarea__help { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-textarea__help.is-error { color: var(--color-danger); }
+  </style>
+  <div class="ui-textarea__field">
+    <label class="ui-textarea__label" for="ui-textarea-default">Release notes</label>
+    <textarea class="ui-textarea__ctrl" id="ui-textarea-default">Ship the compiled token set.</textarea>
+    <p class="ui-textarea__help">Markdown supported.</p>
+  </div>
+  <div class="ui-textarea__field">
+    <label class="ui-textarea__label" for="ui-textarea-hover">Hovered</label>
+    <textarea class="ui-textarea__ctrl is-hover" id="ui-textarea-hover">Border strengthens on pointer.</textarea>
+    <p class="ui-textarea__help">Pointer over the field.</p>
+  </div>
+  <div class="ui-textarea__field">
+    <label class="ui-textarea__label" for="ui-textarea-focus">Focused</label>
+    <textarea class="ui-textarea__ctrl is-focus" id="ui-textarea-focus">Ring at 35% strength.</textarea>
+    <p class="ui-textarea__help">Keyboard focus.</p>
+  </div>
+  <div class="ui-textarea__field">
+    <label class="ui-textarea__label" for="ui-textarea-invalid">Invalid</label>
+    <textarea class="ui-textarea__ctrl is-invalid" id="ui-textarea-invalid" aria-invalid="true" aria-describedby="ui-textarea-invalid-err"></textarea>
+    <p class="ui-textarea__help is-error" id="ui-textarea-invalid-err">Release notes are required.</p>
+  </div>
+  <div class="ui-textarea__field">
+    <label class="ui-textarea__label" for="ui-textarea-disabled">Disabled</label>
+    <textarea class="ui-textarea__ctrl" id="ui-textarea-disabled" disabled>Locked after publish.</textarea>
+    <p class="ui-textarea__help">Read-only once released.</p>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-data-table">
+      <h3 class="comp-kicker" id="c-data-table">9 · Data/Table <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Empty</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-table">
+  <style>
+    .ui-table { font-family: var(--font-family-body); display: grid; gap: var(--space-5); }
+    .ui-table__t { position: relative; width: 100%; border-collapse: collapse; font-size: var(--font-size-sm); color: var(--color-foreground); }
+    .ui-table__t caption { text-align: left; font-size: var(--font-size-xs); color: var(--color-muted-foreground); padding-bottom: var(--space-2); }
+
+    /* Reflow floor (< sm / 40rem): stacked cards, one per row. thead is visually hidden
+       (never display:none) so its text still reaches a screen reader. */
+    .ui-table__t thead {
+      position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .ui-table__t, .ui-table__t tbody, .ui-table__t tr { display: block; }
+    .ui-table__t tbody tr {
+      border: 1px solid var(--color-border); border-radius: var(--radius-button);
+      padding: var(--space-3); margin-bottom: var(--space-3);
+      transition: background var(--duration-fast) ease;
+    }
+    .ui-table__t tbody tr:last-child { margin-bottom: 0; }
+    .ui-table__t td {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: var(--space-3); padding: var(--space-1) 0; border-bottom: none;
+    }
+    .ui-table__t td::before {
+      content: attr(data-th); font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-xs); color: var(--color-muted-foreground);
+    }
+    .ui-table__t tbody tr.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-table__num { text-align: right; font-variant-numeric: tabular-nums; }
+    .ui-table__empty { display: block; text-align: center; color: var(--color-muted-foreground); padding: var(--space-8) var(--space-3); }
+
+    /* sm and up (>= 40rem / 640px — knowledge/mode-constraints.md's counted scale):
+       revert to a real grid table. Mobile-first: this is the only override block. */
+    @media (min-width: 40rem) {
+      .ui-table__t { display: table; }
+      .ui-table__t thead {
+        position: static; width: auto; height: auto; margin: 0; padding: 0;
+        overflow: visible; clip: auto; white-space: normal; border: 0; display: table-header-group;
+      }
+      .ui-table__t tbody { display: table-row-group; }
+      .ui-table__t tr { display: table-row; }
+      .ui-table__t th {
+        display: table-cell; text-align: left; font-weight: var(--font-weight-semibold);
+        font-size: var(--font-size-xs); color: var(--color-muted-foreground);
+        padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border);
+      }
+      .ui-table__t td {
+        display: table-cell; padding: var(--space-2) var(--space-3);
+        border-bottom: 1px solid var(--color-border);
+      }
+      .ui-table__t td::before { content: none; }
+      .ui-table__t td.ui-table__empty { display: table-cell; }
+      .ui-table__t tbody tr { border: none; border-radius: 0; padding: 0; margin-bottom: 0; }
+      .ui-table__t tbody tr:nth-child(even) { background: var(--color-muted); }
+    }
+  </style>
+  <table class="ui-table__t" role="table">
+    <caption>Recent invoices</caption>
+    <thead role="rowgroup">
+      <tr role="row"><th scope="col" role="columnheader">Invoice</th><th scope="col" role="columnheader">Client</th><th scope="col" role="columnheader" class="ui-table__num">Amount</th></tr>
+    </thead>
+    <tbody role="rowgroup">
+      <tr role="row"><td role="cell" data-th="Invoice">INV-1042</td><td role="cell" data-th="Client">Aurora Labs</td><td role="cell" data-th="Amount" class="ui-table__num">$1,200.00</td></tr>
+      <tr role="row"><td role="cell" data-th="Invoice">INV-1041</td><td role="cell" data-th="Client">Northwind</td><td role="cell" data-th="Amount" class="ui-table__num">$840.00</td></tr>
+      <tr role="row" class="is-hover"><td role="cell" data-th="Invoice">INV-1040</td><td role="cell" data-th="Client">Globex</td><td role="cell" data-th="Amount" class="ui-table__num">$2,050.00</td></tr>
+      <tr role="row"><td role="cell" data-th="Invoice">INV-1039</td><td role="cell" data-th="Client">Initech</td><td role="cell" data-th="Amount" class="ui-table__num">$430.00</td></tr>
+    </tbody>
+  </table>
+  <table class="ui-table__t" role="table">
+    <caption>Archived invoices</caption>
+    <thead role="rowgroup">
+      <tr role="row"><th scope="col" role="columnheader">Invoice</th><th scope="col" role="columnheader">Client</th><th scope="col" role="columnheader" class="ui-table__num">Amount</th></tr>
+    </thead>
+    <tbody role="rowgroup">
+      <tr role="row"><td role="cell" class="ui-table__empty" colspan="3">No archived invoices yet.</td></tr>
+    </tbody>
+  </table>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-alert">
+      <h3 class="comp-kicker" id="c-display-alert">10 · Display/Alert <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Tone=Info · Tone=Success · Tone=Warning · Tone=Danger · State=Default</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-alert">
+  <style>
+    .ui-alert { display: grid; gap: var(--space-3); font-family: var(--font-family-body); max-width: 560px; }
+    .ui-alert__box {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: var(--space-3);
+      padding: var(--space-3) var(--space-4); border-radius: var(--radius-card);
+      border: 1px solid var(--color-border); border-left-width: 3px; color: var(--color-foreground);
+    }
+    .ui-alert__box--info    { background: color-mix(in srgb, var(--color-info) 10%, var(--color-background));    border-left-color: var(--color-info); }
+    .ui-alert__box--success { background: color-mix(in srgb, var(--color-success) 10%, var(--color-background)); border-left-color: var(--color-success); }
+    .ui-alert__box--warning { background: color-mix(in srgb, var(--color-warning) 12%, var(--color-background)); border-left-color: var(--color-warning); }
+    .ui-alert__box--danger  { background: color-mix(in srgb, var(--color-danger) 10%, var(--color-background));  border-left-color: var(--color-danger); }
+    .ui-alert__dot { width: 0.55em; height: 0.55em; margin-top: 0.4em; border-radius: var(--radius-full); }
+    .ui-alert__box--info .ui-alert__dot { background: var(--color-info); }
+    .ui-alert__box--success .ui-alert__dot { background: var(--color-success); }
+    .ui-alert__box--warning .ui-alert__dot { background: var(--color-warning); }
+    .ui-alert__box--danger .ui-alert__dot { background: var(--color-danger); }
+    .ui-alert__text { display: grid; gap: var(--space-1); }
+    .ui-alert__title { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+    .ui-alert__body { font-size: var(--font-size-xs); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }
+    .ui-alert__action {
+      font: inherit; font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); cursor: pointer;
+      align-self: center; white-space: nowrap; padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-button); border: 1px solid var(--color-border);
+      background: var(--color-background); color: var(--color-foreground);
+      transition: background var(--duration-fast) ease;
+    }
+  </style>
+  <div class="ui-alert__box ui-alert__box--info" role="status">
+    <span class="ui-alert__dot" aria-hidden="true"></span>
+    <div class="ui-alert__text">
+      <p class="ui-alert__title">A new persona is available</p>
+      <p class="ui-alert__body">Liquid Glass now ships with paired status tokens.</p>
+    </div>
+    <button type="button" class="ui-alert__action">View</button>
+  </div>
+  <div class="ui-alert__box ui-alert__box--success" role="status">
+    <span class="ui-alert__dot" aria-hidden="true"></span>
+    <div class="ui-alert__text">
+      <p class="ui-alert__title">Design system compiled</p>
+      <p class="ui-alert__body">21 components registered and specimen-checked.</p>
+    </div>
+    <button type="button" class="ui-alert__action">Details</button>
+  </div>
+  <div class="ui-alert__box ui-alert__box--warning" role="alert">
+    <span class="ui-alert__dot" aria-hidden="true"></span>
+    <div class="ui-alert__text">
+      <p class="ui-alert__title">Trial ends in 3 days</p>
+      <p class="ui-alert__body">Add a payment method to keep your workspace active.</p>
+    </div>
+    <button type="button" class="ui-alert__action">Add card</button>
+  </div>
+  <div class="ui-alert__box ui-alert__box--danger" role="alert">
+    <span class="ui-alert__dot" aria-hidden="true"></span>
+    <div class="ui-alert__text">
+      <p class="ui-alert__title">Payment failed</p>
+      <p class="ui-alert__body">We could not charge the card ending in 4242.</p>
+    </div>
+    <button type="button" class="ui-alert__action">Retry</button>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-avatar">
+      <h3 class="comp-kicker" id="c-display-avatar">11 · Display/Avatar <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Size=Sm · Size=Md · Size=Lg · State=Static</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-avatar">
+  <style>
+    .ui-avatar { display: grid; gap: var(--space-4); font-family: var(--font-family-body); }
+    .ui-avatar__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+    .ui-avatar__cap { min-width: 84px; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-avatar__face {
+      display: inline-flex; align-items: center; justify-content: center; flex: none; overflow: hidden;
+      border-radius: var(--radius-full); border: 1px solid var(--color-border);
+      background: var(--color-accent); color: var(--color-accent-foreground); font-weight: var(--font-weight-semibold);
+    }
+    .ui-avatar__face--sm { width: 1.75rem; height: 1.75rem; font-size: var(--font-size-xs); }
+    .ui-avatar__face--md { width: 2.25rem; height: 2.25rem; font-size: var(--font-size-sm); }
+    .ui-avatar__face--lg { width: 3rem;    height: 3rem;    font-size: var(--font-size-md); }
+    .ui-avatar__img { width: 100%; height: 100%; object-fit: cover; outline: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent); outline-offset: -1px; }
+  </style>
+  <div class="ui-avatar__row">
+    <span class="ui-avatar__cap">Sizes</span>
+    <span class="ui-avatar__face ui-avatar__face--sm">AL</span>
+    <span class="ui-avatar__face ui-avatar__face--md">AL</span>
+    <span class="ui-avatar__face ui-avatar__face--lg">AL</span>
+  </div>
+  <div class="ui-avatar__row">
+    <span class="ui-avatar__cap">Fallback</span>
+    <span class="ui-avatar__face ui-avatar__face--lg"><img class="ui-avatar__img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='72'%20height='72'%3E%3Ccircle%20cx='36'%20cy='36'%20r='36'%20fill='steelblue'/%3E%3Ccircle%20cx='36'%20cy='29'%20r='13'%20fill='aliceblue'/%3E%3Cpath%20d='M14%2066a22%2018%200%200%201%2044%200z'%20fill='aliceblue'/%3E%3C/svg%3E" alt="Grace Hopper"></span>
+    <span class="ui-avatar__face ui-avatar__face--lg">GH</span>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-badge">
+      <h3 class="comp-kicker" id="c-display-badge">12 · Display/Badge <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Tone=Neutral · Tone=Success · Tone=Info · Tone=Warning · Tone=Danger · State=Default</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-badge">
+  <style>
+    .ui-badge { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); font-family: var(--font-family-body); }
+    .ui-badge__pill {
+      display: inline-flex; align-items: center;
+      padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);
+      font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); line-height: 1.4;
+    }
+    .ui-badge__pill--neutral { background: var(--color-secondary); color: var(--color-secondary-foreground); }
+    .ui-badge__pill--success { background: var(--color-success); color: var(--color-success-foreground); }
+    .ui-badge__pill--info    { background: var(--color-info);    color: var(--color-info-foreground); }
+    .ui-badge__pill--warning { background: var(--color-warning); color: var(--color-warning-foreground); }
+    .ui-badge__pill--danger  { background: var(--color-danger);  color: var(--color-danger-foreground); }
+  </style>
+  <span class="ui-badge__pill ui-badge__pill--neutral">Draft</span>
+  <span class="ui-badge__pill ui-badge__pill--success">Active</span>
+  <span class="ui-badge__pill ui-badge__pill--info">Beta</span>
+  <span class="ui-badge__pill ui-badge__pill--warning">Trial ending</span>
+  <span class="ui-badge__pill ui-badge__pill--danger">Past due</span>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-card">
+      <h3 class="comp-kicker" id="c-display-card">13 · Display/Card <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Elevation=Flat · Elevation=Raised · State=Default</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-card">
+  <style>
+    .ui-card { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-5); font-family: var(--font-family-body); }
+    .ui-card__surface {
+      display: grid; gap: var(--space-4); padding: var(--space-5);
+      background: var(--color-card); color: var(--color-card-foreground);
+      border-radius: var(--radius-card); border: 1px solid var(--color-border);
+    }
+    .ui-card__surface--raised {
+      border-color: transparent;
+      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);
+    }
+    .ui-card__head { display: grid; gap: var(--space-1); }
+    .ui-card__title { font-family: var(--font-family-display); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+    .ui-card__sub { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-card__body { font-size: var(--font-size-sm); line-height: 1.5; text-wrap: pretty; }
+    .ui-card__foot { display: flex; gap: var(--space-2); align-items: center; }
+    .ui-card__btn {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button); border: 1px solid transparent;
+      transition: filter var(--duration-fast) ease;
+    }
+    .ui-card__btn--primary { background: var(--color-primary); color: var(--color-primary-foreground); }
+    .ui-card__btn--ghost { background: transparent; color: var(--color-foreground); border-color: var(--color-border); }
+  </style>
+  <div class="ui-card__surface">
+    <div class="ui-card__head">
+      <p class="ui-card__title">Starter</p>
+      <p class="ui-card__sub">Flat surface &middot; hairline border</p>
+    </div>
+    <p class="ui-card__body">Everything a small team needs to ship its first design system.</p>
+    <div class="ui-card__foot">
+      <button type="button" class="ui-card__btn ui-card__btn--primary">Choose Starter</button>
+      <button type="button" class="ui-card__btn ui-card__btn--ghost">Compare</button>
+    </div>
+  </div>
+  <div class="ui-card__surface ui-card__surface--raised">
+    <div class="ui-card__head">
+      <p class="ui-card__title">Team</p>
+      <p class="ui-card__sub">Raised surface &middot; card elevation</p>
+    </div>
+    <p class="ui-card__body">Shared tokens, unlimited components, and specimen gating on every commit.</p>
+    <div class="ui-card__foot">
+      <button type="button" class="ui-card__btn ui-card__btn--primary">Choose Team</button>
+      <button type="button" class="ui-card__btn ui-card__btn--ghost">Compare</button>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-kbd">
+      <h3 class="comp-kicker" id="c-display-kbd">14 · Display/Kbd <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Keys=Single · Keys=Combo · State=Static</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-kbd">
+  <style>
+    .ui-kbd { display: grid; gap: var(--space-3); font-family: var(--font-family-body); }
+    .ui-kbd__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--color-foreground); }
+    .ui-kbd__cap { min-width: 84px; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-kbd__combo { display: inline-flex; align-items: center; gap: var(--space-1); }
+    .ui-kbd__key {
+      font-family: var(--font-family-body); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); line-height: 1;
+      display: inline-flex; align-items: center; justify-content: center; min-width: 1.5em;
+      padding: var(--space-1) var(--space-2);
+      background: var(--color-muted); color: var(--color-foreground);
+      border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+    }
+  </style>
+  <div class="ui-kbd__row">
+    <span class="ui-kbd__cap">Single</span>
+    <kbd class="ui-kbd__key">Esc</kbd>
+    <kbd class="ui-kbd__key">Enter</kbd>
+    <kbd class="ui-kbd__key">/</kbd>
+  </div>
+  <div class="ui-kbd__row">
+    <span class="ui-kbd__cap">Combo</span>
+    <span class="ui-kbd__combo"><kbd class="ui-kbd__key">⌘</kbd><kbd class="ui-kbd__key">K</kbd></span>
+    <span class="ui-kbd__combo"><kbd class="ui-kbd__key">⇧</kbd><kbd class="ui-kbd__key">⌘</kbd><kbd class="ui-kbd__key">P</kbd></span>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-progress">
+      <h3 class="comp-kicker" id="c-display-progress">15 · Display/Progress <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Indeterminate</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-progress">
+  <style>
+    .ui-progress { display: grid; gap: var(--space-4); font-family: var(--font-family-body); max-width: 360px; }
+    .ui-progress__row { display: grid; gap: var(--space-2); }
+    .ui-progress__cap { display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-progress__track {
+      position: relative; overflow: hidden; height: 0.5rem;
+      background: var(--color-muted); border-radius: var(--radius-full);
+    }
+    .ui-progress__fill { height: 100%; border-radius: var(--radius-full); background: var(--color-primary); }
+    .ui-progress__fill--v30 { width: 30%; }
+    .ui-progress__fill--v72 { width: 72%; }
+    .ui-progress__fill--indet { position: absolute; top: 0; left: 0; width: 40%; animation: ui-progress-slide var(--duration-slow) ease-in-out infinite; }
+    @keyframes ui-progress-slide { 0% { transform: translateX(-110%); } 100% { transform: translateX(275%); } }
+    /* Motion floor: an indeterminate sweep must resolve to a static bar for reduced-motion users. */
+    @media (prefers-reduced-motion: reduce) {
+      .ui-progress__fill--indet { animation: none; transform: none; width: 100%; }
+    }
+  </style>
+  <div class="ui-progress__row">
+    <div class="ui-progress__cap"><span>Uploading assets</span><span>30%</span></div>
+    <div class="ui-progress__track" role="progressbar" aria-label="Uploading assets" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+      <div class="ui-progress__fill ui-progress__fill--v30"></div>
+    </div>
+  </div>
+  <div class="ui-progress__row">
+    <div class="ui-progress__cap"><span>Compiling tokens</span><span>72%</span></div>
+    <div class="ui-progress__track" role="progressbar" aria-label="Compiling tokens" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+      <div class="ui-progress__fill ui-progress__fill--v72"></div>
+    </div>
+  </div>
+  <div class="ui-progress__row">
+    <div class="ui-progress__cap"><span>Publishing release</span><span>Working…</span></div>
+    <div class="ui-progress__track" role="progressbar" aria-label="Publishing release, in progress">
+      <div class="ui-progress__fill ui-progress__fill--indet"></div>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-separator">
+      <h3 class="comp-kicker" id="c-display-separator">16 · Display/Separator <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Orientation=Horizontal · Orientation=Vertical · State=Static</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-sep">
+  <style>
+    .ui-sep { display: grid; gap: var(--space-5); font-family: var(--font-family-body); color: var(--color-foreground); }
+    .ui-sep__cap { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-sep__stack { display: grid; gap: var(--space-3); }
+    .ui-sep__label { font-size: var(--font-size-sm); }
+    .ui-sep__line { height: 1px; background: var(--color-border); }
+    .ui-sep__row { display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); }
+    .ui-sep__v { align-self: stretch; width: 1px; min-height: var(--space-4); background: var(--color-border); }
+  </style>
+  <div class="ui-sep__stack">
+    <p class="ui-sep__cap">Horizontal</p>
+    <p class="ui-sep__label">Billing details</p>
+    <div class="ui-sep__line" role="separator" aria-orientation="horizontal"></div>
+    <p class="ui-sep__label">Payment method</p>
+  </div>
+  <div class="ui-sep__stack">
+    <p class="ui-sep__cap">Vertical</p>
+    <div class="ui-sep__row">
+      <span>Overview</span>
+      <span class="ui-sep__v" role="separator" aria-orientation="vertical"></span>
+      <span>Activity</span>
+      <span class="ui-sep__v" role="separator" aria-orientation="vertical"></span>
+      <span>Settings</span>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-skeleton">
+      <h3 class="comp-kicker" id="c-display-skeleton">17 · Display/Skeleton <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Shape=Line · Shape=Circle · Shape=Block · State=Loading</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-skel" aria-hidden="true">
+  <style>
+    .ui-skel { display: grid; gap: var(--space-4); max-width: 320px; }
+    .ui-skel__card { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); align-items: center; }
+    .ui-skel__circle, .ui-skel__bar, .ui-skel__block {
+      background: var(--color-muted);
+      animation: ui-skel-pulse var(--duration-slow) ease-in-out infinite;
+    }
+    .ui-skel__circle { width: 2.5rem; height: 2.5rem; border-radius: var(--radius-full); flex: none; }
+    .ui-skel__lines { display: grid; gap: var(--space-2); }
+    .ui-skel__bar { height: 0.6rem; border-radius: var(--radius-sm); }
+    .ui-skel__bar--short { width: 60%; }
+    .ui-skel__block { height: var(--space-16); border-radius: var(--radius-card); }
+    @keyframes ui-skel-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    /* Motion floor: the shimmer is decorative — it must stop for reduced-motion users. */
+    @media (prefers-reduced-motion: reduce) {
+      .ui-skel__circle, .ui-skel__bar, .ui-skel__block { animation: none; }
+    }
+  </style>
+  <div class="ui-skel__card">
+    <div class="ui-skel__circle"></div>
+    <div class="ui-skel__lines">
+      <div class="ui-skel__bar"></div>
+      <div class="ui-skel__bar ui-skel__bar--short"></div>
+    </div>
+  </div>
+  <div class="ui-skel__block"></div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-display-toast">
+      <h3 class="comp-kicker" id="c-display-toast">18 · Display/Toast <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">Tone=Neutral · Tone=Success · Tone=Danger · State=Default</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-toast">
+  <style>
+    .ui-toast { display: grid; gap: var(--space-3); font-family: var(--font-family-body); max-width: 380px; }
+    .ui-toast__item {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: var(--space-3);
+      padding: var(--space-3) var(--space-4); border-radius: var(--radius-card);
+      background: var(--color-popover); color: var(--color-popover-foreground);
+      border: 1px solid var(--color-border); border-left-width: 3px;
+      box-shadow: var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) var(--elevation-overlay-color);
+    }
+    .ui-toast__item--neutral { border-left-color: var(--color-secondary); }
+    .ui-toast__item--success { border-left-color: var(--color-success); }
+    .ui-toast__item--danger  { border-left-color: var(--color-danger); }
+    .ui-toast__dot { width: 0.55em; height: 0.55em; margin-top: 0.4em; border-radius: var(--radius-full); }
+    .ui-toast__item--neutral .ui-toast__dot { background: var(--color-secondary); }
+    .ui-toast__item--success .ui-toast__dot { background: var(--color-success); }
+    .ui-toast__item--danger  .ui-toast__dot { background: var(--color-danger); }
+    .ui-toast__text { display: grid; gap: var(--space-1); }
+    .ui-toast__title { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+    .ui-toast__body { font-size: var(--font-size-xs); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }
+    .ui-toast__close {
+      font: inherit; line-height: 1; cursor: pointer; flex: none;
+      padding: var(--space-1); border-radius: var(--radius-button);
+      border: 1px solid transparent; background: transparent; color: var(--color-muted-foreground);
+    }
+  </style>
+  <div class="ui-toast__item ui-toast__item--neutral" role="status">
+    <span class="ui-toast__dot" aria-hidden="true"></span>
+    <div class="ui-toast__text">
+      <p class="ui-toast__title">Draft saved</p>
+      <p class="ui-toast__body">Your changes are saved to this device.</p>
+    </div>
+    <button type="button" class="ui-toast__close" aria-label="Dismiss notification">&times;</button>
+  </div>
+  <div class="ui-toast__item ui-toast__item--success" role="status">
+    <span class="ui-toast__dot" aria-hidden="true"></span>
+    <div class="ui-toast__text">
+      <p class="ui-toast__title">Design system published</p>
+      <p class="ui-toast__body">Version three is now available to your team.</p>
+    </div>
+    <button type="button" class="ui-toast__close" aria-label="Dismiss notification">&times;</button>
+  </div>
+  <div class="ui-toast__item ui-toast__item--danger" role="alert">
+    <span class="ui-toast__dot" aria-hidden="true"></span>
+    <div class="ui-toast__text">
+      <p class="ui-toast__title">Upload failed</p>
+      <p class="ui-toast__body">The file exceeds the 25 MB limit &mdash; try a smaller export.</p>
+    </div>
+    <button type="button" class="ui-toast__close" aria-label="Dismiss notification">&times;</button>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-form-field">
+      <h3 class="comp-kicker" id="c-form-field">19 · Form/Field <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Invalid · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-field">
+  <style>
+    .ui-field { display: grid; gap: var(--space-4); font-family: var(--font-family-body); max-width: 420px; }
+    .ui-field__row { display: grid; gap: var(--space-1); }
+    .ui-field__label { display: flex; align-items: baseline; gap: var(--space-2); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }
+    .ui-field__req { font-weight: var(--font-weight-regular); color: var(--color-danger); }
+    .ui-field__opt { font-weight: var(--font-weight-regular); color: var(--color-muted-foreground); }
+    .ui-field__ctrl {
+      font: inherit; font-size: var(--font-size-sm); width: 100%; box-sizing: border-box;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);
+      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);
+      transition: border-color var(--duration-fast) ease;
+    }
+    .ui-field__ctrl.is-invalid { border-color: var(--color-danger); }
+    .ui-field__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-field__msg { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }
+    .ui-field__msg.is-error { color: var(--color-danger); }
+  </style>
+  <div class="ui-field__row">
+    <label class="ui-field__label" for="ui-field-default">Work email <span class="ui-field__opt">Optional</span></label>
+    <input class="ui-field__ctrl" id="ui-field-default" type="email" value="ada@aurora.dev">
+    <p class="ui-field__msg">We only use this for billing receipts.</p>
+  </div>
+  <div class="ui-field__row">
+    <label class="ui-field__label" for="ui-field-invalid">Workspace slug <span class="ui-field__req">Required</span></label>
+    <input class="ui-field__ctrl is-invalid" id="ui-field-invalid" type="text" value="Aurora Labs" aria-invalid="true" aria-describedby="ui-field-invalid-msg">
+    <p class="ui-field__msg is-error" id="ui-field-invalid-msg">Use lowercase letters and hyphens only.</p>
+  </div>
+  <div class="ui-field__row">
+    <label class="ui-field__label" for="ui-field-disabled">Account owner</label>
+    <input class="ui-field__ctrl" id="ui-field-disabled" type="text" value="Managed by SSO" disabled>
+    <p class="ui-field__msg">Provisioned by your identity provider.</p>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-overlay-dialog">
+      <h3 class="comp-kicker" id="c-overlay-dialog">20 · Overlay/Dialog <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Open</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-dialog">
+  <style>
+    .ui-dialog { font-family: var(--font-family-body); }
+    .ui-dialog__stage { position: relative; min-height: var(--space-16); padding: var(--space-8) var(--space-4); border-radius: var(--radius-card); overflow: hidden; background: var(--color-muted); }
+    .ui-dialog__scrim { position: absolute; inset: 0; background: color-mix(in srgb, var(--color-scrim) 45%, transparent); }
+    .ui-dialog__modal {
+      position: relative; margin: 0 auto; max-width: 380px; display: grid; gap: var(--space-4);
+      padding: var(--space-5); background: var(--color-popover); color: var(--color-popover-foreground);
+      border-radius: var(--radius-card);
+      box-shadow: var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) var(--elevation-overlay-color);
+    }
+    .ui-dialog__head { display: flex; align-items: start; justify-content: space-between; gap: var(--space-3); }
+    .ui-dialog__title { font-family: var(--font-family-display); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+    .ui-dialog__close {
+      font: inherit; line-height: 1; cursor: pointer; flex: none;
+      padding: var(--space-1); border-radius: var(--radius-button);
+      border: 1px solid transparent; background: transparent; color: var(--color-muted-foreground);
+    }
+    .ui-dialog__close.is-focus { outline: 2px solid var(--color-ring); outline-offset: 1px; }
+    .ui-dialog__body { font-size: var(--font-size-sm); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }
+    .ui-dialog__actions { display: flex; justify-content: flex-end; gap: var(--space-2); }
+    .ui-dialog__btn {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button); border: 1px solid transparent;
+      transition: filter var(--duration-fast) ease;
+    }
+    .ui-dialog__btn--secondary { background: var(--color-secondary); color: var(--color-secondary-foreground); }
+    .ui-dialog__btn--danger { background: var(--color-danger); color: var(--color-danger-foreground); }
+  </style>
+  <div class="ui-dialog__stage">
+    <div class="ui-dialog__scrim" aria-hidden="true"></div>
+    <div class="ui-dialog__modal" role="dialog" aria-modal="true" aria-labelledby="ui-dialog-title" aria-describedby="ui-dialog-desc">
+      <div class="ui-dialog__head">
+        <p class="ui-dialog__title" id="ui-dialog-title">Delete project</p>
+        <button type="button" class="ui-dialog__close" aria-label="Close dialog">&times;</button>
+      </div>
+      <p class="ui-dialog__body" id="ui-dialog-desc">This permanently removes the Aurora project and all of its compiled tokens. This action cannot be undone.</p>
+      <div class="ui-dialog__actions">
+        <button type="button" class="ui-dialog__btn ui-dialog__btn--secondary">Cancel</button>
+        <button type="button" class="ui-dialog__btn ui-dialog__btn--danger">Delete project</button>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-overlay-dropdownmenu">
+      <h3 class="comp-kicker" id="c-overlay-dropdownmenu">21 · Overlay/DropdownMenu <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Open · State=Hover · State=Focus · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-dm">
+  <style>
+    .ui-dm { font-family: var(--font-family-body); }
+    .ui-dm__stage { position: relative; min-height: 210px; display: flex; justify-content: center; padding-top: var(--space-2); }
+    .ui-dm__anchor { position: relative; }
+    .ui-dm__trigger {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button);
+      background: var(--color-secondary); color: var(--color-secondary-foreground); border: 1px solid var(--color-border);
+    }
+    .ui-dm__caret { flex: none; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; }
+    .ui-dm__menu {
+      position: absolute; top: calc(100% + var(--space-2)); left: 50%; transform: translateX(-50%);
+      min-width: 208px; z-index: 1; padding: var(--space-1); display: grid; gap: 1px;
+      background: var(--color-popover); color: var(--color-popover-foreground);
+      border: 1px solid var(--color-border); border-radius: var(--radius-card);
+      box-shadow: var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) var(--elevation-overlay-color);
+    }
+    .ui-dm__item {
+      font: inherit; font-size: var(--font-size-sm); cursor: pointer; text-align: left; width: 100%;
+      display: flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2) var(--space-3); border: 0; border-radius: var(--radius-sm);
+      background: transparent; color: var(--color-popover-foreground);
+      transition: background var(--duration-fast) ease;
+    }
+    .ui-dm__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-dm__item.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }
+    .ui-dm__item[aria-disabled="true"] { color: var(--color-muted-foreground); cursor: not-allowed; opacity: 0.7; }
+    .ui-dm__sep { height: 1px; margin: var(--space-1) 0; background: var(--color-border); }
+  </style>
+  <div class="ui-dm__stage">
+    <div class="ui-dm__anchor">
+      <button type="button" class="ui-dm__trigger" id="ui-dm-trigger" aria-haspopup="menu" aria-expanded="true" aria-controls="ui-dm-menu">Options<span class="ui-dm__caret" aria-hidden="true"></span></button>
+      <div class="ui-dm__menu" id="ui-dm-menu" role="menu" aria-labelledby="ui-dm-trigger">
+        <button type="button" class="ui-dm__item" role="menuitem" tabindex="-1">Edit</button>
+        <button type="button" class="ui-dm__item is-hover" role="menuitem" tabindex="-1">Duplicate</button>
+        <button type="button" class="ui-dm__item is-focus" role="menuitem" tabindex="-1">Move to project</button>
+        <div class="ui-dm__sep" role="separator"></div>
+        <button type="button" class="ui-dm__item" role="menuitem" aria-disabled="true" tabindex="-1">Archive</button>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-overlay-popover">
+      <h3 class="comp-kicker" id="c-overlay-popover">22 · Overlay/Popover <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Open</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-pop">
+  <style>
+    .ui-pop { font-family: var(--font-family-body); }
+    .ui-pop__stage { position: relative; min-height: 190px; display: flex; justify-content: center; padding-top: var(--space-2); }
+    .ui-pop__anchor { position: relative; }
+    .ui-pop__trigger {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button);
+      background: var(--color-secondary); color: var(--color-secondary-foreground); border: 1px solid var(--color-border);
+      transition: filter var(--duration-fast) ease;
+    }
+    .ui-pop__panel {
+      position: absolute; top: calc(100% + var(--space-3)); left: 50%; transform: translateX(-50%);
+      width: 264px; z-index: 1; display: grid; gap: var(--space-3);
+      padding: var(--space-4); border-radius: var(--radius-card);
+      background: var(--color-popover); color: var(--color-popover-foreground); border: 1px solid var(--color-border);
+      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);
+    }
+    .ui-pop__arrow {
+      position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+      border: var(--space-1) solid transparent; border-bottom-color: var(--color-popover);
+    }
+    .ui-pop__title { font-family: var(--font-family-display); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-wrap: balance; }
+    .ui-pop__body { font-size: var(--font-size-xs); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }
+    .ui-pop__row { display: flex; gap: var(--space-2); }
+    .ui-pop__btn {
+      font: inherit; font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); cursor: pointer;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button); border: 1px solid transparent;
+      background: var(--color-primary); color: var(--color-primary-foreground);
+    }
+    .ui-pop__btn--ghost { background: transparent; color: var(--color-foreground); border-color: var(--color-border); }
+  </style>
+  <div class="ui-pop__stage">
+    <div class="ui-pop__anchor">
+      <button type="button" class="ui-pop__trigger" aria-expanded="true" aria-controls="ui-pop-panel">Share workspace</button>
+      <div class="ui-pop__panel" id="ui-pop-panel" role="dialog" aria-label="Share workspace">
+        <span class="ui-pop__arrow" aria-hidden="true"></span>
+        <p class="ui-pop__title">Invite teammates</p>
+        <p class="ui-pop__body">Anyone with the link can open this design system in read-only mode.</p>
+        <div class="ui-pop__row">
+          <button type="button" class="ui-pop__btn">Copy link</button>
+          <button type="button" class="ui-pop__btn ui-pop__btn--ghost">Manage access</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-overlay-tooltip">
+      <h3 class="comp-kicker" id="c-overlay-tooltip">23 · Overlay/Tooltip <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Open</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-tooltip">
+  <style>
+    .ui-tooltip { font-family: var(--font-family-body); display: flex; justify-content: center; padding: var(--space-8) var(--space-4) var(--space-4); }
+    .ui-tooltip__anchor { position: relative; }
+    .ui-tooltip__trigger {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: help;
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button);
+      background: var(--color-secondary); color: var(--color-secondary-foreground); border: 1px solid var(--color-border);
+    }
+    .ui-tooltip__pop {
+      position: absolute; bottom: calc(100% + var(--space-2)); left: 50%; transform: translateX(-50%);
+      white-space: nowrap; z-index: 1;
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-card);
+      background: var(--color-popover); color: var(--color-popover-foreground);
+      font-size: var(--font-size-xs); line-height: 1.4;
+      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);
+    }
+    .ui-tooltip__arrow {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: var(--space-1) solid transparent; border-top-color: var(--color-popover);
+    }
+  </style>
+  <span class="ui-tooltip__anchor">
+    <button type="button" class="ui-tooltip__trigger" aria-describedby="ui-tooltip-desc">Keyboard shortcuts</button>
+    <span class="ui-tooltip__pop" role="tooltip" id="ui-tooltip-desc">Press ⌘ K to open the command menu<span class="ui-tooltip__arrow" aria-hidden="true"></span></span>
+  </span>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-structure-accordion">
+      <h3 class="comp-kicker" id="c-structure-accordion">24 · Structure/Accordion <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Expanded · State=Hover · State=Focus · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-acc">
+  <style>
+    .ui-acc { font-family: var(--font-family-body); display: grid; gap: var(--space-2); max-width: 520px; }
+    .ui-acc__item { border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-background); overflow: hidden; }
+    .ui-acc__trigger {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+      padding: var(--space-3) var(--space-4); border: 0; background: transparent; color: var(--color-foreground); text-align: left;
+      transition: background var(--duration-fast) ease;
+    }
+    .ui-acc__trigger.is-hover:not([disabled]) { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-acc__trigger.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }
+    .ui-acc__trigger[disabled] { opacity: 0.5; cursor: not-allowed; }
+    .ui-acc__caret {
+      flex: none; width: 0; height: 0;
+      border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--color-muted-foreground);
+      transition: transform var(--duration-fast) ease;
+    }
+    .ui-acc__trigger[aria-expanded="true"] .ui-acc__caret { transform: rotate(180deg); }
+    .ui-acc__panel { padding: 0 var(--space-4) var(--space-4); font-size: var(--font-size-sm); color: var(--color-muted-foreground); line-height: 1.5; }
+  </style>
+  <div class="ui-acc__item">
+    <button type="button" class="ui-acc__trigger" id="ui-acc-t1" aria-expanded="true" aria-controls="ui-acc-p1">Order details<span class="ui-acc__caret" aria-hidden="true"></span></button>
+    <div class="ui-acc__panel" id="ui-acc-p1" role="region" aria-labelledby="ui-acc-t1">
+      <p>Two items ship from the Rotterdam warehouse and arrive Thursday. Tracking updates land in your inbox as each parcel moves.</p>
+    </div>
+  </div>
+  <div class="ui-acc__item">
+    <button type="button" class="ui-acc__trigger is-hover" id="ui-acc-t2" aria-expanded="false" aria-controls="ui-acc-p2">Shipping and returns<span class="ui-acc__caret" aria-hidden="true"></span></button>
+    <div class="ui-acc__panel" id="ui-acc-p2" role="region" aria-labelledby="ui-acc-t2" hidden>
+      <p>Free returns within thirty days of delivery.</p>
+    </div>
+  </div>
+  <div class="ui-acc__item">
+    <button type="button" class="ui-acc__trigger is-focus" id="ui-acc-t3" aria-expanded="false" aria-controls="ui-acc-p3">Payment methods<span class="ui-acc__caret" aria-hidden="true"></span></button>
+    <div class="ui-acc__panel" id="ui-acc-p3" role="region" aria-labelledby="ui-acc-t3" hidden>
+      <p>Cards, bank transfer, and store credit are accepted at checkout.</p>
+    </div>
+  </div>
+  <div class="ui-acc__item">
+    <button type="button" class="ui-acc__trigger" id="ui-acc-t4" aria-expanded="false" aria-controls="ui-acc-p4" disabled>Gift cards<span class="ui-acc__caret" aria-hidden="true"></span></button>
+    <div class="ui-acc__panel" id="ui-acc-p4" role="region" aria-labelledby="ui-acc-t4" hidden>
+      <p>Gift cards are unavailable in this region.</p>
+    </div>
+  </div>
+</div></div>
+    </article>
+    <article class="comp" aria-labelledby="c-structure-breadcrumb">
+      <h3 class="comp-kicker" id="c-structure-breadcrumb">25 · Structure/Breadcrumb <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Static</p>
+      <div class="ui-specimen__frame"><nav class="ui-kit ui-bc" aria-label="Breadcrumb">
+  <style>
+    .ui-bc { font-family: var(--font-family-body); font-size: var(--font-size-sm); }
+    .ui-bc__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+    .ui-bc__link { color: var(--color-muted-foreground); text-decoration: none; border-radius: var(--radius-sm); transition: color var(--duration-fast) ease; text-underline-position: from-font; text-decoration-skip-ink: auto; }
+    /* Touch floor: real :hover only where hover exists — on touch it sticks after a tap. */
+    @media (hover: hover) { .ui-bc__link:hover { color: var(--color-foreground); text-decoration: underline; } }
+    .ui-bc__link:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; color: var(--color-foreground); }
+    .ui-bc__sep { color: var(--color-muted-foreground); user-select: none; }
+    .ui-bc__current { color: var(--color-foreground); font-weight: var(--font-weight-medium); }
+  </style>
+  <ol class="ui-bc__list">
+    <li><a class="ui-bc__link" href="#">Home</a></li>
+    <li class="ui-bc__sep" aria-hidden="true">/</li>
+    <li><a class="ui-bc__link" href="#">Design systems</a></li>
+    <li class="ui-bc__sep" aria-hidden="true">/</li>
+    <li><a class="ui-bc__link" href="#">Aurora</a></li>
+    <li class="ui-bc__sep" aria-hidden="true">/</li>
+    <li><span class="ui-bc__current" aria-current="page">Tokens</span></li>
+  </ol>
+</nav></div>
+    </article>
+    <article class="comp" aria-labelledby="c-structure-pagination">
+      <h3 class="comp-kicker" id="c-structure-pagination">26 · Structure/Pagination <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Disabled</p>
+      <div class="ui-specimen__frame"><nav class="ui-kit ui-pg" aria-label="Pagination">
+  <style>
+    .ui-pg { font-family: var(--font-family-body); font-size: var(--font-size-sm); }
+    .ui-pg__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); }
+    .ui-pg__link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 2.25rem; padding: var(--space-2) var(--space-3);
+      color: var(--color-foreground); text-decoration: none; cursor: pointer;
+      border: 1px solid transparent; border-radius: var(--radius-button);
+      transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;
+    }
+    .ui-pg__link.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-pg__link.is-focus { outline: 2px solid var(--color-ring); outline-offset: 1px; }
+    .ui-pg__link[aria-current="page"] { background: var(--color-primary); color: var(--color-primary-foreground); }
+    .ui-pg__link[aria-disabled="true"] { color: var(--color-muted-foreground); opacity: 0.6; cursor: not-allowed; }
+    .ui-pg__ellipsis { min-width: 2.25rem; text-align: center; color: var(--color-muted-foreground); user-select: none; }
+  </style>
+  <ul class="ui-pg__list">
+    <li><a class="ui-pg__link" href="#" aria-disabled="true" tabindex="-1">Previous</a></li>
+    <li><a class="ui-pg__link" href="#" aria-current="page">1</a></li>
+    <li><a class="ui-pg__link is-hover" href="#">2</a></li>
+    <li><a class="ui-pg__link is-focus" href="#">3</a></li>
+    <li><a class="ui-pg__link" href="#">4</a></li>
+    <li class="ui-pg__ellipsis" aria-hidden="true">…</li>
+    <li><a class="ui-pg__link" href="#">12</a></li>
+    <li><a class="ui-pg__link" href="#">Next</a></li>
+  </ul>
+</nav></div>
+    </article>
+    <article class="comp" aria-labelledby="c-structure-tabs">
+      <h3 class="comp-kicker" id="c-structure-tabs">27 · Structure/Tabs <span class="status-tag">[stable]</span></h3>
+      <p class="meta comp-variants">State=Default · State=Hover · State=Focus · State=Disabled</p>
+      <div class="ui-specimen__frame"><div class="ui-kit ui-tabs">
+  <style>
+    .ui-tabs { font-family: var(--font-family-body); display: grid; gap: var(--space-4); }
+    .ui-tabs__list { display: flex; flex-wrap: wrap; gap: var(--space-1); border-bottom: 1px solid var(--color-border); }
+    .ui-tabs__tab {
+      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);
+      appearance: none; background: transparent; cursor: pointer; border: 0;
+      padding: var(--space-2) var(--space-3); border-bottom: 2px solid transparent; margin-bottom: -1px;
+      color: var(--color-muted-foreground); border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      transition: color var(--duration-fast) ease, background var(--duration-fast) ease;
+    }
+    .ui-tabs__tab[aria-selected="true"] { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .ui-tabs__tab.is-hover:not([aria-selected="true"]) { background: var(--color-accent); color: var(--color-accent-foreground); }
+    .ui-tabs__tab.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }
+    .ui-tabs__tab[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
+    .ui-tabs__panel { font-size: var(--font-size-sm); color: var(--color-foreground); line-height: 1.5; }
+  </style>
+  <div class="ui-tabs__list" role="tablist" aria-label="Account settings">
+    <button type="button" class="ui-tabs__tab" role="tab" id="ui-tabs-t1" aria-selected="true" aria-controls="ui-tabs-panel">Overview</button>
+    <button type="button" class="ui-tabs__tab" role="tab" id="ui-tabs-t2" aria-selected="false" aria-controls="ui-tabs-panel" tabindex="-1">Reports</button>
+    <button type="button" class="ui-tabs__tab is-hover" role="tab" id="ui-tabs-t3" aria-selected="false" aria-controls="ui-tabs-panel" tabindex="-1">Members</button>
+    <button type="button" class="ui-tabs__tab is-focus" role="tab" id="ui-tabs-t4" aria-selected="false" aria-controls="ui-tabs-panel" tabindex="-1">Billing</button>
+    <button type="button" class="ui-tabs__tab" role="tab" id="ui-tabs-t5" aria-selected="false" aria-disabled="true" tabindex="-1">Archived</button>
+  </div>
+  <div class="ui-tabs__panel" role="tabpanel" id="ui-tabs-panel" aria-labelledby="ui-tabs-t1" tabindex="0">
+    <p>Your workspace overview &mdash; usage, seats, and recent design-system activity.</p>
+  </div>
+</div></div>
+    </article>
+  </section>
+  <footer class="foot">
+    <p class="meta">Generated by <code>ui ds preview</code> from the compiled design system &middot; registry np6Iy38NxMNf</p>
+  </footer>
+</main>
+</body>
+</html>

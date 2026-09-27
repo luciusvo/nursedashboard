@@ -1,0 +1,41 @@
+{
+  "category": "display",
+  "description": "Content card — header, body, and footer actions on card tokens, shown flat and with card elevation.",
+  "markup": "<div class=\"ui-kit ui-card\">\n  <style>\n    .ui-card { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-5); font-family: var(--font-family-body); }\n    .ui-card__surface {\n      display: grid; gap: var(--space-4); padding: var(--space-5);\n      background: var(--color-card); color: var(--color-card-foreground);\n      border-radius: var(--radius-card); border: 1px solid var(--color-border);\n    }\n    .ui-card__surface--raised {\n      border-color: transparent;\n      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);\n    }\n    .ui-card__head { display: grid; gap: var(--space-1); }\n    .ui-card__title { font-family: var(--font-family-display); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); text-wrap: balance; }\n    .ui-card__sub { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-card__body { font-size: var(--font-size-sm); line-height: 1.5; text-wrap: pretty; }\n    .ui-card__foot { display: flex; gap: var(--space-2); align-items: center; }\n    .ui-card__btn {\n      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;\n      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button); border: 1px solid transparent;\n      transition: filter var(--duration-fast) ease;\n    }\n    .ui-card__btn--primary { background: var(--color-primary); color: var(--color-primary-foreground); }\n    .ui-card__btn--ghost { background: transparent; color: var(--color-foreground); border-color: var(--color-border); }\n  </style>\n  <div class=\"ui-card__surface\">\n    <div class=\"ui-card__head\">\n      <p class=\"ui-card__title\">Starter</p>\n      <p class=\"ui-card__sub\">Flat surface &middot; hairline border</p>\n    </div>\n    <p class=\"ui-card__body\">Everything a small team needs to ship its first design system.</p>\n    <div class=\"ui-card__foot\">\n      <button type=\"button\" class=\"ui-card__btn ui-card__btn--primary\">Choose Starter</button>\n      <button type=\"button\" class=\"ui-card__btn ui-card__btn--ghost\">Compare</button>\n    </div>\n  </div>\n  <div class=\"ui-card__surface ui-card__surface--raised\">\n    <div class=\"ui-card__head\">\n      <p class=\"ui-card__title\">Team</p>\n      <p class=\"ui-card__sub\">Raised surface &middot; card elevation</p>\n    </div>\n    <p class=\"ui-card__body\">Shared tokens, unlimited components, and specimen gating on every commit.</p>\n    <div class=\"ui-card__foot\">\n      <button type=\"button\" class=\"ui-card__btn ui-card__btn--primary\">Choose Team</button>\n      <button type=\"button\" class=\"ui-card__btn ui-card__btn--ghost\">Compare</button>\n    </div>\n  </div>\n</div>",
+  "name": "Display/Card",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.card",
+    "color.card-foreground",
+    "color.border",
+    "color.muted-foreground",
+    "color.foreground",
+    "color.primary",
+    "color.primary-foreground",
+    "elevation.card-offset-x",
+    "elevation.card-offset-y",
+    "elevation.card-blur",
+    "elevation.card-spread",
+    "elevation.card-color",
+    "radius.card",
+    "radius.button",
+    "font-family.body",
+    "font-family.display",
+    "font-weight.semibold",
+    "font-weight.medium",
+    "font-size.lg",
+    "font-size.sm",
+    "font-size.xs",
+    "space.1",
+    "space.2",
+    "space.4",
+    "space.5",
+    "duration.fast"
+  ],
+  "variants": [
+    "Elevation=Flat",
+    "Elevation=Raised",
+    "State=Default"
+  ]
+}

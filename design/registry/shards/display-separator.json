@@ -1,0 +1,24 @@
+{
+  "category": "display",
+  "description": "Hairline separator — horizontal and vertical rules on the border token, each with role and aria-orientation.",
+  "markup": "<div class=\"ui-kit ui-sep\">\n  <style>\n    .ui-sep { display: grid; gap: var(--space-5); font-family: var(--font-family-body); color: var(--color-foreground); }\n    .ui-sep__cap { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-sep__stack { display: grid; gap: var(--space-3); }\n    .ui-sep__label { font-size: var(--font-size-sm); }\n    .ui-sep__line { height: 1px; background: var(--color-border); }\n    .ui-sep__row { display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); }\n    .ui-sep__v { align-self: stretch; width: 1px; min-height: var(--space-4); background: var(--color-border); }\n  </style>\n  <div class=\"ui-sep__stack\">\n    <p class=\"ui-sep__cap\">Horizontal</p>\n    <p class=\"ui-sep__label\">Billing details</p>\n    <div class=\"ui-sep__line\" role=\"separator\" aria-orientation=\"horizontal\"></div>\n    <p class=\"ui-sep__label\">Payment method</p>\n  </div>\n  <div class=\"ui-sep__stack\">\n    <p class=\"ui-sep__cap\">Vertical</p>\n    <div class=\"ui-sep__row\">\n      <span>Overview</span>\n      <span class=\"ui-sep__v\" role=\"separator\" aria-orientation=\"vertical\"></span>\n      <span>Activity</span>\n      <span class=\"ui-sep__v\" role=\"separator\" aria-orientation=\"vertical\"></span>\n      <span>Settings</span>\n    </div>\n  </div>\n</div>",
+  "name": "Display/Separator",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.foreground",
+    "color.muted-foreground",
+    "color.border",
+    "font-family.body",
+    "font-size.xs",
+    "font-size.sm",
+    "space.3",
+    "space.4",
+    "space.5"
+  ],
+  "variants": [
+    "Orientation=Horizontal",
+    "Orientation=Vertical",
+    "State=Static"
+  ]
+}

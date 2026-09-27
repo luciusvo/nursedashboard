@@ -1,0 +1,40 @@
+{
+  "category": "overlay",
+  "description": "Popover — a non-modal role=dialog panel on a popover surface with card elevation, anchored to a text trigger via aria-controls.",
+  "markup": "<div class=\"ui-kit ui-pop\">\n  <style>\n    .ui-pop { font-family: var(--font-family-body); }\n    .ui-pop__stage { position: relative; min-height: 190px; display: flex; justify-content: center; padding-top: var(--space-2); }\n    .ui-pop__anchor { position: relative; }\n    .ui-pop__trigger {\n      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;\n      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button);\n      background: var(--color-secondary); color: var(--color-secondary-foreground); border: 1px solid var(--color-border);\n      transition: filter var(--duration-fast) ease;\n    }\n    .ui-pop__panel {\n      position: absolute; top: calc(100% + var(--space-3)); left: 50%; transform: translateX(-50%);\n      width: 264px; z-index: 1; display: grid; gap: var(--space-3);\n      padding: var(--space-4); border-radius: var(--radius-card);\n      background: var(--color-popover); color: var(--color-popover-foreground); border: 1px solid var(--color-border);\n      box-shadow: var(--elevation-card-offset-x) var(--elevation-card-offset-y) var(--elevation-card-blur) var(--elevation-card-spread) var(--elevation-card-color);\n    }\n    .ui-pop__arrow {\n      position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);\n      border: var(--space-1) solid transparent; border-bottom-color: var(--color-popover);\n    }\n    .ui-pop__title { font-family: var(--font-family-display); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-wrap: balance; }\n    .ui-pop__body { font-size: var(--font-size-xs); color: var(--color-muted-foreground); line-height: 1.5; text-wrap: pretty; }\n    .ui-pop__row { display: flex; gap: var(--space-2); }\n    .ui-pop__btn {\n      font: inherit; font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); cursor: pointer;\n      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button); border: 1px solid transparent;\n      background: var(--color-primary); color: var(--color-primary-foreground);\n    }\n    .ui-pop__btn--ghost { background: transparent; color: var(--color-foreground); border-color: var(--color-border); }\n  </style>\n  <div class=\"ui-pop__stage\">\n    <div class=\"ui-pop__anchor\">\n      <button type=\"button\" class=\"ui-pop__trigger\" aria-expanded=\"true\" aria-controls=\"ui-pop-panel\">Share workspace</button>\n      <div class=\"ui-pop__panel\" id=\"ui-pop-panel\" role=\"dialog\" aria-label=\"Share workspace\">\n        <span class=\"ui-pop__arrow\" aria-hidden=\"true\"></span>\n        <p class=\"ui-pop__title\">Invite teammates</p>\n        <p class=\"ui-pop__body\">Anyone with the link can open this design system in read-only mode.</p>\n        <div class=\"ui-pop__row\">\n          <button type=\"button\" class=\"ui-pop__btn\">Copy link</button>\n          <button type=\"button\" class=\"ui-pop__btn ui-pop__btn--ghost\">Manage access</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
+  "name": "Overlay/Popover",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.secondary",
+    "color.secondary-foreground",
+    "color.border",
+    "color.popover",
+    "color.popover-foreground",
+    "color.muted-foreground",
+    "color.primary",
+    "color.primary-foreground",
+    "color.foreground",
+    "elevation.card-offset-x",
+    "elevation.card-offset-y",
+    "elevation.card-blur",
+    "elevation.card-spread",
+    "elevation.card-color",
+    "radius.button",
+    "radius.card",
+    "font-family.body",
+    "font-family.display",
+    "font-weight.medium",
+    "font-weight.semibold",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Open"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "category": "form",
+  "description": "Brand-tinted checkbox with hover, focus, checked, and disabled states.",
+  "markup": "<div class=\"ui-kit ui-check\">\n  <style>\n    .ui-check { display: grid; gap: var(--space-1); font-family: var(--font-family-body); }\n    .ui-check__hint { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-check__item {\n      display: inline-flex; align-items: center; gap: var(--space-3);\n      padding: var(--space-1) var(--space-2); border-radius: var(--radius-button);\n      font-size: var(--font-size-sm); color: var(--color-foreground); cursor: pointer;\n    }\n    .ui-check__box { width: 1.05em; height: 1.05em; accent-color: var(--color-primary); }\n    .ui-check__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-check__item.is-focus .ui-check__box { outline: 2px solid var(--color-ring); outline-offset: 2px; }\n    .ui-check__item.is-disabled { opacity: 0.5; cursor: not-allowed; }\n  </style>\n  <p class=\"ui-check__hint\">Notifications</p>\n  <label class=\"ui-check__item\"><input class=\"ui-check__box\" type=\"checkbox\">Email me product updates</label>\n  <label class=\"ui-check__item is-hover\"><input class=\"ui-check__box\" type=\"checkbox\">Email me product updates</label>\n  <label class=\"ui-check__item is-focus\"><input class=\"ui-check__box\" type=\"checkbox\">Email me product updates</label>\n  <label class=\"ui-check__item\"><input class=\"ui-check__box\" type=\"checkbox\" checked>Subscribed to security alerts</label>\n  <label class=\"ui-check__item is-disabled\"><input class=\"ui-check__box\" type=\"checkbox\" checked disabled>Enforced by your admin</label>\n</div>",
+  "name": "Control/Checkbox",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.primary",
+    "color.foreground",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Checked",
+    "State=Disabled"
+  ]
+}

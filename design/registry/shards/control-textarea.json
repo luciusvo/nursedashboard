@@ -1,0 +1,34 @@
+{
+  "category": "form",
+  "description": "Labelled multi-line text field with hover, focus, invalid, and disabled states.",
+  "markup": "<div class=\"ui-kit ui-textarea\">\n  <style>\n    .ui-textarea { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-4); font-family: var(--font-family-body); }\n    .ui-textarea__field { display: grid; gap: var(--space-1); }\n    .ui-textarea__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }\n    .ui-textarea__ctrl {\n      font: inherit; font-size: var(--font-size-sm); width: 100%; min-height: var(--space-16); resize: vertical;\n      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);\n      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);\n      transition: border-color var(--duration-fast) ease;\n    }\n    .ui-textarea__ctrl.is-hover:not([disabled]) { border-color: color-mix(in srgb, var(--color-foreground) 35%, var(--color-input)); }\n    .ui-textarea__ctrl.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }\n    .ui-textarea__ctrl.is-invalid { border-color: var(--color-danger); }\n    .ui-textarea__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }\n    .ui-textarea__help { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-textarea__help.is-error { color: var(--color-danger); }\n  </style>\n  <div class=\"ui-textarea__field\">\n    <label class=\"ui-textarea__label\" for=\"ui-textarea-default\">Release notes</label>\n    <textarea class=\"ui-textarea__ctrl\" id=\"ui-textarea-default\">Ship the compiled token set.</textarea>\n    <p class=\"ui-textarea__help\">Markdown supported.</p>\n  </div>\n  <div class=\"ui-textarea__field\">\n    <label class=\"ui-textarea__label\" for=\"ui-textarea-hover\">Hovered</label>\n    <textarea class=\"ui-textarea__ctrl is-hover\" id=\"ui-textarea-hover\">Border strengthens on pointer.</textarea>\n    <p class=\"ui-textarea__help\">Pointer over the field.</p>\n  </div>\n  <div class=\"ui-textarea__field\">\n    <label class=\"ui-textarea__label\" for=\"ui-textarea-focus\">Focused</label>\n    <textarea class=\"ui-textarea__ctrl is-focus\" id=\"ui-textarea-focus\">Ring at 35% strength.</textarea>\n    <p class=\"ui-textarea__help\">Keyboard focus.</p>\n  </div>\n  <div class=\"ui-textarea__field\">\n    <label class=\"ui-textarea__label\" for=\"ui-textarea-invalid\">Invalid</label>\n    <textarea class=\"ui-textarea__ctrl is-invalid\" id=\"ui-textarea-invalid\" aria-invalid=\"true\" aria-describedby=\"ui-textarea-invalid-err\"></textarea>\n    <p class=\"ui-textarea__help is-error\" id=\"ui-textarea-invalid-err\">Release notes are required.</p>\n  </div>\n  <div class=\"ui-textarea__field\">\n    <label class=\"ui-textarea__label\" for=\"ui-textarea-disabled\">Disabled</label>\n    <textarea class=\"ui-textarea__ctrl\" id=\"ui-textarea-disabled\" disabled>Locked after publish.</textarea>\n    <p class=\"ui-textarea__help\">Read-only once released.</p>\n  </div>\n</div>",
+  "name": "Control/Textarea",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.input",
+    "color.background",
+    "color.foreground",
+    "color.ring",
+    "color.danger",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "space.16",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Invalid",
+    "State=Disabled"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "changelog": [
+    {
+      "by": "ui ds init",
+      "kind": "init",
+      "note": "compiled from persona=saas-aurora-minimal",
+      "ts": "2026-09-27T11:50:14.986Z"
+    }
+  ],
+  "compiledHash": "sha256-QFFN5PwKt1-TXf-35xMy_DP_MA6_RmWS4nQmwFRXkII",
+  "createdAt": "2026-09-27T11:50:14.984Z",
+  "generation": 1,
+  "intent": "Modern AI web product landing page and interactive studio",
+  "name": "core-ds",
+  "persona": {
+    "antiPatterns": [
+      "heavy textures",
+      "maximalist decoration",
+      "extreme artistic expression",
+      "unpredictable layouts"
+    ],
+    "family": "functional-saas",
+    "slug": "saas-aurora-minimal"
+  },
+  "registryHash": "sha256-np6Iy38NxMNfUkOb-SrenxXo56mjnQHT44nq5VbSN8E",
+  "version": "1.0.0"
+}

@@ -1,0 +1,32 @@
+{
+  "category": "navigation",
+  "description": "Accordion — disclosure sections with aria-expanded button headers and labelled regions, one expanded plus hover/focus/disabled headers.",
+  "markup": "<div class=\"ui-kit ui-acc\">\n  <style>\n    .ui-acc { font-family: var(--font-family-body); display: grid; gap: var(--space-2); max-width: 520px; }\n    .ui-acc__item { border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-background); overflow: hidden; }\n    .ui-acc__trigger {\n      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;\n      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);\n      padding: var(--space-3) var(--space-4); border: 0; background: transparent; color: var(--color-foreground); text-align: left;\n      transition: background var(--duration-fast) ease;\n    }\n    .ui-acc__trigger.is-hover:not([disabled]) { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-acc__trigger.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }\n    .ui-acc__trigger[disabled] { opacity: 0.5; cursor: not-allowed; }\n    .ui-acc__caret {\n      flex: none; width: 0; height: 0;\n      border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--color-muted-foreground);\n      transition: transform var(--duration-fast) ease;\n    }\n    .ui-acc__trigger[aria-expanded=\"true\"] .ui-acc__caret { transform: rotate(180deg); }\n    .ui-acc__panel { padding: 0 var(--space-4) var(--space-4); font-size: var(--font-size-sm); color: var(--color-muted-foreground); line-height: 1.5; }\n  </style>\n  <div class=\"ui-acc__item\">\n    <button type=\"button\" class=\"ui-acc__trigger\" id=\"ui-acc-t1\" aria-expanded=\"true\" aria-controls=\"ui-acc-p1\">Order details<span class=\"ui-acc__caret\" aria-hidden=\"true\"></span></button>\n    <div class=\"ui-acc__panel\" id=\"ui-acc-p1\" role=\"region\" aria-labelledby=\"ui-acc-t1\">\n      <p>Two items ship from the Rotterdam warehouse and arrive Thursday. Tracking updates land in your inbox as each parcel moves.</p>\n    </div>\n  </div>\n  <div class=\"ui-acc__item\">\n    <button type=\"button\" class=\"ui-acc__trigger is-hover\" id=\"ui-acc-t2\" aria-expanded=\"false\" aria-controls=\"ui-acc-p2\">Shipping and returns<span class=\"ui-acc__caret\" aria-hidden=\"true\"></span></button>\n    <div class=\"ui-acc__panel\" id=\"ui-acc-p2\" role=\"region\" aria-labelledby=\"ui-acc-t2\" hidden>\n      <p>Free returns within thirty days of delivery.</p>\n    </div>\n  </div>\n  <div class=\"ui-acc__item\">\n    <button type=\"button\" class=\"ui-acc__trigger is-focus\" id=\"ui-acc-t3\" aria-expanded=\"false\" aria-controls=\"ui-acc-p3\">Payment methods<span class=\"ui-acc__caret\" aria-hidden=\"true\"></span></button>\n    <div class=\"ui-acc__panel\" id=\"ui-acc-p3\" role=\"region\" aria-labelledby=\"ui-acc-t3\" hidden>\n      <p>Cards, bank transfer, and store credit are accepted at checkout.</p>\n    </div>\n  </div>\n  <div class=\"ui-acc__item\">\n    <button type=\"button\" class=\"ui-acc__trigger\" id=\"ui-acc-t4\" aria-expanded=\"false\" aria-controls=\"ui-acc-p4\" disabled>Gift cards<span class=\"ui-acc__caret\" aria-hidden=\"true\"></span></button>\n    <div class=\"ui-acc__panel\" id=\"ui-acc-p4\" role=\"region\" aria-labelledby=\"ui-acc-t4\" hidden>\n      <p>Gift cards are unavailable in this region.</p>\n    </div>\n  </div>\n</div>",
+  "name": "Structure/Accordion",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.border",
+    "color.background",
+    "color.foreground",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "radius.card",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.sm",
+    "space.2",
+    "space.3",
+    "space.4",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Expanded",
+    "State=Hover",
+    "State=Focus",
+    "State=Disabled"
+  ]
+}

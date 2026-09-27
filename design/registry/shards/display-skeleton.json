@@ -1,0 +1,25 @@
+{
+  "category": "feedback",
+  "description": "Loading skeleton — line, circle, and block placeholders that pulse, with a self-contained reduced-motion guard.",
+  "markup": "<div class=\"ui-kit ui-skel\" aria-hidden=\"true\">\n  <style>\n    .ui-skel { display: grid; gap: var(--space-4); max-width: 320px; }\n    .ui-skel__card { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); align-items: center; }\n    .ui-skel__circle, .ui-skel__bar, .ui-skel__block {\n      background: var(--color-muted);\n      animation: ui-skel-pulse var(--duration-slow) ease-in-out infinite;\n    }\n    .ui-skel__circle { width: 2.5rem; height: 2.5rem; border-radius: var(--radius-full); flex: none; }\n    .ui-skel__lines { display: grid; gap: var(--space-2); }\n    .ui-skel__bar { height: 0.6rem; border-radius: var(--radius-sm); }\n    .ui-skel__bar--short { width: 60%; }\n    .ui-skel__block { height: var(--space-16); border-radius: var(--radius-card); }\n    @keyframes ui-skel-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }\n    /* Motion floor: the shimmer is decorative — it must stop for reduced-motion users. */\n    @media (prefers-reduced-motion: reduce) {\n      .ui-skel__circle, .ui-skel__bar, .ui-skel__block { animation: none; }\n    }\n  </style>\n  <div class=\"ui-skel__card\">\n    <div class=\"ui-skel__circle\"></div>\n    <div class=\"ui-skel__lines\">\n      <div class=\"ui-skel__bar\"></div>\n      <div class=\"ui-skel__bar ui-skel__bar--short\"></div>\n    </div>\n  </div>\n  <div class=\"ui-skel__block\"></div>\n</div>",
+  "name": "Display/Skeleton",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.muted",
+    "radius.full",
+    "radius.sm",
+    "radius.card",
+    "space.2",
+    "space.3",
+    "space.4",
+    "space.16",
+    "duration.slow"
+  ],
+  "variants": [
+    "Shape=Line",
+    "Shape=Circle",
+    "Shape=Block",
+    "State=Loading"
+  ]
+}

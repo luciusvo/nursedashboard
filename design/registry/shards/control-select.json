@@ -1,0 +1,33 @@
+{
+  "category": "form",
+  "description": "Native select restyled to tokens — Default/Hover/Focus/Disabled plus a placeholder Empty state.",
+  "markup": "<div class=\"ui-kit ui-select\">\n  <style>\n    .ui-select { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); font-family: var(--font-family-body); }\n    .ui-select__field { display: grid; gap: var(--space-1); }\n    .ui-select__label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }\n    .ui-select__wrap { position: relative; }\n    .ui-select__wrap::after {\n      content: \"\"; position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%);\n      width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;\n      border-top: 5px solid var(--color-muted-foreground); pointer-events: none;\n    }\n    .ui-select__ctrl {\n      font: inherit; font-size: var(--font-size-sm); width: 100%; appearance: none; -webkit-appearance: none;\n      padding: var(--space-2) var(--space-6) var(--space-2) var(--space-3); border-radius: var(--radius-button);\n      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);\n      transition: border-color var(--duration-fast) ease;\n    }\n    .ui-select__ctrl.is-hover:not([disabled]) { border-color: color-mix(in srgb, var(--color-foreground) 35%, var(--color-input)); }\n    .ui-select__ctrl.is-focus { border-color: var(--color-ring); outline: 2px solid color-mix(in srgb, var(--color-ring) 35%, transparent); outline-offset: 1px; }\n    .ui-select__ctrl.is-empty { color: var(--color-muted-foreground); }\n    .ui-select__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }\n  </style>\n  <div class=\"ui-select__field\">\n    <label class=\"ui-select__label\" for=\"ui-select-default\">Plan</label>\n    <div class=\"ui-select__wrap\">\n      <select class=\"ui-select__ctrl\" id=\"ui-select-default\"><option>Starter</option><option selected>Team</option><option>Enterprise</option></select>\n    </div>\n  </div>\n  <div class=\"ui-select__field\">\n    <label class=\"ui-select__label\" for=\"ui-select-hover\">Hovered</label>\n    <div class=\"ui-select__wrap\">\n      <select class=\"ui-select__ctrl is-hover\" id=\"ui-select-hover\"><option selected>Team</option><option>Enterprise</option></select>\n    </div>\n  </div>\n  <div class=\"ui-select__field\">\n    <label class=\"ui-select__label\" for=\"ui-select-focus\">Focused</label>\n    <div class=\"ui-select__wrap\">\n      <select class=\"ui-select__ctrl is-focus\" id=\"ui-select-focus\"><option selected>Team</option><option>Enterprise</option></select>\n    </div>\n  </div>\n  <div class=\"ui-select__field\">\n    <label class=\"ui-select__label\" for=\"ui-select-empty\">Empty</label>\n    <div class=\"ui-select__wrap\">\n      <select class=\"ui-select__ctrl is-empty\" id=\"ui-select-empty\"><option value=\"\" disabled selected>Choose a plan</option><option>Starter</option><option>Team</option></select>\n    </div>\n  </div>\n  <div class=\"ui-select__field\">\n    <label class=\"ui-select__label\" for=\"ui-select-disabled\">Disabled</label>\n    <div class=\"ui-select__wrap\">\n      <select class=\"ui-select__ctrl\" id=\"ui-select-disabled\" disabled><option selected>Managed by SSO</option></select>\n    </div>\n  </div>\n</div>",
+  "name": "Control/Select",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.input",
+    "color.background",
+    "color.foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "space.6",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Hover",
+    "State=Focus",
+    "State=Empty",
+    "State=Disabled"
+  ]
+}

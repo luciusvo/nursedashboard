@@ -1,0 +1,31 @@
+{
+  "category": "form",
+  "description": "Labelled form-row wrapper — label, control, and a help/error message line across default, invalid, and disabled states.",
+  "markup": "<div class=\"ui-kit ui-field\">\n  <style>\n    .ui-field { display: grid; gap: var(--space-4); font-family: var(--font-family-body); max-width: 420px; }\n    .ui-field__row { display: grid; gap: var(--space-1); }\n    .ui-field__label { display: flex; align-items: baseline; gap: var(--space-2); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--color-foreground); }\n    .ui-field__req { font-weight: var(--font-weight-regular); color: var(--color-danger); }\n    .ui-field__opt { font-weight: var(--font-weight-regular); color: var(--color-muted-foreground); }\n    .ui-field__ctrl {\n      font: inherit; font-size: var(--font-size-sm); width: 100%; box-sizing: border-box;\n      padding: var(--space-2) var(--space-3); border-radius: var(--radius-button);\n      border: 1px solid var(--color-input); background: var(--color-background); color: var(--color-foreground);\n      transition: border-color var(--duration-fast) ease;\n    }\n    .ui-field__ctrl.is-invalid { border-color: var(--color-danger); }\n    .ui-field__ctrl[disabled] { opacity: 0.5; cursor: not-allowed; }\n    .ui-field__msg { font-size: var(--font-size-xs); color: var(--color-muted-foreground); }\n    .ui-field__msg.is-error { color: var(--color-danger); }\n  </style>\n  <div class=\"ui-field__row\">\n    <label class=\"ui-field__label\" for=\"ui-field-default\">Work email <span class=\"ui-field__opt\">Optional</span></label>\n    <input class=\"ui-field__ctrl\" id=\"ui-field-default\" type=\"email\" value=\"ada@aurora.dev\">\n    <p class=\"ui-field__msg\">We only use this for billing receipts.</p>\n  </div>\n  <div class=\"ui-field__row\">\n    <label class=\"ui-field__label\" for=\"ui-field-invalid\">Workspace slug <span class=\"ui-field__req\">Required</span></label>\n    <input class=\"ui-field__ctrl is-invalid\" id=\"ui-field-invalid\" type=\"text\" value=\"Aurora Labs\" aria-invalid=\"true\" aria-describedby=\"ui-field-invalid-msg\">\n    <p class=\"ui-field__msg is-error\" id=\"ui-field-invalid-msg\">Use lowercase letters and hyphens only.</p>\n  </div>\n  <div class=\"ui-field__row\">\n    <label class=\"ui-field__label\" for=\"ui-field-disabled\">Account owner</label>\n    <input class=\"ui-field__ctrl\" id=\"ui-field-disabled\" type=\"text\" value=\"Managed by SSO\" disabled>\n    <p class=\"ui-field__msg\">Provisioned by your identity provider.</p>\n  </div>\n</div>",
+  "name": "Form/Field",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.foreground",
+    "color.input",
+    "color.background",
+    "color.danger",
+    "color.muted-foreground",
+    "radius.button",
+    "font-family.body",
+    "font-weight.medium",
+    "font-weight.regular",
+    "font-size.xs",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Invalid",
+    "State=Disabled"
+  ]
+}

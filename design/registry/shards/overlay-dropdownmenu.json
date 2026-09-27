@@ -1,0 +1,42 @@
+{
+  "category": "overlay",
+  "description": "Dropdown menu — a labelled role=menu of menuitem actions with a separator and a disabled item, drawn open with static hover and focus.",
+  "markup": "<div class=\"ui-kit ui-dm\">\n  <style>\n    .ui-dm { font-family: var(--font-family-body); }\n    .ui-dm__stage { position: relative; min-height: 210px; display: flex; justify-content: center; padding-top: var(--space-2); }\n    .ui-dm__anchor { position: relative; }\n    .ui-dm__trigger {\n      font: inherit; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;\n      display: inline-flex; align-items: center; gap: var(--space-2);\n      padding: var(--space-2) var(--space-4); border-radius: var(--radius-button);\n      background: var(--color-secondary); color: var(--color-secondary-foreground); border: 1px solid var(--color-border);\n    }\n    .ui-dm__caret { flex: none; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; }\n    .ui-dm__menu {\n      position: absolute; top: calc(100% + var(--space-2)); left: 50%; transform: translateX(-50%);\n      min-width: 208px; z-index: 1; padding: var(--space-1); display: grid; gap: 1px;\n      background: var(--color-popover); color: var(--color-popover-foreground);\n      border: 1px solid var(--color-border); border-radius: var(--radius-card);\n      box-shadow: var(--elevation-overlay-offset-x) var(--elevation-overlay-offset-y) var(--elevation-overlay-blur) var(--elevation-overlay-spread) var(--elevation-overlay-color);\n    }\n    .ui-dm__item {\n      font: inherit; font-size: var(--font-size-sm); cursor: pointer; text-align: left; width: 100%;\n      display: flex; align-items: center; gap: var(--space-2);\n      padding: var(--space-2) var(--space-3); border: 0; border-radius: var(--radius-sm);\n      background: transparent; color: var(--color-popover-foreground);\n      transition: background var(--duration-fast) ease;\n    }\n    .ui-dm__item.is-hover { background: var(--color-accent); color: var(--color-accent-foreground); }\n    .ui-dm__item.is-focus { outline: 2px solid var(--color-ring); outline-offset: -2px; }\n    .ui-dm__item[aria-disabled=\"true\"] { color: var(--color-muted-foreground); cursor: not-allowed; opacity: 0.7; }\n    .ui-dm__sep { height: 1px; margin: var(--space-1) 0; background: var(--color-border); }\n  </style>\n  <div class=\"ui-dm__stage\">\n    <div class=\"ui-dm__anchor\">\n      <button type=\"button\" class=\"ui-dm__trigger\" id=\"ui-dm-trigger\" aria-haspopup=\"menu\" aria-expanded=\"true\" aria-controls=\"ui-dm-menu\">Options<span class=\"ui-dm__caret\" aria-hidden=\"true\"></span></button>\n      <div class=\"ui-dm__menu\" id=\"ui-dm-menu\" role=\"menu\" aria-labelledby=\"ui-dm-trigger\">\n        <button type=\"button\" class=\"ui-dm__item\" role=\"menuitem\" tabindex=\"-1\">Edit</button>\n        <button type=\"button\" class=\"ui-dm__item is-hover\" role=\"menuitem\" tabindex=\"-1\">Duplicate</button>\n        <button type=\"button\" class=\"ui-dm__item is-focus\" role=\"menuitem\" tabindex=\"-1\">Move to project</button>\n        <div class=\"ui-dm__sep\" role=\"separator\"></div>\n        <button type=\"button\" class=\"ui-dm__item\" role=\"menuitem\" aria-disabled=\"true\" tabindex=\"-1\">Archive</button>\n      </div>\n    </div>\n  </div>\n</div>",
+  "name": "Overlay/DropdownMenu",
+  "scope": "local",
+  "status": "stable",
+  "tokensUsed": [
+    "color.secondary",
+    "color.secondary-foreground",
+    "color.border",
+    "color.popover",
+    "color.popover-foreground",
+    "color.accent",
+    "color.accent-foreground",
+    "color.ring",
+    "color.muted-foreground",
+    "elevation.overlay-offset-x",
+    "elevation.overlay-offset-y",
+    "elevation.overlay-blur",
+    "elevation.overlay-spread",
+    "elevation.overlay-color",
+    "radius.button",
+    "radius.card",
+    "radius.sm",
+    "font-family.body",
+    "font-weight.medium",
+    "font-size.sm",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "duration.fast"
+  ],
+  "variants": [
+    "State=Default",
+    "State=Open",
+    "State=Hover",
+    "State=Focus",
+    "State=Disabled"
+  ]
+}

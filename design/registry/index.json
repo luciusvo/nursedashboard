@@ -1,0 +1,194 @@
+{
+  "components": [
+    {
+      "category": "action",
+      "hash": "sha256-se51hqpoeTR40Oupslf9RY-4x35gyFQlZPkFJVF0jMU",
+      "name": "Control/Button",
+      "scope": "local",
+      "shard": "shards/control-button.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-7WJjI98p9MdQwkgQcqxkHcEyDFSx5dSE30-NezlJYEY",
+      "name": "Control/Checkbox",
+      "scope": "local",
+      "shard": "shards/control-checkbox.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-4PG-ZwLTIHsJYw5k0U61PZMTy8NjP2-VfDHQkVppEtE",
+      "name": "Control/Combobox",
+      "scope": "local",
+      "shard": "shards/control-combobox.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-wHrDpcZwo1mfnk2Izc7tlZvche91xNh7h3pKpAUF7OM",
+      "name": "Control/Input",
+      "scope": "local",
+      "shard": "shards/control-input.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-JZ2orrlF0gw4f8dCzxN37GhX7AlYL_dsiXZO8SdU3Tg",
+      "name": "Control/Radio",
+      "scope": "local",
+      "shard": "shards/control-radio.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-8hlVJTSOWJITFP4_x7vviPgObuLt8QVMrQHPQBTdBDY",
+      "name": "Control/Select",
+      "scope": "local",
+      "shard": "shards/control-select.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-hS48bWz2wHs4mOFWkUv4TpP0MKs5c8ic2YzwPfzNcbc",
+      "name": "Control/Switch",
+      "scope": "local",
+      "shard": "shards/control-switch.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-0DjkmZKN08xd3DuvUry7CIJcRLwyYxXLwliLBKFhzOk",
+      "name": "Control/Textarea",
+      "scope": "local",
+      "shard": "shards/control-textarea.json"
+    },
+    {
+      "category": "data",
+      "hash": "sha256-BJTNH0qf8s9--5mzUHwGPCBheT00GoYaNWvxGH8o3-w",
+      "name": "Data/Table",
+      "scope": "local",
+      "shard": "shards/data-table.json"
+    },
+    {
+      "category": "feedback",
+      "hash": "sha256--tyIy9hujZfI3eE5g4KX1IhCJDEmNmUaY7JUDH1dJSs",
+      "name": "Display/Alert",
+      "scope": "local",
+      "shard": "shards/display-alert.json"
+    },
+    {
+      "category": "display",
+      "hash": "sha256-ub2mE44p9tQZlvoScg17nsUd2JQzUs8fXnj0A01wYjU",
+      "name": "Display/Avatar",
+      "scope": "local",
+      "shard": "shards/display-avatar.json"
+    },
+    {
+      "category": "display",
+      "hash": "sha256-JcKxt-XhJ7fov7_Rx6OOl4wSjLARkrGdSXlx8708ekM",
+      "name": "Display/Badge",
+      "scope": "local",
+      "shard": "shards/display-badge.json"
+    },
+    {
+      "category": "display",
+      "hash": "sha256-dmf-4T3Y8zejhI9vRD9ARpLBfWvCEr0LmvDFb1x1boM",
+      "name": "Display/Card",
+      "scope": "local",
+      "shard": "shards/display-card.json"
+    },
+    {
+      "category": "display",
+      "hash": "sha256-86FUjaVzo7hwwr4oI1BaTJQzqm2Fw4EOMYdafpRGgFc",
+      "name": "Display/Kbd",
+      "scope": "local",
+      "shard": "shards/display-kbd.json"
+    },
+    {
+      "category": "feedback",
+      "hash": "sha256-nGd-xOkfy6Spe-C7TJ6y8cLuB_Ap3W7IiY0IWry9quw",
+      "name": "Display/Progress",
+      "scope": "local",
+      "shard": "shards/display-progress.json"
+    },
+    {
+      "category": "display",
+      "hash": "sha256-6iN9NelhsZ1nEkIUmCjfskylN_Idmtr4j6j75xXaXWo",
+      "name": "Display/Separator",
+      "scope": "local",
+      "shard": "shards/display-separator.json"
+    },
+    {
+      "category": "feedback",
+      "hash": "sha256-1HYSOsC1nmUz2VOYe1F3kBz2pHhXKhLfnZpj9mijyvQ",
+      "name": "Display/Skeleton",
+      "scope": "local",
+      "shard": "shards/display-skeleton.json"
+    },
+    {
+      "category": "feedback",
+      "hash": "sha256-3WwRO0PuyK-ZG0AYquey0HBJyFZ-CRS29HYYZlvhihQ",
+      "name": "Display/Toast",
+      "scope": "local",
+      "shard": "shards/display-toast.json"
+    },
+    {
+      "category": "form",
+      "hash": "sha256-wXTiszrH2opQfwqv0IUkkBqUIq5mPZIiNKzEMT2QWQY",
+      "name": "Form/Field",
+      "scope": "local",
+      "shard": "shards/form-field.json"
+    },
+    {
+      "category": "overlay",
+      "hash": "sha256-MAfac8OQOFPPpdrI_nYJyaxv2spfEq_4ano6R-yKJJU",
+      "name": "Overlay/Dialog",
+      "scope": "local",
+      "shard": "shards/overlay-dialog.json"
+    },
+    {
+      "category": "overlay",
+      "hash": "sha256-xTFKRiyjsKUnWiLPmr0gv83L98Y3peiwzvpbGiJv15U",
+      "name": "Overlay/DropdownMenu",
+      "scope": "local",
+      "shard": "shards/overlay-dropdownmenu.json"
+    },
+    {
+      "category": "overlay",
+      "hash": "sha256-L_4Tz_Mfu2s-V5w1avq4iIUSb9XWOF-doYDFRni9vHg",
+      "name": "Overlay/Popover",
+      "scope": "local",
+      "shard": "shards/overlay-popover.json"
+    },
+    {
+      "category": "overlay",
+      "hash": "sha256-fuTvR0AcDKvHhgYBOzrhM-9SRljJwsXZMr-XRuenUZw",
+      "name": "Overlay/Tooltip",
+      "scope": "local",
+      "shard": "shards/overlay-tooltip.json"
+    },
+    {
+      "category": "navigation",
+      "hash": "sha256-r8WAlEwi2vmVWwX4JObyYPLviJNi16_S_qlDiZvyacI",
+      "name": "Structure/Accordion",
+      "scope": "local",
+      "shard": "shards/structure-accordion.json"
+    },
+    {
+      "category": "navigation",
+      "hash": "sha256-G6KGL2eLFGynmvJz3KhhW0T71F7oDKY-MsAruxIivN0",
+      "name": "Structure/Breadcrumb",
+      "scope": "local",
+      "shard": "shards/structure-breadcrumb.json"
+    },
+    {
+      "category": "navigation",
+      "hash": "sha256-kietx8JCUItDIyGETfOfC5lJdp_6mVuu8d_tX9CBlLs",
+      "name": "Structure/Pagination",
+      "scope": "local",
+      "shard": "shards/structure-pagination.json"
+    },
+    {
+      "category": "navigation",
+      "hash": "sha256-cubSYg-oiUY5R3-mFUJDrVX-AjuWJBtDE5_7Knqef_8",
+      "name": "Structure/Tabs",
+      "scope": "local",
+      "shard": "shards/structure-tabs.json"
+    }
+  ],
+  "v": "0.1.0"
+}
