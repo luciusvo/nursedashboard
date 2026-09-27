@@ -1,0 +1,18 @@
+{
+  "name": "design-os-project",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "ui:doctor": "ui doctor --cwd .",
+    "ui:preview": "ui ds preview",
+    "ui:tokens": "ui tokens compile design/design.tokens.json --target css > design/tokens.css",
+    "ui:gate": "ui gate index.html --tokens design/design.tokens.json",
+    "ui:taste": "ui taste-lint index.html --tokens design/design.tokens.json",
+    "ui:autofix": "ui autofix index.html --write"
+  },
+  "dependencies": {
+    "ease-design": "^0.6.0"
+  }
+}
