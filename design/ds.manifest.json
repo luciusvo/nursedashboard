@@ -5,22 +5,38 @@
       "kind": "init",
       "note": "compiled from persona=saas-aurora-minimal",
       "ts": "2026-09-27T11:50:14.986Z"
+    },
+    {
+      "by": "ui ds init",
+      "kind": "init",
+      "note": "compiled from persona=inclusive-clarity",
+      "ts": "2026-09-27T11:56:11.942Z"
+    },
+    {
+      "by": "ui ds change-token",
+      "from": "{primary.500}",
+      "kind": "change-token",
+      "path": "color.primary",
+      "reason": "Match hospital clinical cyan brand color",
+      "to": "#0284C7",
+      "ts": "2026-09-27T11:56:23.757Z"
     }
   ],
-  "compiledHash": "sha256-QFFN5PwKt1-TXf-35xMy_DP_MA6_RmWS4nQmwFRXkII",
-  "createdAt": "2026-09-27T11:50:14.984Z",
-  "generation": 1,
-  "intent": "Modern AI web product landing page and interactive studio",
-  "name": "core-ds",
+  "compiledHash": "sha256-ApKX3Baon5J4gJLZ2rS3x4SYOsYPqC-XqBsdG0mXW3Q",
+  "createdAt": "2026-09-27T11:56:11.942Z",
+  "generation": 2,
+  "intent": "Ứng dụng y tế di động EMR bệnh viện, lâm sàng tin cậy, tối ưu thao tác nhanh cho bác sĩ và điều dưỡng",
+  "name": "medical-emr-ds",
   "persona": {
     "antiPatterns": [
-      "heavy textures",
-      "maximalist decoration",
-      "extreme artistic expression",
-      "unpredictable layouts"
+      "decorative animations",
+      "thin fonts",
+      "low contrast colors",
+      "small text",
+      "hover-only states"
     ],
-    "family": "functional-saas",
-    "slug": "saas-aurora-minimal"
+    "family": "product-marketing",
+    "slug": "inclusive-clarity"
   },
   "registryHash": "sha256-np6Iy38NxMNfUkOb-SrenxXo56mjnQHT44nq5VbSN8E",
   "version": "1.0.0"

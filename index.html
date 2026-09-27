@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dự án mẫu tích hợp DESIGN:OS và Antigravity AI IDE">
-  <title>DESIGN:OS Studio & Antigravity</title>
+  <meta name="description" content="Hệ thống Hồ sơ bệnh án điện tử EMR Bệnh viện - Giao diện Bác sĩ và Điều dưỡng">
+  <title>UMC EMR — Hồ sơ bệnh án điện tử</title>
   <link rel="stylesheet" href="./design/tokens.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -20,293 +20,736 @@
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background-color: var(--color-background);
       color: var(--color-foreground);
-      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100dvh;
+      margin: 0;
+      padding: 24px 16px;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
 
-    header {
-      border-bottom: 1px solid var(--color-border);
-      background: var(--color-card);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    /* Mobile Container Frame */
+    .mobile-app-wrapper {
+      width: 100%;
+      max-width: 420px;
+      min-height: 890px;
+      background-color: var(--base-white);
+      border-radius: 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 4px solid var(--color-border);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
     }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
+    @media (max-width: 480px) {
+      body {
+        padding: 0;
+        background-color: var(--base-white);
+      }
+      .mobile-app-wrapper {
+        border-radius: 0;
+        border: none;
+        max-width: 100%;
+        min-height: 100dvh;
+        box-shadow: none;
+      }
     }
 
-    .nav-inner {
+    /* Header with Clinical Teal/Blue Gradient */
+    .app-header {
+      background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-info) 100%);
+      color: var(--base-white);
+      padding: 16px 16px 20px;
+      position: relative;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0 4px 12px;
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Doctor Profile Bar */
+    .user-profile-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .brand {
+    .user-identity {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--color-foreground);
-      text-decoration: none;
+      min-width: 0;
     }
 
-    .brand-badge {
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 6px;
-      background-color: var(--color-primary);
-      color: var(--base-white);
-      letter-spacing: 0.5px;
-    }
-
-    .btn {
-      display: inline-flex;
+    .avatar-badge {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.25);
+      border: 2px solid var(--base-white);
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-height: 44px;
-      padding: 10px 20px;
-      border-radius: 8px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--base-white);
+    }
+
+    .user-meta h1 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--base-white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .user-badge-role {
+      font-size: 14px;
       font-weight: 600;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .app-brand-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--base-white);
+      color: var(--color-primary);
+      padding: 6px 10px;
+      border-radius: 8px;
+      min-width: 52px;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Search & Scan Row */
+    .search-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-input-wrapper {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      background-color: var(--base-white);
+      padding: 0 44px 0 16px;
       font-size: 16px;
-      text-decoration: none;
+      color: var(--color-foreground);
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: var(--color-muted-foreground);
+    }
+
+    .search-icon-btn {
+      position: absolute;
+      right: 4px;
+      background: none;
+      border: none;
+      color: var(--color-muted-foreground);
+      width: 44px;
+      height: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      border: 1px solid transparent;
-      transition-property: background-color, border-color, color, box-shadow;
+    }
+
+    .qr-scanner-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 8px;
+      background-color: var(--base-white);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      cursor: pointer;
+    }
+
+    /* Modules 4-Column Grid */
+    .app-content {
+      flex: 1;
+      padding: 20px 12px 90px;
+      overflow-y: auto;
+      background-color: var(--base-white);
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 20px;
+      column-gap: 8px;
+    }
+
+    .module-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 4px;
+      border-radius: 12px;
+      min-height: 96px;
+      min-width: 44px;
+      transition-property: transform, opacity;
       transition-duration: 150ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .btn-primary {
-      background-color: var(--color-primary);
-      color: var(--base-white);
+    @media (hover: hover) {
+      .module-item:hover {
+        transform: translateY(-2px);
+      }
+      .module-item:active {
+        transform: scale(0.96);
+      }
     }
 
-    @media (hover: hover) { .btn-primary:hover {
-      opacity: 0.92;
-    } }
-
-    .btn-outline {
-      border-color: var(--color-border);
-      background-color: transparent;
-      color: var(--color-foreground);
-    }
-
-    @media (hover: hover) { .btn-outline:hover {
-      background-color: var(--color-card);
-    } }
-
-    .hero {
-      padding: 80px 0 64px;
-      text-align: center;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      background-color: var(--color-accent);
-      color: var(--color-accent-foreground);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      color: var(--color-foreground);
-    }
-
-    .hero-lead {
-      font-size: 18px;
-      color: var(--color-muted-foreground);
-      max-width: 680px;
-      margin: 0 auto 36px;
-    }
-
-    .hero-actions {
+    .module-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      margin-bottom: 8px;
+      background-color: var(--color-accent);
+      color: var(--color-primary);
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin: 64px 0;
+    .icon-emerald {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
     }
 
-    .card {
-      background: var(--color-card);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 28px;
+    .icon-rose {
+      background-color: var(--color-accent);
+      color: var(--color-danger);
+    }
+
+    .icon-amber {
+      background-color: var(--color-accent);
+      color: var(--color-warning, var(--color-primary));
+    }
+
+    .icon-purple {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+    }
+
+    .icon-indigo {
+      background-color: var(--color-accent);
+      color: var(--color-info);
+    }
+
+    .module-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-foreground);
+      line-height: 1.25;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      max-width: 84px;
+    }
+
+    /* Fixed Bottom Tab Navigation */
+    .bottom-tab-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background-color: var(--base-white);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 20;
+    }
+
+    .tab-item {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--color-muted-foreground);
+      font-size: 12px;
+      font-weight: 700;
+      min-width: 72px;
+      min-height: 48px;
+      cursor: pointer;
+      border: none;
+      background: none;
     }
 
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: var(--color-accent);
-      color: var(--color-accent-foreground);
+    .tab-item.active {
+      color: var(--color-primary);
+    }
+
+    /* Modal Sheet */
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: flex-end;
+      z-index: 50;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background-color: var(--base-white);
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+      padding: 24px 20px 36px;
+      box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-foreground);
+    }
+
+    .modal-close {
+      background: var(--color-card);
+      border: none;
+      border-radius: 9999px;
+      width: 44px;
+      height: 44px;
+      min-height: 44px;
+      min-width: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--color-muted-foreground);
+      cursor: pointer;
     }
 
-    .card h2 {
-      font-size: 20px;
+    .modal-body {
+      font-size: 16px;
+      color: var(--color-muted-foreground);
+      line-height: 1.5;
+    }
+
+    .modal-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      background-color: var(--color-primary);
+      color: var(--base-white);
+      font-size: 16px;
       font-weight: 700;
-    }
-
-    .card p {
-      color: var(--color-muted-foreground);
-      font-size: 16px;
-    }
-
-    .code-box {
-      background: var(--color-card);
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      padding: 20px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      margin: 40px 0;
-      overflow-x: auto;
-    }
-
-    .code-line {
-      display: block;
-      color: var(--color-primary);
-      margin-bottom: 6px;
-    }
-
-    .code-comment {
-      color: var(--color-muted-foreground);
-    }
-
-    footer {
-      border-top: 1px solid var(--color-border);
-      padding: 40px 0;
-      margin-top: 80px;
-      text-align: center;
-      color: var(--color-muted-foreground);
-      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .btn {
+      .module-item {
         transition: none;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav class="nav-inner" aria-label="Điều hướng chính">
-        <a href="#" class="brand">
-          <span class="brand-badge">DESIGN:OS</span>
-          <span>Antigravity Studio</span>
-        </a>
-        <div style="display: flex; gap: 12px;">
-          <a href="design/preview/specimen.html" class="btn btn-outline" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M14 9h5"/><path d="M14 15h5"/></svg>
-            Xem Tokens Specimen
-          </a>
-          <a href="#quickstart" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Khởi động
-          </a>
+  <div class="mobile-app-wrapper" role="region" aria-label="Giao diện UMC EMR Bệnh viện">
+    <!-- Header: Status & Doctor Identity -->
+    <header class="app-header">
+      <div class="status-bar" aria-label="Trạng thái hệ thống thiết bị">
+        <time datetime="09:01">09:01</time>
+        <div class="status-icons">
+          <svg width="18" height="14" viewBox="0 0 16 12" fill="currentColor" aria-hidden="true">
+            <rect x="0" y="8" width="3" height="4" rx="0.5"/>
+            <rect x="4" y="6" width="3" height="6" rx="0.5"/>
+            <rect x="8" y="3" width="3" height="9" rx="0.5"/>
+            <rect x="12" y="0" width="3" height="12" rx="0.5"/>
+          </svg>
+          <svg width="18" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
+          </svg>
+          <span>89%</span>
         </div>
-      </nav>
+      </div>
+
+      <div class="user-profile-bar">
+        <div class="user-identity">
+          <div class="avatar-badge" aria-hidden="true">DN</div>
+          <div class="user-meta">
+            <h1>Dương Yến Nhi (D23-220)</h1>
+            <p class="user-badge-role">KHOA TIM MẠCH CAN THIỆP</p>
+          </div>
+        </div>
+        <div class="app-brand-badge" aria-label="Phiên bản phần mềm UMC EMR v113">
+          <span>UMC EMR</span>
+          <span style="color: var(--color-primary);">v113</span>
+        </div>
+      </div>
+
+      <!-- Search & Scan Bar -->
+      <form class="search-row" onsubmit="event.preventDefault();" role="search" aria-label="Tìm kiếm người bệnh">
+        <div class="search-input-wrapper">
+          <label for="patientSearch" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Mã người bệnh hoặc số vào viện</label>
+          <input
+            type="search"
+            id="patientSearch"
+            class="search-input"
+            placeholder="Mã người bệnh/Số vào viện"
+            autocomplete="off"
+          />
+          <button type="button" class="search-icon-btn" aria-label="Thực hiện tìm kiếm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+        <button type="button" class="qr-scanner-btn" aria-label="Quét mã QR bệnh nhân">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/>
+          </svg>
+        </button>
+      </form>
+    </header>
+
+    <!-- Main Functional Grid -->
+    <main class="app-content">
+      <div class="modules-grid" id="modulesContainer" role="navigation" aria-label="Danh mục chức năng lâm sàng">
+        <!-- 1. Quá trình điều trị -->
+        <button type="button" class="module-item" onclick="openModule('Quá trình điều trị', 'Theo dõi diễn tiến bệnh án, bệnh sử và các mốc can thiệp.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <span class="module-label">Quá trình điều trị</span>
+        </button>
+
+        <!-- 2. Trực phòng -->
+        <button type="button" class="module-item" onclick="openModule('Trực phòng', 'Danh sách bệnh nhân nội trú theo buồng bệnh phụ trách.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <span class="module-label">Trực phòng</span>
+        </button>
+
+        <!-- 3. Chỉ định -->
+        <button type="button" class="module-item" onclick="openModule('Chỉ định', 'Ra y lệnh, chỉ định cận lâm sàng, xét nghiệm và thủ thuật.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+          </div>
+          <span class="module-label">Chỉ định</span>
+        </button>
+
+        <!-- 4. Khám chuyên khoa -->
+        <button type="button" class="module-item" onclick="openModule('Khám chuyên khoa', 'Hội chẩn liên khoa và phiếu khám chuyên khoa Tim mạch.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <span class="module-label">Khám chuyên khoa</span>
+        </button>
+
+        <!-- 5. Đơn thuốc -->
+        <button type="button" class="module-item" onclick="openModule('Đơn thuốc', 'Kê đơn thuốc điều trị nội trú, ngoại trú và tương tác thuốc.')">
+          <div class="module-icon-box icon-emerald">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+          </div>
+          <span class="module-label">Đơn thuốc</span>
+        </button>
+
+        <!-- 6. Chăm sóc -->
+        <button type="button" class="module-item" onclick="openModule('Chăm sóc', 'Kế hoạch chăm sóc điều dưỡng, theo dõi dinh dưỡng và thể trạng.')">
+          <div class="module-icon-box icon-amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <span class="module-label">Chăm sóc</span>
+        </button>
+
+        <!-- 7. Cận lâm sàng -->
+        <button type="button" class="module-item" onclick="openModule('Cận lâm sàng', 'Kết quả xét nghiệm máu, X-quang, CT/MRI và siêu âm tim.')">
+          <div class="module-icon-box icon-purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5h0c-1.4 0-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>
+          </div>
+          <span class="module-label">Cận lâm sàng</span>
+        </button>
+
+        <!-- 8. Sinh hiệu -->
+        <button type="button" class="module-item" onclick="openModule('Sinh hiệu', 'Biểu đồ huyết áp, mạch, SpO2, nhiệt độ và nhịp thở.')">
+          <div class="module-icon-box icon-rose">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="module-label">Sinh hiệu</span>
+        </button>
+
+        <!-- 9. Máu, chế phẩm máu -->
+        <button type="button" class="module-item" onclick="openModule('Máu, chế phẩm máu', 'Dự trù máu, phản ứng truyền máu và theo dõi túi máu.')">
+          <div class="module-icon-box icon-rose">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <span class="module-label">Máu, chế phẩm máu</span>
+        </button>
+
+        <!-- 10. Code Blue -->
+        <button type="button" class="module-item" onclick="openModule('Code Blue', 'Báo động cấp cứu ngừng tim phổi khẩn cấp toàn viện.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <span class="module-label">Code Blue</span>
+        </button>
+
+        <!-- 11. Ký số ngoại viện -->
+        <button type="button" class="module-item" onclick="openModule('Ký số ngoại viện', 'Ký số văn bản, giấy chuyển tuyến và đơn thuốc ngoại viện.')">
+          <div class="module-icon-box icon-amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+          </div>
+          <span class="module-label">Ký số ngoại viện</span>
+        </button>
+
+        <!-- 12. Ký số người bệnh -->
+        <button type="button" class="module-item" onclick="openModule('Ký số người bệnh', 'Xác thực chữ ký điện tử của thân nhân và người bệnh.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="module-label">Ký số người bệnh</span>
+        </button>
+
+        <!-- 13. Chưa ký số -->
+        <button type="button" class="module-item" onclick="openModule('Chưa ký số', 'Danh mục các hồ sơ bệnh án đang chờ bác sĩ duyệt ký số.')">
+          <div class="module-icon-box icon-indigo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+          </div>
+          <span class="module-label">Chưa ký số</span>
+        </button>
+
+        <!-- 14. Xác nhận vật tư -->
+        <button type="button" class="module-item" onclick="openModule('Xác nhận vật tư', 'Duyệt xuất vật tư y tế tiêu hao, stent và catheter can thiệp.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <span class="module-label">Xác nhận vật tư</span>
+        </button>
+
+        <!-- 15. Theo dõi công việc -->
+        <button type="button" class="module-item" onclick="openModule('Theo dõi công việc', 'Lịch trình ca trực, nhiệm vụ trong ngày và báo cáo bàn giao.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </div>
+          <span class="module-label">Theo dõi công việc</span>
+        </button>
+
+        <!-- 16. Người nuôi bệnh -->
+        <button type="button" class="module-item" onclick="openModule('Người nuôi bệnh', 'Đăng ký thẻ ra vào và quản lý thân nhân người bệnh tại buồng.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          </div>
+          <span class="module-label">Người nuôi bệnh</span>
+        </button>
+
+        <!-- 17. Phẫu thuật -->
+        <button type="button" class="module-item" onclick="openModule('Phẫu thuật', 'Checklist an toàn phẫu thuật, phòng mổ và vật tư vô trùng.')">
+          <div class="module-icon-box icon-rose">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 14-7.5 7.5a2.12 2.12 0 1 1-3-3L11 11"/><path d="m21.5 2.5-3.5 3.5"/><path d="m18 6 3 3"/></svg>
+          </div>
+          <span class="module-label">Phẫu thuật</span>
+        </button>
+
+        <!-- 18. Tường trình thủ thuật -->
+        <button type="button" class="module-item" onclick="openModule('Tường trình thủ thuật', 'Biên bản chụp mạch vành, nong mạch và đặt stent tim mạch.')">
+          <div class="module-icon-box icon-amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <span class="module-label">Tường trình thủ thuật</span>
+        </button>
+
+        <!-- 19. Lịch mổ -->
+        <button type="button" class="module-item" onclick="openModule('Lịch mổ', 'Lịch can thiệp tim mạch và phẫu thuật lồng ngực.')">
+          <div class="module-icon-box icon-emerald">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <span class="module-label">Lịch mổ</span>
+        </button>
+
+        <!-- 20. Khảo sát -->
+        <button type="button" class="module-item" onclick="openModule('Khảo sát', 'Đánh giá mức độ hài lòng và khảo sát dinh dưỡng người bệnh.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <span class="module-label">Khảo sát</span>
+        </button>
+
+        <!-- 21. Thông tin vật tư -->
+        <button type="button" class="module-item" onclick="openModule('Thông tin vật tư', 'Tra cứu tồn kho vật tư và thiết bị tim mạch can thiệp.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          </div>
+          <span class="module-label">Thông tin vật tư</span>
+        </button>
+
+        <!-- 22. Hướng dẫn thực hành -->
+        <button type="button" class="module-item" onclick="openModule('Hướng dẫn thực hành', 'Phác đồ điều trị của Bộ Y tế và Bệnh viện Đại học Y Dược.')">
+          <div class="module-icon-box icon-amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          </div>
+          <span class="module-label">Hướng dẫn thực hành</span>
+        </button>
+
+        <!-- 23. Quản lý thiết bị cá nhân -->
+        <button type="button" class="module-item" onclick="openModule('Quản lý thiết bị cá nhân', 'Đồng bộ máy đo điện tim cầm tay, tablet bác sĩ và máy quét mã vạch.')">
+          <div class="module-icon-box icon-purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <span class="module-label">Quản lý thiết bị</span>
+        </button>
+
+        <!-- 24. Bật/tắt chức năng -->
+        <button type="button" class="module-item" onclick="openModule('Bật/tắt chức năng', 'Tùy chỉnh các phím tắt và biểu tượng thao tác nhanh trên trang chủ.')">
+          <div class="module-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <span class="module-label">Bật/tắt tính năng</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-tab-bar" aria-label="Điều hướng tab chính">
+      <button type="button" class="tab-item active" aria-current="page" aria-label="Về trang chủ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        <span>Trang chủ</span>
+      </button>
+
+      <button type="button" class="tab-item" aria-label="Xem thông báo chuyên khoa">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+        <span>Thông báo</span>
+      </button>
+
+      <button type="button" class="tab-item" aria-label="Cài đặt tài khoản bác sĩ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        <span>Tài khoản</span>
+      </button>
+    </nav>
+
+    <!-- Detail Dialog -->
+    <div class="modal-backdrop" id="moduleModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-sheet" id="modalSheet">
+        <div class="modal-header">
+          <h2 id="modalTitle">Chi tiết chức năng</h2>
+          <button type="button" class="modal-close" onclick="closeModal()" aria-label="Đóng cửa sổ">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <p class="modal-body" id="modalDescription">Nội dung chức năng lâm sàng.</p>
+        <button type="button" class="modal-action-btn" onclick="closeModal()">Mở phân hệ làm việc</button>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-tag">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-          Sẵn sàng kết nối Antigravity Agent
-        </div>
-        <h1>Xây dựng Giao diện Chuẩn Tinh hoa với DESIGN:OS</h1>
-        <p class="hero-lead">
-          Dự án đã được tích hợp bộ điều phối DESIGN:OS với 160 Design Tokens, 20 quy trình tác vụ (workflows) và 20 kỹ năng thiết kế chuyên sâu dành riêng cho Antigravity.
-        </p>
-        <div class="hero-actions">
-          <a href="design/preview/specimen.html" class="btn btn-primary" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            Mở bảng Preview Specimen
-          </a>
-          <a href="#workflows" class="btn btn-outline">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
-            Khám phá 20 Lệnh /ui:*
-          </a>
-        </div>
-      </div>
-    </section>
+  <script>
+    const searchInput = document.getElementById('patientSearch');
+    const modules = document.querySelectorAll('.module-item');
 
-    <section class="container" id="features" aria-label="Tính năng chính">
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-          </div>
-          <h2>Bộ Design Tokens DTCG</h2>
-          <p>Màu sắc theo khoa học OKLCH, typography ramp nhất quán, tự động đồng bộ sang CSS, Tailwind v4 và Figma.</p>
-        </article>
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      modules.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (!query || text.includes(query)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
 
-        <article class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h2>Taste-Lint &amp; Quality Gates</h2>
-          <p>Kiểm tra tĩnh tự động: cấm hex tự do, ép tương phản WCAG AA, chặn body text nhỏ hơn 16px, ngăn ngừa lỗi AI sinh code cẩu thả.</p>
-        </article>
+    const modal = document.getElementById('moduleModal');
+    const modalSheet = document.getElementById('modalSheet');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDescription');
 
-        <article class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h2>Đa nền tảng (Multi-Runtime)</h2>
-          <p>Một nguồn sự thật duy nhất (Single Source of Truth) hỗ trợ Web HTML/CSS, Figma Canvas và Apple SwiftUI (macOS, iOS, iPadOS).</p>
-        </article>
-      </div>
+    modal.addEventListener('click', () => closeModal());
+    if (modalSheet) {
+      modalSheet.addEventListener('click', (e) => e.stopPropagation());
+    }
 
-      <div class="code-box" id="quickstart">
-        <span class="code-comment"># Các lệnh Antigravity bạn có thể gõ ngay trong cửa sổ chat:</span>
-        <span class="code-line">/ui:generate "landing page cho ứng dụng SaaS quản lý công việc, phong cách tối giản hiện đại"</span>
-        <span class="code-line">/ui:iterate "chỉnh tiêu đề nổi bật hơn và tăng độ tương phản của nút CTA"</span>
-        <span class="code-line">/ui:diagram "kiến trúc hệ thống microservices 3 tầng"</span>
-        <span class="code-line">/ui:chart "biểu đồ doanh thu 4 quý dạng bar chart"</span>
-      </div>
-    </section>
-  </main>
+    function openModule(name, desc) {
+      modalTitle.innerText = name;
+      modalDesc.innerText = desc;
+      modal.classList.add('open');
+    }
 
-  <footer>
-    <div class="container">
-      <p>Khởi tạo thành công trong Antigravity IDE • Động cơ DESIGN:OS (ease-design)</p>
-    </div>
-  </footer>
+    function closeModal() {
+      modal.classList.remove('open');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
