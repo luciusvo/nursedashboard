@@ -1311,67 +1311,6 @@
       gap: 12px;
     }
 
-    /* Safety Rules (13 Principles) */
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 16px;
-    }
-
-    .rule-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      display: flex;
-      gap: 14px;
-      transition: all 0.2s;
-    }
-
-    .rule-card:hover {
-      border-color: var(--primary);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .rule-number {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-      border-radius: 8px;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 14px;
-      font-family: var(--font-mono);
-    }
-
-    .rule-content h4 {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-
-    .rule-content p {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    .rule-tag {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: #EFF6FF;
-      color: #1D4ED8;
-    }
-
     /* Modals & Dialogs */
     .modal-overlay {
       position: fixed;
@@ -1686,7 +1625,7 @@
     .auth-card-backdrop {
       position: absolute;
       inset: 0;
-      background-image: 
+      background-image:
         radial-gradient(rgba(2, 132, 199, 0.18) 1px, transparent 1px),
         radial-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px);
       background-size: 28px 28px;
@@ -1713,6 +1652,7 @@
         opacity: 0;
         transform: translateY(24px) scale(0.96);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1902,9 +1842,21 @@
     }
 
     @keyframes shakeAnimation {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-6px); }
-      40%, 80% { transform: translateX(6px); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-6px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(6px);
+      }
     }
 
     .shake-anim {
@@ -2058,7 +2010,8 @@
           </div>
         </div>
 
-        <form id="authPassForm" onsubmit="event.preventDefault(); handleAuthSubmit();" class="auth-form" autocomplete="off">
+        <form id="authPassForm" onsubmit="event.preventDefault(); handleAuthSubmit();" class="auth-form"
+          autocomplete="off">
           <div class="auth-input-group" id="authInputGroup">
             <div class="auth-input-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2066,8 +2019,10 @@
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
             </div>
-            <input type="password" id="authPasscode" class="auth-pass-input" placeholder="Nhập pass (2809)" maxlength="16" autocomplete="off" autofocus>
-            <button type="button" class="auth-toggle-eye" onclick="togglePassVisibility()" title="Hiển thị / Ẩn mật khẩu">
+            <input type="password" id="authPasscode" class="auth-pass-input" placeholder="Nhập pass (****)"
+              maxlength="16" autocomplete="off" autofocus>
+            <button type="button" class="auth-toggle-eye" onclick="togglePassVisibility()"
+              title="Hiển thị / Ẩn mật khẩu">
               <span id="authEyeIcon">👁️</span>
             </button>
           </div>
@@ -2092,9 +2047,11 @@
             <button type="button" class="auth-numpad-btn" onclick="appendPin('7')">7</button>
             <button type="button" class="auth-numpad-btn" onclick="appendPin('8')">8</button>
             <button type="button" class="auth-numpad-btn" onclick="appendPin('9')">9</button>
-            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="clearPin()" title="Xóa toàn bộ">C</button>
+            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="clearPin()"
+              title="Xóa toàn bộ">C</button>
             <button type="button" class="auth-numpad-btn" onclick="appendPin('0')">0</button>
-            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="backspacePin()" title="Xóa ký tự cuối">⌫</button>
+            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="backspacePin()"
+              title="Xóa ký tự cuối">⌫</button>
           </div>
 
           <button type="submit" id="btnAuthSubmit" class="auth-submit-btn">
@@ -2123,7 +2080,9 @@
     <header class="top-navbar">
       <div class="brand-section">
         <div class="brand-logo-badge" aria-label="Logo Bệnh viện">
-          <img src="logo.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: #fff;" onerror="this.style.display='none'; this.parentElement.innerText='GĐ';">
+          <img src="logo.jpg" alt="Logo"
+            style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: #fff;"
+            onerror="this.style.display='none'; this.parentElement.innerText='GĐ';">
         </div>
         <div class="brand-text">
           <h1>BẢNG ĐIỀU HÀNH & HỒ SƠ ĐIỆN TỬ ĐIỀU DƯỠNG</h1>
@@ -2136,7 +2095,8 @@
 
       <div class="nav-actions">
         <!-- Khoa phòng Dropdown -->
-        <select class="ward-selector" id="wardSelector" onchange="switchWard(this.value)" aria-label="Chọn khoa lâm sàng">
+        <select class="ward-selector" id="wardSelector" onchange="switchWard(this.value)"
+          aria-label="Chọn khoa lâm sàng">
           <option value="tim_mach">Khoa Tim Mạch Can Thiệp (Lầu 5A)</option>
           <option value="hoi_suc">Khoa Hồi Sức Tích Cực - ICU (Lầu 3)</option>
           <option value="ngoai_tong_hop">Khoa Ngoại Tổng Hợp (Lầu 7B)</option>
@@ -2176,1300 +2136,1142 @@
             <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z" />
           </svg>
           <span>CODE BLUE</span>
-      </button>
-
-      <!-- Desktop vs Bedside Mode Switch -->
-      <div class="view-mode-toggle">
-        <button type="button" class="mode-btn active" id="btnDeskMode" onclick="toggleViewMode('desktop')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect width="20" height="14" x="2" y="3" rx="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-          Trạm Console
         </button>
-        <button type="button" class="mode-btn" id="btnBedsideMode" onclick="toggleViewMode('bedside')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect width="14" height="20" x="5" y="2" rx="2" />
-            <circle cx="12" cy="18" r="1" />
+
+        <!-- Desktop vs Bedside Mode Switch -->
+        <div class="view-mode-toggle">
+          <button type="button" class="mode-btn active" id="btnDeskMode" onclick="toggleViewMode('desktop')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="14" x="2" y="3" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+            Trạm Console
+          </button>
+          <button type="button" class="mode-btn" id="btnBedsideMode" onclick="toggleViewMode('bedside')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="14" height="20" x="5" y="2" rx="2" />
+              <circle cx="12" cy="18" r="1" />
+            </svg>
+            Giường bệnh
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tab Bar -->
+    <nav class="console-nav-strip">
+      <div class="nav-tabs-group">
+        <button type="button" class="nav-tab-btn active" onclick="switchTab('dashboard')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="7" height="9" x="3" y="3" rx="1" />
+            <rect width="7" height="5" x="14" y="3" rx="1" />
+            <rect width="7" height="9" x="14" y="12" rx="1" />
+            <rect width="7" height="5" x="3" y="16" rx="1" />
           </svg>
-          Giường bệnh
+          <span>Tổng Quan</span>
+          <span class="nav-tab-badge">24 BN</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" onclick="switchTab('forms-directory')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+            <path d="M6 6h10" />
+            <path d="M6 10h10" />
+          </svg>
+          <span>Biểu Mẫu</span>
+          <span class="nav-tab-badge">11 Nhóm</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" onclick="switchTab('mar-station')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
+            <path d="m8.5 8.5 7 7" />
+          </svg>
+          <span>Thực Hiện Thuốc (MAR)</span>
+          <span class="nav-tab-badge warning">6 Cữ cần tiêm</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" onclick="switchTab('flowsheet-24h')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18" />
+            <path d="m19 9-5 5-4-4-3 3" />
+          </svg>
+          <span>Biểu Đồ Giờ & Xuất-Nhập</span>
+          <span class="nav-tab-badge danger">3 Cảnh báo</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" onclick="switchTab('handover')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+            <path d="m15 5 4 4" />
+          </svg>
+          <span>Bàn Giao Ca Trực</span>
+          <span class="nav-tab-badge">Ca 2 / 3</span>
         </button>
       </div>
-    </div>
-  </header>
 
-  <!-- Navigation Tab Bar -->
-  <nav class="console-nav-strip">
-    <div class="nav-tabs-group">
-      <button type="button" class="nav-tab-btn active" onclick="switchTab('dashboard')">
+      <!-- Quick Search Input -->
+      <div class="console-search-box">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect width="7" height="9" x="3" y="3" rx="1" />
-          <rect width="7" height="5" x="14" y="3" rx="1" />
-          <rect width="7" height="9" x="14" y="12" rx="1" />
-          <rect width="7" height="5" x="3" y="16" rx="1" />
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-        <span>Tổng Quan</span>
-        <span class="nav-tab-badge">24 BN</span>
-      </button>
-
-      <button type="button" class="nav-tab-btn" onclick="switchTab('forms-directory')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-          <path d="M6 6h10" />
-          <path d="M6 10h10" />
-        </svg>
-        <span>Cây Thư Mục 46 Biểu Mẫu</span>
-        <span class="nav-tab-badge">11 Nhóm</span>
-      </button>
-
-      <button type="button" class="nav-tab-btn" onclick="switchTab('mar-station')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
-          <path d="m8.5 8.5 7 7" />
-        </svg>
-        <span>Thực Hiện Thuốc (MAR)</span>
-        <span class="nav-tab-badge warning">6 Cữ cần tiêm</span>
-      </button>
-
-      <button type="button" class="nav-tab-btn" onclick="switchTab('flowsheet-24h')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 3v18h18" />
-          <path d="m19 9-5 5-4-4-3 3" />
-        </svg>
-        <span>Biểu Đồ 24 Cột Giờ & Xuất-Nhập</span>
-        <span class="nav-tab-badge danger">3 Cảnh báo</span>
-      </button>
-
-      <button type="button" class="nav-tab-btn" onclick="switchTab('handover')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
-          <path d="m15 5 4 4" />
-        </svg>
-        <span>Bàn Giao Ca Trực</span>
-        <span class="nav-tab-badge">Ca 2 / 3</span>
-      </button>
-
-      <button type="button" class="nav-tab-btn" onclick="switchTab('safety-shield')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-        <span>13 Cảnh Báo Bảo Vệ Điều Dưỡng</span>
-        <span class="nav-tab-badge success">Audit-Active</span>
-      </button>
-    </div>
-
-    <!-- Quick Search Input -->
-    <div class="console-search-box">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-      <input type="search" id="globalSearchInput" placeholder="Tìm người bệnh, số giường, biểu mẫu..."
-        oninput="handleGlobalSearch(this.value)">
-    </div>
-  </nav>
-
-  <!-- Main Console Body -->
-  <main class="console-main-container">
-
-    <!-- Top Realtime Clinical Indicators (KPI Cards) -->
-    <section class="kpi-row" aria-label="Chỉ số vận hành điều dưỡng khoa">
-      <!-- 1. Tổng bệnh nhân -->
-      <div class="kpi-card kpi-info" onclick="filterPatients('all')">
-        <div class="kpi-header">
-          <span class="kpi-label">Tổng người bệnh khoa</span>
-          <div class="kpi-icon">🏥</div>
-        </div>
-        <div class="kpi-value-row">
-          <span class="kpi-number">24</span>
-          <span class="kpi-unit">người bệnh</span>
-        </div>
-        <div class="kpi-subtext">
-          <span class="pill-badge pill-danger">4 Cấp I</span>
-          <span class="pill-badge pill-warning">12 Cấp II</span>
-          <span class="pill-badge pill-success">8 Cấp III</span>
-        </div>
+        <input type="search" id="globalSearchInput" placeholder="Tìm người bệnh, số giường, biểu mẫu..."
+          oninput="handleGlobalSearch(this.value)">
       </div>
+    </nav>
 
-      <!-- 2. Cảnh báo NEWS2 & Vượt ngưỡng -->
-      <div class="kpi-card kpi-danger" onclick="filterPatients('severe')">
-        <div class="kpi-header">
-          <span class="kpi-label">Cảnh báo NEWS2 / Sinh hiệu</span>
-          <div class="kpi-icon">⚠️</div>
-        </div>
-        <div class="kpi-value-row">
-          <span class="kpi-number">3</span>
-          <span class="kpi-unit">ca khẩn</span>
-        </div>
-        <div class="kpi-subtext">
-          <span class="pill-badge pill-danger">NEWS2 ≥ 5</span>
-          <span>Báo BS điều trị xử trí</span>
-        </div>
-      </div>
+    <!-- Main Console Body -->
+    <main class="console-main-container">
 
-      <!-- 3. Y lệnh thuốc đến giờ -->
-      <div class="kpi-card kpi-warning" onclick="switchTab('mar-station')">
-        <div class="kpi-header">
-          <span class="kpi-label">Cữ thuốc MAR 14:00</span>
-          <div class="kpi-icon">💊</div>
-        </div>
-        <div class="kpi-value-row">
-          <span class="kpi-number">6</span>
-          <span class="kpi-unit">cữ thuốc chờ</span>
-        </div>
-        <div class="kpi-subtext">
-          <span class="pill-badge pill-danger">1 Morphin (Double-Check)</span>
-        </div>
-      </div>
-
-      <!-- 4. Đếm ngược 24h Nhận định vào viện -->
-      <div class="kpi-card kpi-primary" onclick="showCountdownInfo()">
-        <div class="kpi-header">
-          <span class="kpi-label">Hạn 24h Nhận Định Vào Viện</span>
-          <div class="kpi-icon">⏳</div>
-        </div>
-        <div class="kpi-value-row">
-          <span class="kpi-number">2</span>
-          <span class="kpi-unit">hồ sơ đếm ngược</span>
-        </div>
-        <div class="kpi-subtext">
-          <span class="pill-badge pill-warning">Còn 02h:45m</span>
-          <span>Tránh vi phạm pháp lý</span>
-        </div>
-      </div>
-
-      <!-- 5. Tồn đọng ký số -->
-      <div class="kpi-card kpi-info" onclick="openSignatureReviewModal()">
-        <div class="kpi-header">
-          <span class="kpi-label">Phiếu chưa ký số ca trước</span>
-          <div class="kpi-icon">✍️</div>
-        </div>
-        <div class="kpi-value-row">
-          <span class="kpi-number">4</span>
-          <span class="kpi-unit">phiếu chờ ký</span>
-        </div>
-        <div class="kpi-subtext">
-          <span class="pill-badge pill-info">Ký số SmartCA</span>
-          <span>Có tem truy vết lịch sử</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 1: TỔNG QUAN TRẠM ĐIỀU DƯỠNG (PATIENT MATRIX) -->
-    <div class="tab-pane active" id="pane-dashboard">
-      <div class="section-card">
-        <div class="section-card-header">
-          <div class="section-card-title">
-            <h2>DANH SÁCH NGƯỜI BỆNH TẠI BUỒNG (PATIENT MONITOR MATRIX)</h2>
-            <p>Phân loại mức độ chăm sóc theo Thông tư 31/2021/TT-BYT và giám sát sinh hiệu liên tục</p>
+      <!-- Top Realtime Clinical Indicators (KPI Cards) -->
+      <section class="kpi-row" aria-label="Chỉ số vận hành điều dưỡng khoa">
+        <!-- 1. Tổng bệnh nhân -->
+        <div class="kpi-card kpi-info" onclick="filterPatients('all')">
+          <div class="kpi-header">
+            <span class="kpi-label">Tổng người bệnh khoa</span>
+            <div class="kpi-icon">🏥</div>
           </div>
-          <div class="patient-filter-bar" style="margin-bottom: 0;">
-            <button type="button" class="filter-chip active" onclick="filterPatients('all')">Tất cả (24)</button>
-            <button type="button" class="filter-chip" onclick="filterPatients('cap1')">Cấp I - Nguy kịch (4)</button>
-            <button type="button" class="filter-chip" onclick="filterPatients('cap2')">Cấp II (12)</button>
-            <button type="button" class="filter-chip" onclick="filterPatients('cap3')">Cấp III (8)</button>
-            <button type="button" class="filter-chip" onclick="filterPatients('allergy')">Có dị ứng (5)</button>
+          <div class="kpi-value-row">
+            <span class="kpi-number">24</span>
+            <span class="kpi-unit">người bệnh</span>
+          </div>
+          <div class="kpi-subtext">
+            <span class="pill-badge pill-danger">4 Cấp I</span>
+            <span class="pill-badge pill-warning">12 Cấp II</span>
+            <span class="pill-badge pill-success">8 Cấp III</span>
           </div>
         </div>
 
-        <!-- Patient Cards Grid -->
-        <div class="patient-grid" id="patientCardsContainer">
-          <!-- Patient 1: Cấp I - Nguy kịch -->
-          <div class="patient-card tier-1" data-tier="cap1" data-allergy="true">
-            <div class="patient-card-header">
-              <div class="patient-main-info">
-                <span class="bed-badge">G-301</span>
-                <div class="patient-name-box">
-                  <h3>Trần Đình Hùng, 64T</h3>
-                  <div class="patient-sub-meta">Mã BA: 24-00982 • Nhập: 26/09/2026</div>
+        <!-- 2. Cảnh báo NEWS2 & Vượt ngưỡng -->
+        <div class="kpi-card kpi-danger" onclick="filterPatients('severe')">
+          <div class="kpi-header">
+            <span class="kpi-label">Cảnh báo NEWS2 / Sinh hiệu</span>
+            <div class="kpi-icon">⚠️</div>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-number">3</span>
+            <span class="kpi-unit">ca khẩn</span>
+          </div>
+          <div class="kpi-subtext">
+            <span class="pill-badge pill-danger">NEWS2 ≥ 5</span>
+            <span>Báo BS điều trị xử trí</span>
+          </div>
+        </div>
+
+        <!-- 3. Y lệnh thuốc đến giờ -->
+        <div class="kpi-card kpi-warning" onclick="switchTab('mar-station')">
+          <div class="kpi-header">
+            <span class="kpi-label">Cữ thuốc MAR 14:00</span>
+            <div class="kpi-icon">💊</div>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-number">6</span>
+            <span class="kpi-unit">cữ thuốc chờ</span>
+          </div>
+          <div class="kpi-subtext">
+            <span class="pill-badge pill-danger">1 Morphin (Double-Check)</span>
+          </div>
+        </div>
+
+        <!-- 4. Đếm ngược 24h Nhận định vào viện -->
+        <div class="kpi-card kpi-primary" onclick="showCountdownInfo()">
+          <div class="kpi-header">
+            <span class="kpi-label">Hạn 24h Nhận Định Vào Viện</span>
+            <div class="kpi-icon">⏳</div>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-number">2</span>
+            <span class="kpi-unit">hồ sơ đếm ngược</span>
+          </div>
+          <div class="kpi-subtext">
+            <span class="pill-badge pill-warning">Còn 02h:45m</span>
+            <span>Tránh vi phạm pháp lý</span>
+          </div>
+        </div>
+
+        <!-- 5. Tồn đọng ký số -->
+        <div class="kpi-card kpi-info" onclick="openSignatureReviewModal()">
+          <div class="kpi-header">
+            <span class="kpi-label">Phiếu chưa ký số ca trước</span>
+            <div class="kpi-icon">✍️</div>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-number">4</span>
+            <span class="kpi-unit">phiếu chờ ký</span>
+          </div>
+          <div class="kpi-subtext">
+            <span class="pill-badge pill-info">Ký số SmartCA</span>
+            <span>Có tem truy vết lịch sử</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 1: TỔNG QUAN TRẠM ĐIỀU DƯỠNG (PATIENT MATRIX) -->
+      <div class="tab-pane active" id="pane-dashboard">
+        <div class="section-card">
+          <div class="section-card-header">
+            <div class="section-card-title">
+              <h2>DANH SÁCH NGƯỜI BỆNH TẠI BUỒNG (PATIENT MONITOR MATRIX)</h2>
+              <p>Phân loại mức độ chăm sóc theo Thông tư 31/2021/TT-BYT và giám sát sinh hiệu liên tục</p>
+            </div>
+            <div class="patient-filter-bar" style="margin-bottom: 0;">
+              <button type="button" class="filter-chip active" onclick="filterPatients('all')">Tất cả (24)</button>
+              <button type="button" class="filter-chip" onclick="filterPatients('cap1')">Cấp I - Nguy kịch (4)</button>
+              <button type="button" class="filter-chip" onclick="filterPatients('cap2')">Cấp II (12)</button>
+              <button type="button" class="filter-chip" onclick="filterPatients('cap3')">Cấp III (8)</button>
+              <button type="button" class="filter-chip" onclick="filterPatients('allergy')">Có dị ứng (5)</button>
+            </div>
+          </div>
+
+          <!-- Patient Cards Grid -->
+          <div class="patient-grid" id="patientCardsContainer">
+            <!-- Patient 1: Cấp I - Nguy kịch -->
+            <div class="patient-card tier-1" data-tier="cap1" data-allergy="true">
+              <div class="patient-card-header">
+                <div class="patient-main-info">
+                  <span class="bed-badge">G-301</span>
+                  <div class="patient-name-box">
+                    <h3>Trần Đình Hùng, 64T</h3>
+                    <div class="patient-sub-meta">Mã BA: 24-00982 • Nhập: 26/09/2026</div>
+                  </div>
                 </div>
+                <span class="tier-badge tier-badge-1">Chăm sóc Cấp I</span>
               </div>
-              <span class="tier-badge tier-badge-1">Chăm sóc Cấp I</span>
-            </div>
 
-            <!-- Allergy Alert Banner -->
-            <div class="allergy-alert-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-              </svg>
-              <span>DỊ ỨNG: Kháng sinh Penicillin & Thuốc cản quang</span>
-            </div>
-
-            <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Nhồi máu cơ tim cấp ST chênh lên ngày 2 sau can thiệp PCI • Đang thở Oxy kính
-              3L/phút
-            </p>
-
-            <!-- Realtime Vitals Mini Table -->
-            <div class="vitals-mini-table">
-              <div class="vital-cell">
-                <div class="vital-cell-label">MẠCH</div>
-                <div class="vital-cell-val vital-alert">114 l/p ⚠️</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">HUYẾT ÁP</div>
-                <div class="vital-cell-val vital-alert">165/98</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">SpO2</div>
-                <div class="vital-cell-val vital-alert">93% ⚠️</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">NHIỆT ĐỘ</div>
-                <div class="vital-cell-val">38.4°C</div>
-              </div>
-            </div>
-
-            <div class="scores-row">
-              <span class="score-chip danger"><strong>NEWS2:</strong> 6 điểm (Trung bình-Cao)</span>
-              <span class="score-chip warning"><strong>Braden:</strong> 13 (Nguy cơ loét)</span>
-              <span class="score-chip"><strong>Morse:</strong> 35</span>
-              <span class="score-chip danger"><strong>Đau VAS:</strong> 6/10</span>
-            </div>
-
-            <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary"
-                onclick="openCareForm(1, 'Trần Đình Hùng', 'G-301')">
-                <span>📝 Phiếu Cấp 1 (24h)</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openMedicationForPatient('Trần Đình Hùng')">
-                <span>💊 Cho thuốc</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openWoundCareModal('Trần Đình Hùng')">
-                <span>🩹 Vết thương</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Patient 2: Cấp II - Hậu phẫu -->
-          <div class="patient-card tier-2" data-tier="cap2" data-allergy="false">
-            <div class="patient-card-header">
-              <div class="patient-main-info">
-                <span class="bed-badge">G-304</span>
-                <div class="patient-name-box">
-                  <h3>Nguyễn Văn An, 58T</h3>
-                  <div class="patient-sub-meta">Mã BA: 24-01045 • Nhập: 27/09/2026</div>
-                </div>
-              </div>
-              <span class="tier-badge tier-badge-2">Chăm sóc Cấp II</span>
-            </div>
-
-            <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Hậu phẫu viêm ruột thừa nội soi ngày 1 • Dẫn lưu vết mổ ít dịch hồng
-            </p>
-
-            <!-- Realtime Vitals Mini Table -->
-            <div class="vitals-mini-table">
-              <div class="vital-cell">
-                <div class="vital-cell-label">MẠCH</div>
-                <div class="vital-cell-val">82 l/p</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">HUYẾT ÁP</div>
-                <div class="vital-cell-val">120/80</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">SpO2</div>
-                <div class="vital-cell-val">98%</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">NHIỆT ĐỘ</div>
-                <div class="vital-cell-val">37.2°C</div>
-              </div>
-            </div>
-
-            <div class="scores-row">
-              <span class="score-chip"><strong>NEWS2:</strong> 1 điểm (Thấp)</span>
-              <span class="score-chip"><strong>Braden:</strong> 18 (Bình thường)</span>
-              <span class="score-chip warning"><strong>Đau VAS:</strong> 4/10</span>
-              <span class="score-chip" style="color: #0284C7;">Đo 3 lần/ngày</span>
-            </div>
-
-            <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary"
-                onclick="openCareForm(2, 'Nguyễn Văn An', 'G-304')">
-                <span>📝 Phiếu Cấp 2-3</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openCarePlanModal('Nguyễn Văn An')">
-                <span>📋 KH Chăm sóc</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openMedicationForPatient('Nguyễn Văn An')">
-                <span>💊 Dùng thuốc</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Patient 3: Cấp I - Hồi sức lọc máu -->
-          <div class="patient-card tier-1" data-tier="cap1" data-allergy="true">
-            <div class="patient-card-header">
-              <div class="patient-main-info">
-                <span class="bed-badge">G-302</span>
-                <div class="patient-name-box">
-                  <h3>Lê Thị Kim Oanh, 72T</h3>
-                  <div class="patient-sub-meta">Mã BA: 24-00891 • Nhập: 25/09/2026</div>
-                </div>
-              </div>
-              <span class="tier-badge tier-badge-1">Chăm sóc Cấp I</span>
-            </div>
-
-            <div class="allergy-alert-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-              </svg>
-              <span>DỊ ỨNG: NSAID (Aspirin, Ibuprofen)</span>
-            </div>
-
-            <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Choáng nhiễm trùng từ đường mật • Suy thận cấp đang chạy CRRT lọc máu liên tục
-            </p>
-
-            <div class="vitals-mini-table">
-              <div class="vital-cell">
-                <div class="vital-cell-label">MẠCH</div>
-                <div class="vital-cell-val vital-alert">128 l/p</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">HUYẾT ÁP</div>
-                <div class="vital-cell-val vital-alert">90/55 ⚠️</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">SpO2</div>
-                <div class="vital-cell-val">95%</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">GLASGOW</div>
-                <div class="vital-cell-val vital-alert">11 đ (E3V3M5)</div>
-              </div>
-            </div>
-
-            <div class="scores-row">
-              <span class="score-chip danger"><strong>NEWS2:</strong> 8 điểm (Nguy cơ Rất Cao)</span>
-              <span class="score-chip danger"><strong>Braden:</strong> 11 (Loét rất cao)</span>
-              <span class="score-chip warning"><strong>Dịch vào/ra:</strong> +850 ml</span>
-            </div>
-
-            <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary"
-                onclick="openDialysisForm('Lê Thị Kim Oanh')">
-                <span>🩸 Theo dõi Lọc máu</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openCareForm(1, 'Lê Thị Kim Oanh', 'G-302')">
-                <span>📈 Biểu đồ giờ</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openHandoverModal('Lê Thị Kim Oanh')">
-                <span>🔄 Bàn giao</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Patient 4: Cấp III - Chuẩn bị xuất viện -->
-          <div class="patient-card tier-3" data-tier="cap3" data-allergy="false">
-            <div class="patient-card-header">
-              <div class="patient-main-info">
-                <span class="bed-badge">G-310</span>
-                <div class="patient-name-box">
-                  <h3>Hoàng Minh Trí, 45T</h3>
-                  <div class="patient-sub-meta">Mã BA: 24-01120 • Nhập: 24/09/2026</div>
-                </div>
-              </div>
-              <span class="tier-badge tier-badge-3">Chăm sóc Cấp III</span>
-            </div>
-
-            <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Tăng huyết áp độ 2 • Rối loạn lipid máu • Tự phục vụ sinh hoạt cá nhân hoàn
-              toàn
-            </p>
-
-            <div class="vitals-mini-table">
-              <div class="vital-cell">
-                <div class="vital-cell-label">MẠCH</div>
-                <div class="vital-cell-val">74 l/p</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">HUYẾT ÁP</div>
-                <div class="vital-cell-val">128/82</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">SpO2</div>
-                <div class="vital-cell-val">99%</div>
-              </div>
-              <div class="vital-cell">
-                <div class="vital-cell-label">NHIỆT ĐỘ</div>
-                <div class="vital-cell-val">36.8°C</div>
-              </div>
-            </div>
-
-            <div class="scores-row">
-              <span class="score-chip"><strong>NEWS2:</strong> 0 điểm</span>
-              <span class="score-chip"><strong>Đo:</strong> 2 lần/ngày (8h-14h)</span>
-              <span class="score-chip"><strong>GDSK:</strong> Đã tư vấn ăn giảm muối</span>
-            </div>
-
-            <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary"
-                onclick="openCareForm(2, 'Hoàng Minh Trí', 'G-310')">
-                <span>📝 Phiếu Cấp 3</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openNutritionCounselModal('Hoàng Minh Trí')">
-                <span>🥗 Tư vấn Dinh dưỡng</span>
-              </button>
-              <button type="button" class="btn-action-sm" onclick="openPublicCostModal('Hoàng Minh Trí')">
-                <span>💰 Công khai thuốc</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 2: CÂY THƯ MỤC 46 BIỂU MẪU (11 NHÓM CHI TIẾT) -->
-    <div class="tab-pane" id="pane-forms-directory">
-      <div class="forms-directory-container">
-        <!-- Sidebar 11 Nhóm -->
-        <aside class="groups-sidebar" aria-label="11 Nhóm Biểu Mẫu Điều Dưỡng">
-          <div
-            style="font-size: 13px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-            <span>DANH MỤC 11 NHÓM</span>
-            <span class="pill-badge pill-info">46 Biểu mẫu</span>
-          </div>
-
-          <div class="group-nav-item active" onclick="selectFormGroup('all', this)">
-            <span>Toàn bộ 46 Biểu mẫu</span>
-            <span class="group-count-tag">46</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom1', this)">
-            <span>I. Chăm sóc cơ bản</span>
-            <span class="group-count-tag">5</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom2', this)">
-            <span>II. Kỹ thuật chuyên sâu</span>
-            <span class="group-count-tag">8</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom3', this)">
-            <span>III. Thực hiện thuốc (MAR)</span>
-            <span class="group-count-tag">2</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom4', this)">
-            <span>IV. Bàn giao người bệnh</span>
-            <span class="group-count-tag">2</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom5', this)">
-            <span>V. Đánh giá & Nhận định</span>
-            <span class="group-count-tag">2</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom6', this)">
-            <span>VI. Tư vấn & Cam kết</span>
-            <span class="group-count-tag">5</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom7', this)">
-            <span>VII. Dinh dưỡng người bệnh</span>
-            <span class="group-count-tag">7</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom8', this)">
-            <span>VIII. Bảng kiểm tiêm chủng</span>
-            <span class="group-count-tag">3</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom9', this)">
-            <span>IX. An toàn phẫu thuật</span>
-            <span class="group-count-tag">5</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom10', this)">
-            <span>X. Phục hồi chức năng</span>
-            <span class="group-count-tag">2</span>
-          </div>
-          <div class="group-nav-item" onclick="selectFormGroup('nhom11', this)">
-            <span>XI. Tiện ích & Giám sát</span>
-            <span class="group-count-tag">5</span>
-          </div>
-        </aside>
-
-        <!-- Right Content: List of Forms Cards -->
-        <section class="forms-list-panel" id="formsListContainer" aria-label="Danh sách biểu mẫu">
-          <!-- Loaded dynamically or rendered with search capability -->
-        </section>
-      </div>
-    </div>
-
-    <!-- TAB 3: TRẠM THỰC HIỆN THUỐC (MAR CONSOLE) -->
-    <div class="tab-pane" id="pane-mar-station">
-      <div class="section-card">
-        <div class="section-card-header">
-          <div class="section-card-title">
-            <h2>TRẠM XÁC NHẬN THỰC HIỆN THUỐC (MEDICATION ADMINISTRATION RECORD - MAR)</h2>
-            <p>Áp dụng nguyên tắc 8 Đúng • Cảnh báo Dị ứng chéo • Double-Check thuốc gây nghiện/hướng thần</p>
-          </div>
-          <div style="display: flex; gap: 8px;">
-            <button type="button" class="btn-action-sm btn-action-primary"
-              onclick="showToast('Đang đồng bộ y lệnh mới từ Bác sĩ...', 'info')">
-              🔄 Tải y lệnh mới nhất
-            </button>
-          </div>
-        </div>
-
-        <!-- Timeline of Slots -->
-        <div class="mar-timeline-row">
-          <button type="button" class="time-slot-btn" onclick="selectTimeSlot('08:00', this)">
-            <span class="slot-time">08:00</span>
-            <span class="slot-count">12 cữ • Đã xong</span>
-          </button>
-          <button type="button" class="time-slot-btn" onclick="selectTimeSlot('11:30', this)">
-            <span class="slot-time">11:30</span>
-            <span class="slot-count">8 cữ • Đã xong</span>
-          </button>
-          <button type="button" class="time-slot-btn active" onclick="selectTimeSlot('14:00', this)">
-            <span class="slot-time">14:00 (Hiện tại)</span>
-            <span class="slot-count" style="color: #FFF;">6 cữ • Cần tiêm</span>
-          </button>
-          <button type="button" class="time-slot-btn" onclick="selectTimeSlot('18:00', this)">
-            <span class="slot-time">18:00</span>
-            <span class="slot-count">9 cữ chờ</span>
-          </button>
-          <button type="button" class="time-slot-btn" onclick="selectTimeSlot('20:00', this)">
-            <span class="slot-time">20:00</span>
-            <span class="slot-count">14 cữ chờ</span>
-          </button>
-        </div>
-
-        <!-- Medication Orders List -->
-        <div id="medOrdersContainer">
-          <!-- Order 1: Thuốc Gây Nghiện (Bắt buộc Double Check) -->
-          <div class="med-order-card narcotic-alert" id="order-morphine">
-            <div class="med-details-box">
-              <div class="med-header-line">
-                <span class="pill-badge pill-danger">THUỐC GÂY NGHIỆN • DOUBLE-CHECK</span>
-                <span class="med-name">Morphin hydroclorid 10mg/1ml</span>
-                <span class="med-dose-tag">1 ống (5mg)</span>
-                <span class="med-route">Tiêm dưới da (SC)</span>
-              </div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
-                Người bệnh: <strong>Trần Đình Hùng</strong> (Giường 301 • Mã BA: 24-00982)
-              </div>
-              <div class="med-times-compare">
-                <span>Giờ y lệnh BS: <strong>14:00</strong></span>
-                <span>BS kê: <strong>BS.CK2 Trần Hữu Đức</strong></span>
-                <span>Chỉ định: <strong>Giảm đau cơn đau thắt ngực (VAS 6/10)</strong></span>
-              </div>
-              <div style="margin-top: 6px; font-size: 11.5px; color: var(--danger); font-weight: 600;">
-                ⚠️ Bắt buộc có chữ ký xác nhận của 02 Điều dưỡng cùng đối chiếu trước khi tiêm.
-              </div>
-            </div>
-
-            <div class="med-actions-cluster">
-              <button type="button" class="btn-med-doublecheck"
-                onclick="openDoubleCheckModal('Morphin 10mg', 'Trần Đình Hùng', 'order-morphine')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <polyline points="16 11 18 13 22 9" />
+              <!-- Allergy Alert Banner -->
+              <div class="allergy-alert-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
                 </svg>
-                <span>Xác nhận 2 Điều dưỡng (Double-Check)</span>
-              </button>
-              <button type="button" class="btn-med-postpone"
-                onclick="openPostponeModal('Morphin 10mg', 'Trần Đình Hùng')">
-                Hoãn tiêm...
-              </button>
-            </div>
-          </div>
+                <span>DỊ ỨNG: Kháng sinh Penicillin & Thuốc cản quang</span>
+              </div>
 
-          <!-- Order 2: Kháng sinh IV -->
-          <div class="med-order-card" id="order-cefazolin">
-            <div class="med-details-box">
-              <div class="med-header-line">
-                <span class="pill-badge pill-info">KHÁNG SINH</span>
-                <span class="med-name">Cefazolin 1g</span>
-                <span class="med-dose-tag">1 lọ pha tiêm</span>
-                <span class="med-route">Tiêm tĩnh mạch chậm (IV)</span>
+              <p style="font-size: 12.5px; color: var(--text-muted);">
+                <strong>Chẩn đoán:</strong> Nhồi máu cơ tim cấp ST chênh lên ngày 2 sau can thiệp PCI • Đang thở Oxy
+                kính
+                3L/phút
+              </p>
+
+              <!-- Realtime Vitals Mini Table -->
+              <div class="vitals-mini-table">
+                <div class="vital-cell">
+                  <div class="vital-cell-label">MẠCH</div>
+                  <div class="vital-cell-val vital-alert">114 l/p ⚠️</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">HUYẾT ÁP</div>
+                  <div class="vital-cell-val vital-alert">165/98</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">SpO2</div>
+                  <div class="vital-cell-val vital-alert">93% ⚠️</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">NHIỆT ĐỘ</div>
+                  <div class="vital-cell-val">38.4°C</div>
+                </div>
               </div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
-                Người bệnh: <strong>Nguyễn Văn An</strong> (Giường 304 • Mã BA: 24-01045)
+
+              <div class="scores-row">
+                <span class="score-chip danger"><strong>NEWS2:</strong> 6 điểm (Trung bình-Cao)</span>
+                <span class="score-chip warning"><strong>Braden:</strong> 13 (Nguy cơ loét)</span>
+                <span class="score-chip"><strong>Morse:</strong> 35</span>
+                <span class="score-chip danger"><strong>Đau VAS:</strong> 6/10</span>
               </div>
-              <div class="med-times-compare">
-                <span>Giờ y lệnh: <strong>14:00</strong></span>
-                <span>Hệ thống hiển thị giờ thực hiện thực tế song song</span>
+
+              <div class="card-actions-row">
+                <button type="button" class="btn-action-sm btn-action-primary"
+                  onclick="openCareForm(1, 'Trần Đình Hùng', 'G-301')">
+                  <span>📝 Phiếu Cấp 1 (24h)</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openMedicationForPatient('Trần Đình Hùng')">
+                  <span>💊 Cho thuốc</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openWoundCareModal('Trần Đình Hùng')">
+                  <span>🩹 Vết thương</span>
+                </button>
               </div>
             </div>
 
-            <div class="med-actions-cluster">
-              <button type="button" class="btn-med-confirm"
-                onclick="confirmMedication('order-cefazolin', 'Cefazolin 1g', 'Nguyễn Văn An')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
+            <!-- Patient 2: Cấp II - Hậu phẫu -->
+            <div class="patient-card tier-2" data-tier="cap2" data-allergy="false">
+              <div class="patient-card-header">
+                <div class="patient-main-info">
+                  <span class="bed-badge">G-304</span>
+                  <div class="patient-name-box">
+                    <h3>Nguyễn Văn An, 58T</h3>
+                    <div class="patient-sub-meta">Mã BA: 24-01045 • Nhập: 27/09/2026</div>
+                  </div>
+                </div>
+                <span class="tier-badge tier-badge-2">Chăm sóc Cấp II</span>
+              </div>
+
+              <p style="font-size: 12.5px; color: var(--text-muted);">
+                <strong>Chẩn đoán:</strong> Hậu phẫu viêm ruột thừa nội soi ngày 1 • Dẫn lưu vết mổ ít dịch hồng
+              </p>
+
+              <!-- Realtime Vitals Mini Table -->
+              <div class="vitals-mini-table">
+                <div class="vital-cell">
+                  <div class="vital-cell-label">MẠCH</div>
+                  <div class="vital-cell-val">82 l/p</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">HUYẾT ÁP</div>
+                  <div class="vital-cell-val">120/80</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">SpO2</div>
+                  <div class="vital-cell-val">98%</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">NHIỆT ĐỘ</div>
+                  <div class="vital-cell-val">37.2°C</div>
+                </div>
+              </div>
+
+              <div class="scores-row">
+                <span class="score-chip"><strong>NEWS2:</strong> 1 điểm (Thấp)</span>
+                <span class="score-chip"><strong>Braden:</strong> 18 (Bình thường)</span>
+                <span class="score-chip warning"><strong>Đau VAS:</strong> 4/10</span>
+                <span class="score-chip" style="color: #0284C7;">Đo 3 lần/ngày</span>
+              </div>
+
+              <div class="card-actions-row">
+                <button type="button" class="btn-action-sm btn-action-primary"
+                  onclick="openCareForm(2, 'Nguyễn Văn An', 'G-304')">
+                  <span>📝 Phiếu Cấp 2-3</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openCarePlanModal('Nguyễn Văn An')">
+                  <span>📋 KH Chăm sóc</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openMedicationForPatient('Nguyễn Văn An')">
+                  <span>💊 Dùng thuốc</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Patient 3: Cấp I - Hồi sức lọc máu -->
+            <div class="patient-card tier-1" data-tier="cap1" data-allergy="true">
+              <div class="patient-card-header">
+                <div class="patient-main-info">
+                  <span class="bed-badge">G-302</span>
+                  <div class="patient-name-box">
+                    <h3>Lê Thị Kim Oanh, 72T</h3>
+                    <div class="patient-sub-meta">Mã BA: 24-00891 • Nhập: 25/09/2026</div>
+                  </div>
+                </div>
+                <span class="tier-badge tier-badge-1">Chăm sóc Cấp I</span>
+              </div>
+
+              <div class="allergy-alert-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
                 </svg>
-                <span>Xác nhận Đã Tiêm</span>
-              </button>
-              <button type="button" class="btn-med-postpone"
-                onclick="openPostponeModal('Cefazolin 1g', 'Nguyễn Văn An')">
-                Hoãn / Từ chối
-              </button>
-            </div>
-          </div>
-
-          <!-- Order 3: Dịch truyền tĩnh mạch -->
-          <div class="med-order-card" id="order-nacl">
-            <div class="med-details-box">
-              <div class="med-header-line">
-                <span class="pill-badge pill-success">DỊCH TRUYỀN</span>
-                <span class="med-name">Natri Clorid 0.9% 500ml</span>
-                <span class="med-dose-tag">1 chai 500ml</span>
-                <span class="med-route">Truyền TM • 40 giọt/phút</span>
+                <span>DỊ ỨNG: NSAID (Aspirin, Ibuprofen)</span>
               </div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
-                Người bệnh: <strong>Hoàng Minh Trí</strong> (Giường 310 • Mã BA: 24-01120)
+
+              <p style="font-size: 12.5px; color: var(--text-muted);">
+                <strong>Chẩn đoán:</strong> Choáng nhiễm trùng từ đường mật • Suy thận cấp đang chạy CRRT lọc máu liên
+                tục
+              </p>
+
+              <div class="vitals-mini-table">
+                <div class="vital-cell">
+                  <div class="vital-cell-label">MẠCH</div>
+                  <div class="vital-cell-val vital-alert">128 l/p</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">HUYẾT ÁP</div>
+                  <div class="vital-cell-val vital-alert">90/55 ⚠️</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">SpO2</div>
+                  <div class="vital-cell-val">95%</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">GLASGOW</div>
+                  <div class="vital-cell-val vital-alert">11 đ (E3V3M5)</div>
+                </div>
               </div>
-              <div class="med-times-compare">
-                <span>Giờ y lệnh: <strong>14:00</strong></span>
-                <span>Thời gian truyền dự kiến: <strong>03 giờ 30 phút</strong></span>
-                <span class="pill-badge pill-info">Liên kết Nhập-Xuất dịch</span>
+
+              <div class="scores-row">
+                <span class="score-chip danger"><strong>NEWS2:</strong> 8 điểm (Nguy cơ Rất Cao)</span>
+                <span class="score-chip danger"><strong>Braden:</strong> 11 (Loét rất cao)</span>
+                <span class="score-chip warning"><strong>Dịch vào/ra:</strong> +850 ml</span>
               </div>
-            </div>
 
-            <div class="med-actions-cluster">
-              <button type="button" class="btn-med-confirm"
-                onclick="confirmMedication('order-nacl', 'Natri Clorid 0.9%', 'Hoàng Minh Trí')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Xác nhận Cắm truyền</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: BIỂU ĐỒ SINH HIỆU 24 CỘT GIỜ & CÂN BẰNG DỊCH (FLOWSHEET) -->
-    <div class="tab-pane" id="pane-flowsheet-24h">
-      <div class="section-card">
-        <div class="section-card-header">
-          <div class="section-card-title">
-            <h2>PHIẾU CHĂM SÓC CẤP 1 — BIỂU ĐỒ SINH HIỆU 24 CỘT GIỜ (ICU FLOWSHEET)</h2>
-            <p>Theo dõi liên tục từng giờ theo mẫu MS 37/BV2 • Cảnh báo thời gian thực khi vượt ngưỡng an toàn</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 13px; font-weight: 700;">Người bệnh:</span>
-            <select class="form-control" style="font-weight: 700; min-width: 220px;"
-              onchange="changeFlowsheetPatient(this.value)">
-              <option value="hung">Trần Đình Hùng (G-301 • Hậu phẫu PCI)</option>
-              <option value="oanh">Lê Thị Kim Oanh (G-302 • Lọc máu CRRT)</option>
-            </select>
-            <button type="button" class="btn-action-sm btn-action-primary" onclick="openAddVitalColumnModal()">
-              ➕ Ghi nhận giờ mới
-            </button>
-          </div>
-        </div>
-
-        <!-- Flowsheet Table -->
-        <div class="flowsheet-table-wrapper">
-          <table class="flowsheet-table" id="flowsheetTable">
-            <thead>
-              <tr>
-                <th class="param-col">THÔNG SỐ / GIỜ ĐO</th>
-                <th>08:00</th>
-                <th>09:00</th>
-                <th>10:00</th>
-                <th>11:00</th>
-                <th>12:00</th>
-                <th>13:00</th>
-                <th style="background: #E0F2FE; color: #0369A1;">14:00 (Hiện tại)</th>
-                <th>15:00</th>
-                <th>16:00</th>
-                <th>17:00</th>
-                <th>18:00</th>
-                <th>19:00</th>
-                <th>20:00</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="param-col">Mạch (lần/phút)</td>
-                <td>92</td>
-                <td>98</td>
-                <td>102</td>
-                <td>108</td>
-                <td class="cell-abnormal">112 ⚠️</td>
-                <td class="cell-abnormal">116 ⚠️</td>
-                <td class="cell-abnormal" style="background: #FEE2E2; font-weight: 800;">114 ⚠️</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">Huyết áp (mmHg)</td>
-                <td>135/85</td>
-                <td>140/90</td>
-                <td>150/92</td>
-                <td class="cell-abnormal">160/95</td>
-                <td class="cell-abnormal">170/100 ⚠️</td>
-                <td class="cell-abnormal">168/98</td>
-                <td class="cell-abnormal">165/98</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">Nhiệt độ (°C)</td>
-                <td>37.2</td>
-                <td>37.5</td>
-                <td>37.8</td>
-                <td class="cell-abnormal">38.2</td>
-                <td class="cell-abnormal">38.6 ⚠️</td>
-                <td class="cell-abnormal">38.5 ⚠️</td>
-                <td class="cell-abnormal">38.4 ⚠️</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">Nhịp thở (lần/phút)</td>
-                <td>20</td>
-                <td>20</td>
-                <td>22</td>
-                <td>24</td>
-                <td class="cell-abnormal">26 ⚠️</td>
-                <td>24</td>
-                <td>24</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">SpO2 (%)</td>
-                <td>97</td>
-                <td>96</td>
-                <td>95</td>
-                <td class="cell-abnormal">93% ⚠️</td>
-                <td class="cell-abnormal">92% ⚠️</td>
-                <td class="cell-abnormal">93% ⚠️</td>
-                <td class="cell-abnormal">93% (Oxy 3L)</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">Glasgow (E-V-M)</td>
-                <td>15 (4-5-6)</td>
-                <td>15 (4-5-6)</td>
-                <td>15 (4-5-6)</td>
-                <td>14 (4-4-6)</td>
-                <td>14 (4-4-6)</td>
-                <td>14 (4-4-6)</td>
-                <td>14 (4-4-6)</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="param-col">Tư thế xoay trở</td>
-                <td>Nằm ngửa</td>
-                <td>Nghiêng T</td>
-                <td>Nghiêng T</td>
-                <td>Nghiêng P</td>
-                <td>Nghiêng P</td>
-                <td>Fowler 30°</td>
-                <td>Fowler 30°</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr style="background: #F8FAFC; font-weight: 700;">
-                <td class="param-col">DỊCH VÀO (ml) - Truyền + Ăn</td>
-                <td>200</td>
-                <td>150</td>
-                <td>150</td>
-                <td>250</td>
-                <td>100</td>
-                <td>150</td>
-                <td>200</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr style="background: #F8FAFC; font-weight: 700;">
-                <td class="param-col">DỊCH RA (ml) - Tiểu + Dẫn lưu</td>
-                <td>100</td>
-                <td>80</td>
-                <td>70</td>
-                <td>110</td>
-                <td>60</td>
-                <td>80</td>
-                <td>90</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr style="background: #EFF6FF; font-weight: 800; color: #1E40AF;">
-                <td class="param-col">CÂN BẰNG TÍCH LŨY (ml)</td>
-                <td>+100</td>
-                <td>+170</td>
-                <td>+250</td>
-                <td>+390</td>
-                <td>+430</td>
-                <td>+500</td>
-                <td>+610 ml (Dương)</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div
-          style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-          <div style="display: flex; gap: 12px; font-size: 12px; color: var(--text-muted);">
-            <span>🔴 <strong>Ô màu đỏ:</strong> Chỉ số vượt ngưỡng an toàn</span>
-            <span>🔵 <strong>Cột màu xanh:</strong> Cột giờ ca hiện tại</span>
-            <span>💾 Tự động lưu biểu đồ sau mỗi lượt nhập</span>
-          </div>
-          <button type="button" class="btn-action-sm btn-action-primary"
-            onclick="openSignatureModal('Phiếu Chăm Sóc Cấp 1 (Giờ 14:00)', 'Trần Đình Hùng')">
-            ✍️ Ký số xác nhận ca trực (SmartCA)
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 5: BÀN GIAO CA TRỰC & CHUYỂN KHOA -->
-    <div class="tab-pane" id="pane-handover">
-      <div class="section-card">
-        <div class="section-card-header">
-          <div class="section-card-title">
-            <h2>PHIẾU BÀN GIAO PHIÊN TRỰC & CHUYỂN KHOA (MỤC 16 & 17)</h2>
-            <p>Bàn giao toàn diện: Danh sách người bệnh nặng, tồn đọng y lệnh, thuốc chưa thực hiện, khóa ca trực</p>
-          </div>
-          <div style="display: flex; gap: 8px;">
-            <button type="button" class="btn-action-sm btn-action-primary" onclick="openShiftSignModal()">
-              ✍️ Ký số Bàn giao 2 bên
-            </button>
-          </div>
-        </div>
-
-        <div class="handover-layout">
-          <!-- Left: Danh sách người bệnh cần theo dõi sát -->
-          <div class="handover-box">
-            <h3>
-              <span>🚨 Danh sách Người bệnh Cần Chú Ý Đặc Biệt</span>
-              <span class="pill-badge pill-danger">3 Ca nặng</span>
-            </h3>
-
-            <div class="handover-patient-item severe">
-              <div style="font-weight: 800; color: #991B1B;">G-301: Trần Đình Hùng (64T) - Chăm sóc Cấp I</div>
-              <div style="font-size: 12px; margin-top: 2px;">
-                HA dao động 165-170 mmHg, SpO2 93% với oxy 3L. Vừa cho tiêm Morphin 5mg SC lúc 14:15. Theo dõi sát tần
-                số thở và VAS đau lúc 15:00.
+              <div class="card-actions-row">
+                <button type="button" class="btn-action-sm btn-action-primary"
+                  onclick="openDialysisForm('Lê Thị Kim Oanh')">
+                  <span>🩸 Theo dõi Lọc máu</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openCareForm(1, 'Lê Thị Kim Oanh', 'G-302')">
+                  <span>📈 Biểu đồ giờ</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openHandoverModal('Lê Thị Kim Oanh')">
+                  <span>🔄 Bàn giao</span>
+                </button>
               </div>
             </div>
 
-            <div class="handover-patient-item severe">
-              <div style="font-weight: 800; color: #991B1B;">G-302: Lê Thị Kim Oanh (72T) - Chăm sóc Cấp I</div>
-              <div style="font-size: 12px; margin-top: 2px;">
-                Đang chạy lọc máu CRRT giờ thứ 18. Dịch vào/ra dương +610ml. ACT cần kiểm tra lúc 16:00. Đã chuẩn bị 1
-                khối hồng cầu lắng dự trù.
+            <!-- Patient 4: Cấp III - Chuẩn bị xuất viện -->
+            <div class="patient-card tier-3" data-tier="cap3" data-allergy="false">
+              <div class="patient-card-header">
+                <div class="patient-main-info">
+                  <span class="bed-badge">G-310</span>
+                  <div class="patient-name-box">
+                    <h3>Hoàng Minh Trí, 45T</h3>
+                    <div class="patient-sub-meta">Mã BA: 24-01120 • Nhập: 24/09/2026</div>
+                  </div>
+                </div>
+                <span class="tier-badge tier-badge-3">Chăm sóc Cấp III</span>
               </div>
-            </div>
 
-            <div class="handover-patient-item" style="border-left-color: var(--warning);">
-              <div style="font-weight: 800; color: #92400E;">G-304: Nguyễn Văn An (58T) - Hậu phẫu ruột thừa N1</div>
-              <div style="font-size: 12px; margin-top: 2px;">
-                Dẫn lưu ổ bụng thấm gạc ít dịch hồng. Đã rút sonde tiểu lúc 10h. Nhắc theo dõi tự đi tiểu trước 16:00,
-                nếu bí tiểu báo BS.
+              <p style="font-size: 12.5px; color: var(--text-muted);">
+                <strong>Chẩn đoán:</strong> Tăng huyết áp độ 2 • Rối loạn lipid máu • Tự phục vụ sinh hoạt cá nhân hoàn
+                toàn
+              </p>
+
+              <div class="vitals-mini-table">
+                <div class="vital-cell">
+                  <div class="vital-cell-label">MẠCH</div>
+                  <div class="vital-cell-val">74 l/p</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">HUYẾT ÁP</div>
+                  <div class="vital-cell-val">128/82</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">SpO2</div>
+                  <div class="vital-cell-val">99%</div>
+                </div>
+                <div class="vital-cell">
+                  <div class="vital-cell-label">NHIỆT ĐỘ</div>
+                  <div class="vital-cell-val">36.8°C</div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Right: Công việc còn tồn & Ký nhận -->
-          <div class="handover-box">
-            <h3>
-              <span>📋 Công Việc Còn Tồn Đọng Chuyển Ca Sau</span>
-              <span class="pill-badge pill-warning">4 Hạng mục</span>
-            </h3>
-
-            <ul style="list-style: none; font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
-              <li style="display: flex; gap: 8px; align-items: flex-start;">
-                <input type="checkbox" checked disabled>
-                <span><strong>G-301:</strong> Chờ kết quả Khí máu động mạch (đã lấy máu lúc 13:45).</span>
-              </li>
-              <li style="display: flex; gap: 8px; align-items: flex-start;">
-                <input type="checkbox" checked disabled>
-                <span><strong>G-305:</strong> Chuẩn bị bệnh nhân đi chụp CT mạch vành lúc 15:30 (Đã ký cam kết).</span>
-              </li>
-              <li style="display: flex; gap: 8px; align-items: flex-start;">
-                <input type="checkbox" disabled>
-                <span><strong>G-308:</strong> Đổi chai truyền Natri Clorid 0.9% cữ 17:30.</span>
-              </li>
-              <li style="display: flex; gap: 8px; align-items: flex-start;">
-                <input type="checkbox" disabled>
-                <span><strong>Công khai viện phí:</strong> Còn 2 bệnh nhân buồng 306 chưa ký nhận bảng kê thuốc.</span>
-              </li>
-            </ul>
-
-            <div class="handover-sign-strip">
-              <div>
-                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD
-                  BÀN GIAO (CA CHIỀU)</div>
-                <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Nguyễn Mai Hương</div>
-                <span class="signature-stamp">✓ Đã ký số lúc 14:30</span>
+              <div class="scores-row">
+                <span class="score-chip"><strong>NEWS2:</strong> 0 điểm</span>
+                <span class="score-chip"><strong>Đo:</strong> 2 lần/ngày (8h-14h)</span>
+                <span class="score-chip"><strong>GDSK:</strong> Đã tư vấn ăn giảm muối</span>
               </div>
-              <div>
-                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD
-                  NHẬN CA (CA ĐÊM)</div>
-                <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Trần Quốc Tuấn</div>
-                <button type="button" class="btn-action-sm btn-action-primary" style="margin-top: 4px;"
-                  onclick="signHandoverReceive()">
-                  ✍️ Xác nhận nhận ca
+
+              <div class="card-actions-row">
+                <button type="button" class="btn-action-sm btn-action-primary"
+                  onclick="openCareForm(2, 'Hoàng Minh Trí', 'G-310')">
+                  <span>📝 Phiếu Cấp 3</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openNutritionCounselModal('Hoàng Minh Trí')">
+                  <span>🥗 Tư vấn Dinh dưỡng</span>
+                </button>
+                <button type="button" class="btn-action-sm" onclick="openPublicCostModal('Hoàng Minh Trí')">
+                  <span>💰 Công khai thuốc</span>
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- TAB 6: 13 NGUYÊN TẮC CẢNH BÁO BẢO VỆ ĐIỀU DƯỠNG (SAFETY SHIELD) -->
-    <div class="tab-pane" id="pane-safety-shield">
-      <div class="section-card">
-        <div class="section-card-header">
-          <div class="section-card-title">
-            <h2>13 NGUYÊN TẮC HỆ THỐNG CẢNH BÁO & KHÓA AN TOÀN — BẢO VỆ ĐIỀU DƯỠNG</h2>
-            <p>Thiết kế hệ thống thông minh, vừa hỗ trợ nghiệp vụ vừa bảo vệ pháp lý và an toàn tối đa cho điều dưỡng
-            </p>
+      <!-- TAB 2: CÂY THƯ MỤC 46 BIỂU MẪU (11 NHÓM CHI TIẾT) -->
+      <div class="tab-pane" id="pane-forms-directory">
+        <div class="forms-directory-container">
+          <!-- Sidebar 11 Nhóm -->
+          <aside class="groups-sidebar" aria-label="11 Nhóm Biểu Mẫu Điều Dưỡng">
+            <div
+              style="font-size: 13px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <span>DANH MỤC 11 NHÓM</span>
+              <span class="pill-badge pill-info">46 Biểu mẫu</span>
+            </div>
+
+            <div class="group-nav-item active" onclick="selectFormGroup('all', this)">
+              <span>Toàn bộ 46 Biểu mẫu</span>
+              <span class="group-count-tag">46</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom1', this)">
+              <span>I. Chăm sóc cơ bản</span>
+              <span class="group-count-tag">5</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom2', this)">
+              <span>II. Kỹ thuật chuyên sâu</span>
+              <span class="group-count-tag">8</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom3', this)">
+              <span>III. Thực hiện thuốc (MAR)</span>
+              <span class="group-count-tag">2</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom4', this)">
+              <span>IV. Bàn giao người bệnh</span>
+              <span class="group-count-tag">2</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom5', this)">
+              <span>V. Đánh giá & Nhận định</span>
+              <span class="group-count-tag">2</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom6', this)">
+              <span>VI. Tư vấn & Cam kết</span>
+              <span class="group-count-tag">5</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom7', this)">
+              <span>VII. Dinh dưỡng người bệnh</span>
+              <span class="group-count-tag">7</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom8', this)">
+              <span>VIII. Bảng kiểm tiêm chủng</span>
+              <span class="group-count-tag">3</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom9', this)">
+              <span>IX. An toàn phẫu thuật</span>
+              <span class="group-count-tag">5</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom10', this)">
+              <span>X. Phục hồi chức năng</span>
+              <span class="group-count-tag">2</span>
+            </div>
+            <div class="group-nav-item" onclick="selectFormGroup('nhom11', this)">
+              <span>XI. Tiện ích & Giám sát</span>
+              <span class="group-count-tag">5</span>
+            </div>
+          </aside>
+
+          <!-- Right Content: List of Forms Cards -->
+          <section class="forms-list-panel" id="formsListContainer" aria-label="Danh sách biểu mẫu">
+            <!-- Loaded dynamically or rendered with search capability -->
+          </section>
+        </div>
+      </div>
+
+      <!-- TAB 3: TRẠM THỰC HIỆN THUỐC (MAR CONSOLE) -->
+      <div class="tab-pane" id="pane-mar-station">
+        <div class="section-card">
+          <div class="section-card-header">
+            <div class="section-card-title">
+              <h2>TRẠM XÁC NHẬN THỰC HIỆN THUỐC (MEDICATION ADMINISTRATION RECORD - MAR)</h2>
+              <p>Áp dụng nguyên tắc 8 Đúng • Cảnh báo Dị ứng chéo • Double-Check thuốc gây nghiện/hướng thần</p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-action-sm btn-action-primary"
+                onclick="showToast('Đang đồng bộ y lệnh mới từ Bác sĩ...', 'info')">
+                🔄 Tải y lệnh mới nhất
+              </button>
+            </div>
           </div>
-          <button type="button" class="btn-action-sm btn-action-primary" onclick="openAuditTrailDemo()">
-            🔍 Xem Nhật ký Kiểm toán (Audit Trail Log)
+
+          <!-- Timeline of Slots -->
+          <div class="mar-timeline-row">
+            <button type="button" class="time-slot-btn" onclick="selectTimeSlot('08:00', this)">
+              <span class="slot-time">08:00</span>
+              <span class="slot-count">12 cữ • Đã xong</span>
+            </button>
+            <button type="button" class="time-slot-btn" onclick="selectTimeSlot('11:30', this)">
+              <span class="slot-time">11:30</span>
+              <span class="slot-count">8 cữ • Đã xong</span>
+            </button>
+            <button type="button" class="time-slot-btn active" onclick="selectTimeSlot('14:00', this)">
+              <span class="slot-time">14:00 (Hiện tại)</span>
+              <span class="slot-count" style="color: #FFF;">6 cữ • Cần tiêm</span>
+            </button>
+            <button type="button" class="time-slot-btn" onclick="selectTimeSlot('18:00', this)">
+              <span class="slot-time">18:00</span>
+              <span class="slot-count">9 cữ chờ</span>
+            </button>
+            <button type="button" class="time-slot-btn" onclick="selectTimeSlot('20:00', this)">
+              <span class="slot-time">20:00</span>
+              <span class="slot-count">14 cữ chờ</span>
+            </button>
+          </div>
+
+          <!-- Medication Orders List -->
+          <div id="medOrdersContainer">
+            <!-- Order 1: Thuốc Gây Nghiện (Bắt buộc Double Check) -->
+            <div class="med-order-card narcotic-alert" id="order-morphine">
+              <div class="med-details-box">
+                <div class="med-header-line">
+                  <span class="pill-badge pill-danger">THUỐC GÂY NGHIỆN • DOUBLE-CHECK</span>
+                  <span class="med-name">Morphin hydroclorid 10mg/1ml</span>
+                  <span class="med-dose-tag">1 ống (5mg)</span>
+                  <span class="med-route">Tiêm dưới da (SC)</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+                  Người bệnh: <strong>Trần Đình Hùng</strong> (Giường 301 • Mã BA: 24-00982)
+                </div>
+                <div class="med-times-compare">
+                  <span>Giờ y lệnh BS: <strong>14:00</strong></span>
+                  <span>BS kê: <strong>BS.CK2 Trần Hữu Đức</strong></span>
+                  <span>Chỉ định: <strong>Giảm đau cơn đau thắt ngực (VAS 6/10)</strong></span>
+                </div>
+                <div style="margin-top: 6px; font-size: 11.5px; color: var(--danger); font-weight: 600;">
+                  ⚠️ Bắt buộc có chữ ký xác nhận của 02 Điều dưỡng cùng đối chiếu trước khi tiêm.
+                </div>
+              </div>
+
+              <div class="med-actions-cluster">
+                <button type="button" class="btn-med-doublecheck"
+                  onclick="openDoubleCheckModal('Morphin 10mg', 'Trần Đình Hùng', 'order-morphine')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <polyline points="16 11 18 13 22 9" />
+                  </svg>
+                  <span>Xác nhận 2 Điều dưỡng (Double-Check)</span>
+                </button>
+                <button type="button" class="btn-med-postpone"
+                  onclick="openPostponeModal('Morphin 10mg', 'Trần Đình Hùng')">
+                  Hoãn tiêm...
+                </button>
+              </div>
+            </div>
+
+            <!-- Order 2: Kháng sinh IV -->
+            <div class="med-order-card" id="order-cefazolin">
+              <div class="med-details-box">
+                <div class="med-header-line">
+                  <span class="pill-badge pill-info">KHÁNG SINH</span>
+                  <span class="med-name">Cefazolin 1g</span>
+                  <span class="med-dose-tag">1 lọ pha tiêm</span>
+                  <span class="med-route">Tiêm tĩnh mạch chậm (IV)</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+                  Người bệnh: <strong>Nguyễn Văn An</strong> (Giường 304 • Mã BA: 24-01045)
+                </div>
+                <div class="med-times-compare">
+                  <span>Giờ y lệnh: <strong>14:00</strong></span>
+                  <span>Hệ thống hiển thị giờ thực hiện thực tế song song</span>
+                </div>
+              </div>
+
+              <div class="med-actions-cluster">
+                <button type="button" class="btn-med-confirm"
+                  onclick="confirmMedication('order-cefazolin', 'Cefazolin 1g', 'Nguyễn Văn An')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Xác nhận Đã Tiêm</span>
+                </button>
+                <button type="button" class="btn-med-postpone"
+                  onclick="openPostponeModal('Cefazolin 1g', 'Nguyễn Văn An')">
+                  Hoãn / Từ chối
+                </button>
+              </div>
+            </div>
+
+            <!-- Order 3: Dịch truyền tĩnh mạch -->
+            <div class="med-order-card" id="order-nacl">
+              <div class="med-details-box">
+                <div class="med-header-line">
+                  <span class="pill-badge pill-success">DỊCH TRUYỀN</span>
+                  <span class="med-name">Natri Clorid 0.9% 500ml</span>
+                  <span class="med-dose-tag">1 chai 500ml</span>
+                  <span class="med-route">Truyền TM • 40 giọt/phút</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+                  Người bệnh: <strong>Hoàng Minh Trí</strong> (Giường 310 • Mã BA: 24-01120)
+                </div>
+                <div class="med-times-compare">
+                  <span>Giờ y lệnh: <strong>14:00</strong></span>
+                  <span>Thời gian truyền dự kiến: <strong>03 giờ 30 phút</strong></span>
+                  <span class="pill-badge pill-info">Liên kết Nhập-Xuất dịch</span>
+                </div>
+              </div>
+
+              <div class="med-actions-cluster">
+                <button type="button" class="btn-med-confirm"
+                  onclick="confirmMedication('order-nacl', 'Natri Clorid 0.9%', 'Hoàng Minh Trí')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Xác nhận Cắm truyền</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: BIỂU ĐỒ SINH HIỆU 24 CỘT GIỜ & CÂN BẰNG DỊCH (FLOWSHEET) -->
+      <div class="tab-pane" id="pane-flowsheet-24h">
+        <div class="section-card">
+          <div class="section-card-header">
+            <div class="section-card-title">
+              <h2>PHIẾU CHĂM SÓC CẤP 1 — BIỂU ĐỒ SINH HIỆU 24 CỘT GIỜ (ICU FLOWSHEET)</h2>
+              <p>Theo dõi liên tục từng giờ theo mẫu MS 37/BV2 • Cảnh báo thời gian thực khi vượt ngưỡng an toàn</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 13px; font-weight: 700;">Người bệnh:</span>
+              <select class="form-control" style="font-weight: 700; min-width: 220px;"
+                onchange="changeFlowsheetPatient(this.value)">
+                <option value="hung">Trần Đình Hùng (G-301 • Hậu phẫu PCI)</option>
+                <option value="oanh">Lê Thị Kim Oanh (G-302 • Lọc máu CRRT)</option>
+              </select>
+              <button type="button" class="btn-action-sm btn-action-primary" onclick="openAddVitalColumnModal()">
+                ➕ Ghi nhận giờ mới
+              </button>
+            </div>
+          </div>
+
+          <!-- Flowsheet Table -->
+          <div class="flowsheet-table-wrapper">
+            <table class="flowsheet-table" id="flowsheetTable">
+              <thead>
+                <tr>
+                  <th class="param-col">THÔNG SỐ / GIỜ ĐO</th>
+                  <th>08:00</th>
+                  <th>09:00</th>
+                  <th>10:00</th>
+                  <th>11:00</th>
+                  <th>12:00</th>
+                  <th>13:00</th>
+                  <th style="background: #E0F2FE; color: #0369A1;">14:00 (Hiện tại)</th>
+                  <th>15:00</th>
+                  <th>16:00</th>
+                  <th>17:00</th>
+                  <th>18:00</th>
+                  <th>19:00</th>
+                  <th>20:00</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="param-col">Mạch (lần/phút)</td>
+                  <td>92</td>
+                  <td>98</td>
+                  <td>102</td>
+                  <td>108</td>
+                  <td class="cell-abnormal">112 ⚠️</td>
+                  <td class="cell-abnormal">116 ⚠️</td>
+                  <td class="cell-abnormal" style="background: #FEE2E2; font-weight: 800;">114 ⚠️</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">Huyết áp (mmHg)</td>
+                  <td>135/85</td>
+                  <td>140/90</td>
+                  <td>150/92</td>
+                  <td class="cell-abnormal">160/95</td>
+                  <td class="cell-abnormal">170/100 ⚠️</td>
+                  <td class="cell-abnormal">168/98</td>
+                  <td class="cell-abnormal">165/98</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">Nhiệt độ (°C)</td>
+                  <td>37.2</td>
+                  <td>37.5</td>
+                  <td>37.8</td>
+                  <td class="cell-abnormal">38.2</td>
+                  <td class="cell-abnormal">38.6 ⚠️</td>
+                  <td class="cell-abnormal">38.5 ⚠️</td>
+                  <td class="cell-abnormal">38.4 ⚠️</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">Nhịp thở (lần/phút)</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>22</td>
+                  <td>24</td>
+                  <td class="cell-abnormal">26 ⚠️</td>
+                  <td>24</td>
+                  <td>24</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">SpO2 (%)</td>
+                  <td>97</td>
+                  <td>96</td>
+                  <td>95</td>
+                  <td class="cell-abnormal">93% ⚠️</td>
+                  <td class="cell-abnormal">92% ⚠️</td>
+                  <td class="cell-abnormal">93% ⚠️</td>
+                  <td class="cell-abnormal">93% (Oxy 3L)</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">Glasgow (E-V-M)</td>
+                  <td>15 (4-5-6)</td>
+                  <td>15 (4-5-6)</td>
+                  <td>15 (4-5-6)</td>
+                  <td>14 (4-4-6)</td>
+                  <td>14 (4-4-6)</td>
+                  <td>14 (4-4-6)</td>
+                  <td>14 (4-4-6)</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="param-col">Tư thế xoay trở</td>
+                  <td>Nằm ngửa</td>
+                  <td>Nghiêng T</td>
+                  <td>Nghiêng T</td>
+                  <td>Nghiêng P</td>
+                  <td>Nghiêng P</td>
+                  <td>Fowler 30°</td>
+                  <td>Fowler 30°</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr style="background: #F8FAFC; font-weight: 700;">
+                  <td class="param-col">DỊCH VÀO (ml) - Truyền + Ăn</td>
+                  <td>200</td>
+                  <td>150</td>
+                  <td>150</td>
+                  <td>250</td>
+                  <td>100</td>
+                  <td>150</td>
+                  <td>200</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr style="background: #F8FAFC; font-weight: 700;">
+                  <td class="param-col">DỊCH RA (ml) - Tiểu + Dẫn lưu</td>
+                  <td>100</td>
+                  <td>80</td>
+                  <td>70</td>
+                  <td>110</td>
+                  <td>60</td>
+                  <td>80</td>
+                  <td>90</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr style="background: #EFF6FF; font-weight: 800; color: #1E40AF;">
+                  <td class="param-col">CÂN BẰNG TÍCH LŨY (ml)</td>
+                  <td>+100</td>
+                  <td>+170</td>
+                  <td>+250</td>
+                  <td>+390</td>
+                  <td>+430</td>
+                  <td>+500</td>
+                  <td>+610 ml (Dương)</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; gap: 12px; font-size: 12px; color: var(--text-muted);">
+              <span>🔴 <strong>Ô màu đỏ:</strong> Chỉ số vượt ngưỡng an toàn</span>
+              <span>🔵 <strong>Cột màu xanh:</strong> Cột giờ ca hiện tại</span>
+              <span>💾 Tự động lưu biểu đồ sau mỗi lượt nhập</span>
+            </div>
+            <button type="button" class="btn-action-sm btn-action-primary"
+              onclick="openSignatureModal('Phiếu Chăm Sóc Cấp 1 (Giờ 14:00)', 'Trần Đình Hùng')">
+              ✍️ Ký số xác nhận ca trực (SmartCA)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: BÀN GIAO CA TRỰC & CHUYỂN KHOA -->
+      <div class="tab-pane" id="pane-handover">
+        <div class="section-card">
+          <div class="section-card-header">
+            <div class="section-card-title">
+              <h2>PHIẾU BÀN GIAO PHIÊN TRỰC & CHUYỂN KHOA (MỤC 16 & 17)</h2>
+              <p>Bàn giao toàn diện: Danh sách người bệnh nặng, tồn đọng y lệnh, thuốc chưa thực hiện, khóa ca trực</p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-action-sm btn-action-primary" onclick="openShiftSignModal()">
+                ✍️ Ký số Bàn giao 2 bên
+              </button>
+            </div>
+          </div>
+
+          <div class="handover-layout">
+            <!-- Left: Danh sách người bệnh cần theo dõi sát -->
+            <div class="handover-box">
+              <h3>
+                <span>🚨 Danh sách Người bệnh Cần Chú Ý Đặc Biệt</span>
+                <span class="pill-badge pill-danger">3 Ca nặng</span>
+              </h3>
+
+              <div class="handover-patient-item severe">
+                <div style="font-weight: 800; color: #991B1B;">G-301: Trần Đình Hùng (64T) - Chăm sóc Cấp I</div>
+                <div style="font-size: 12px; margin-top: 2px;">
+                  HA dao động 165-170 mmHg, SpO2 93% với oxy 3L. Vừa cho tiêm Morphin 5mg SC lúc 14:15. Theo dõi sát tần
+                  số thở và VAS đau lúc 15:00.
+                </div>
+              </div>
+
+              <div class="handover-patient-item severe">
+                <div style="font-weight: 800; color: #991B1B;">G-302: Lê Thị Kim Oanh (72T) - Chăm sóc Cấp I</div>
+                <div style="font-size: 12px; margin-top: 2px;">
+                  Đang chạy lọc máu CRRT giờ thứ 18. Dịch vào/ra dương +610ml. ACT cần kiểm tra lúc 16:00. Đã chuẩn bị 1
+                  khối hồng cầu lắng dự trù.
+                </div>
+              </div>
+
+              <div class="handover-patient-item" style="border-left-color: var(--warning);">
+                <div style="font-weight: 800; color: #92400E;">G-304: Nguyễn Văn An (58T) - Hậu phẫu ruột thừa N1</div>
+                <div style="font-size: 12px; margin-top: 2px;">
+                  Dẫn lưu ổ bụng thấm gạc ít dịch hồng. Đã rút sonde tiểu lúc 10h. Nhắc theo dõi tự đi tiểu trước 16:00,
+                  nếu bí tiểu báo BS.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Công việc còn tồn & Ký nhận -->
+            <div class="handover-box">
+              <h3>
+                <span>📋 Công Việc Còn Tồn Đọng Chuyển Ca Sau</span>
+                <span class="pill-badge pill-warning">4 Hạng mục</span>
+              </h3>
+
+              <ul style="list-style: none; font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
+                <li style="display: flex; gap: 8px; align-items: flex-start;">
+                  <input type="checkbox" checked disabled>
+                  <span><strong>G-301:</strong> Chờ kết quả Khí máu động mạch (đã lấy máu lúc 13:45).</span>
+                </li>
+                <li style="display: flex; gap: 8px; align-items: flex-start;">
+                  <input type="checkbox" checked disabled>
+                  <span><strong>G-305:</strong> Chuẩn bị bệnh nhân đi chụp CT mạch vành lúc 15:30 (Đã ký cam
+                    kết).</span>
+                </li>
+                <li style="display: flex; gap: 8px; align-items: flex-start;">
+                  <input type="checkbox" disabled>
+                  <span><strong>G-308:</strong> Đổi chai truyền Natri Clorid 0.9% cữ 17:30.</span>
+                </li>
+                <li style="display: flex; gap: 8px; align-items: flex-start;">
+                  <input type="checkbox" disabled>
+                  <span><strong>Công khai viện phí:</strong> Còn 2 bệnh nhân buồng 306 chưa ký nhận bảng kê
+                    thuốc.</span>
+                </li>
+              </ul>
+
+              <div class="handover-sign-strip">
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">
+                    ĐD
+                    BÀN GIAO (CA CHIỀU)</div>
+                  <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Nguyễn Mai Hương</div>
+                  <span class="signature-stamp">✓ Đã ký số lúc 14:30</span>
+                </div>
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">
+                    ĐD
+                    NHẬN CA (CA ĐÊM)</div>
+                  <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Trần Quốc Tuấn</div>
+                  <button type="button" class="btn-action-sm btn-action-primary" style="margin-top: 4px;"
+                    onclick="signHandoverReceive()">
+                    ✍️ Xác nhận nhận ca
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL: KÝ SỐ SMARTCA & LỊCH SỬ PHIÊN BẢN -->
+    <div class="modal-overlay" id="signatureModal">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="signModalTitle">✍️ KÝ SỐ XÁC NHẬN HỒ SƠ ĐIỀU DƯỠNG</h3>
+          <button type="button" class="modal-close-btn" onclick="closeModal('signatureModal')">✕</button>
+        </div>
+        <div class="modal-body">
+          <div
+            style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-weight: 800; color: #1E40AF; font-size: 14px;">CHỨNG THƯ KÝ SỐ ĐIỆN TỬ BAN HÀNH</div>
+            <div style="font-size: 12.5px; color: #1E3A8A; margin-top: 4px;">
+              Người ký: <strong>ĐD. Nguyễn Mai Hương (Mã ĐD-1082)</strong> • Đơn vị: <strong>Bệnh viện Đại học Y Dược
+                TP.HCM</strong><br>
+              Thiết bị xác thực: <strong>SmartCA Cloud Token • Tiêu chuẩn FIPS 140-2 Level 3</strong>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Nội dung ghi chú bổ sung (nếu có chỉnh sửa):</label>
+            <textarea class="form-control" rows="2"
+              placeholder="Ghi rõ lý do cập nhật hồ sơ (nếu chỉnh sửa sau khi đã ký lần trước)..."></textarea>
+          </div>
+
+          <!-- Version History Simulation -->
+          <div class="signature-history-box">
+            <div style="font-size: 12px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+              📜 LỊCH SỬ CÁC LẦN KÝ SỐ & TRUY VẾT THỜI GIAN (NGUYÊN TẮC 1 & 13)
+            </div>
+            <div style="font-size: 12px; line-height: 1.6; color: var(--text-muted);">
+              <div>• <strong>Phiên bản 1 (Ký ban đầu):</strong> Lúc 14:05 ngày 27/09/2026 bởi ĐD. Nguyễn Mai Hương
+                (Hash:
+                #8f92a1c)</div>
+              <div>• <strong>Phiên bản 2 (Bổ sung đáp ứng giảm đau):</strong> Lúc 14:35 ngày 27/09/2026 bởi ĐD. Nguyễn
+                Mai
+                Hương (Hash: #3b71e9f)</div>
+              <div style="color: var(--success); font-weight: 700;">• <strong>Phiên bản hiện tại đang soạn
+                  thảo:</strong>
+                Lần ký thứ 3 - Tem thời gian thực sẽ được đóng dấu ngay dưới chữ ký</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-action-sm" onclick="closeModal('signatureModal')">Hủy bỏ</button>
+          <button type="button" class="btn-action-sm btn-action-primary" onclick="executeDigitalSignature()">
+            🔐 Xác nhận Ký số Ngay
           </button>
         </div>
+      </div>
+    </div>
 
-        <div class="rules-grid">
-          <!-- Rule 1 -->
-          <div class="rule-card">
-            <div class="rule-number">01</div>
-            <div class="rule-content">
-              <h4>Ký số đa phiên bản (Không khóa cứng)</h4>
-              <p>Cho phép sửa/bổ sung sau ký. Hệ thống luôn hiển thị giờ ký mới nhất ngay dưới chữ ký và lưu toàn bộ
-                lịch sử các lần ký/sửa trước đó để truy vết.</p>
-              <span class="rule-tag">Pháp lý hồ sơ</span>
+    <!-- MODAL: DOUBLE-CHECK XÁC NHẬN THUỐC GÂY NGHIỆN (2 ĐIỀU DƯỠNG) -->
+    <div class="modal-overlay" id="doubleCheckModal">
+      <div class="modal-dialog" style="max-width: 600px;">
+        <div class="modal-header" style="background: #FEF2F2;">
+          <h3 style="color: #991B1B;">⚠️ XÁC THỰC DOUBLE-CHECK THUỐC GÂY NGHIỆN (NGUYÊN TẮC 6)</h3>
+          <button type="button" class="modal-close-btn" onclick="closeModal('doubleCheckModal')">✕</button>
+        </div>
+        <div class="modal-body">
+          <div
+            style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: #9F1239;">
+            Theo quy định an toàn thuốc gây nghiện và Thông tư 31/2021/TT-BYT, thuốc <strong>Morphin 10mg</strong> bắt
+            buộc phải có 02 Điều dưỡng cùng đối chiếu người bệnh, tên thuốc, liều dùng, đường dùng và cùng ký xác nhận
+            trên hệ thống.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>ĐIỀU DƯỠNG THỰC HIỆN 1:</label>
+              <input type="text" class="form-control" value="ĐD. Nguyễn Mai Hương (ĐD-1082)" readonly>
+            </div>
+            <div class="form-group">
+              <label>ĐIỀU DƯỠNG CHỨNG KIẾN 2 (*):</label>
+              <select class="form-control" id="witnessNurse">
+                <option value="tuấn">ĐD. Trần Quốc Tuấn (Mã ĐD-1090)</option>
+                <option value="thảo">ĐD. Phan Thị Thanh Thảo (Mã ĐD-1102)</option>
+                <option value="hà">ĐD. Vũ Bích Hà (Mã ĐD-1044)</option>
+              </select>
             </div>
           </div>
 
-          <!-- Rule 2 -->
-          <div class="rule-card">
-            <div class="rule-number">02</div>
-            <div class="rule-content">
-              <h4>Ghi Log đầy đủ (Audit Trail 100%)</h4>
-              <p>Lưu vết chính xác: Ai, lúc nào, từ thiết bị nào thực hiện thao tác tạo, sửa, xóa, ký duyệt để làm bằng
-                chứng khách quan khi có tranh chấp.</p>
-              <span class="rule-tag">Bảo vệ cá nhân</span>
-            </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Mã PIN xác thực của Điều dưỡng 2:</label>
+            <input type="password" class="form-control" id="witnessPin" placeholder="Nhập mã PIN hoặc OTP SmartCA..."
+              value="••••••">
           </div>
 
-          <!-- Rule 3 -->
-          <div class="rule-card">
-            <div class="rule-number">03</div>
-            <div class="rule-content">
-              <h4>Cảnh báo Real-time Nguy cơ Then chốt</h4>
-              <p>Phát hiện tức thì trùng dị ứng thuốc, quá liều, tương tác nguy hiểm, chỉ số NEWS2 tăng vọt ngay tại
-                thời điểm thao tác trên màn hình.</p>
-              <span class="rule-tag">An toàn người bệnh</span>
-            </div>
+          <div style="font-size: 12px; color: var(--text-muted);">
+            ☑️ Đã đối chiếu đúng 5 Đúng: Đúng người bệnh (Trần Đình Hùng) • Đúng thuốc (Morphin) • Đúng liều (5mg) •
+            Đúng
+            đường dùng (SC) • Đúng thời gian.
           </div>
-
-          <!-- Rule 4 -->
-          <div class="rule-card">
-            <div class="rule-number">04</div>
-            <div class="rule-content">
-              <h4>Cảnh báo Quá hạn theo Mốc thời gian</h4>
-              <p>Đếm ngược 24h Nhận định ban đầu, tần suất đo sinh hiệu (3 lần/ngày cấp II, 2 lần/ngày cấp III), nhắc ký
-                số cuối ca trực.</p>
-              <span class="rule-tag">Quy định Bộ Y Tế</span>
-            </div>
-          </div>
-
-          <!-- Rule 5 -->
-          <div class="rule-card">
-            <div class="rule-number">05</div>
-            <div class="rule-content">
-              <h4>Giờ Y lệnh vs Giờ Thực hiện Song song</h4>
-              <p>Cho phép xác nhận linh hoạt nhưng hệ thống luôn hiển thị rõ Giờ thực tế bên cạnh Giờ dự kiến của bác
-                sĩ, chống quy chụp sai giờ.</p>
-              <span class="rule-tag">Minh bạch MAR</span>
-            </div>
-          </div>
-
-          <!-- Rule 6 -->
-          <div class="rule-card">
-            <div class="rule-number">06</div>
-            <div class="rule-content">
-              <h4>Cơ chế 2 người xác nhận (Double-Check)</h4>
-              <p>Bắt buộc có đủ 02 chữ ký của 2 điều dưỡng đối với thuốc gây nghiện, hướng thần, truyền máu và chế phẩm
-                máu trước khi tiêm/truyền.</p>
-              <span class="rule-tag">Nguy cơ cao</span>
-            </div>
-          </div>
-
-          <!-- Rule 7 -->
-          <div class="rule-card">
-            <div class="rule-number">07</div>
-            <div class="rule-content">
-              <h4>Phân quyền chặt chẽ theo Khoa phòng</h4>
-              <p>Điều dưỡng chỉ truy cập và thao tác trên người bệnh thuộc khoa/phân khu mình phụ trách, ngăn chặn nhập
-                nhầm sang bệnh nhân khác.</p>
-              <span class="rule-tag">Bảo mật dữ liệu</span>
-            </div>
-          </div>
-
-          <!-- Rule 8 -->
-          <div class="rule-card">
-            <div class="rule-number">08</div>
-            <div class="rule-content">
-              <h4>Chặn chuyển bước khi thiếu điều kiện</h4>
-              <p>Khóa cứng không cho tạo lệnh chuyển mổ nếu bảng kiểm thiếu mục đạt; không cho xuất viện tự ý nếu chưa
-                có giấy cam kết ký tên.</p>
-              <span class="rule-tag">Quy trình rào chắn</span>
-            </div>
-          </div>
-
-          <!-- Rule 9 -->
-          <div class="rule-card">
-            <div class="rule-number">09</div>
-            <div class="rule-content">
-              <h4>Chế độ Ngoại tuyến (Offline-Ready)</h4>
-              <p>Khi mạng chập chờn hoặc mất kết nối, hệ thống tự lưu tạm cục bộ trên tablet và tự đồng bộ khi có mạng,
-                không bao giờ mất dữ liệu.</p>
-              <span class="rule-tag">Tin cậy hệ thống</span>
-            </div>
-          </div>
-
-          <!-- Rule 10 -->
-          <div class="rule-card">
-            <div class="rule-number">10</div>
-            <div class="rule-content">
-              <h4>Giao diện Tối ưu Nhập tại Giường</h4>
-              <p>Chế độ Bedside chuyên biệt cho tablet/di động, nút bấm to, chọn nhanh các thang điểm VAS/Glasgow giảm
-                gõ phím trong ca bận rộn.</p>
-              <span class="rule-tag">Trải nghiệm ĐD</span>
-            </div>
-          </div>
-
-          <!-- Rule 11 -->
-          <div class="rule-card">
-            <div class="rule-number">11</div>
-            <div class="rule-content">
-              <h4>Chặn chèn Y lệnh Hồi tố (Backdating)</h4>
-              <p>Chặn tuyệt đối tạo y lệnh có mốc giờ sớm hơn y lệnh đã ký liền trước, bảo đảm trình tự thời gian pháp
-                lý chuẩn xác không thể xuyên tạc.</p>
-              <span class="rule-tag">Tính toàn vẹn EMR</span>
-            </div>
-          </div>
-
-          <!-- Rule 12 -->
-          <div class="rule-card">
-            <div class="rule-number">12</div>
-            <div class="rule-content">
-              <h4>Nổi bật Y lệnh Bác sĩ Chưa Thực Hiện</h4>
-              <p>Đánh dấu màu cam rực rỡ khi có y lệnh mới, y lệnh đổi liều hoặc thuốc mới kê để ĐD không bao giờ bỏ sót
-                cữ thuốc.</p>
-              <span class="rule-tag">Giao tiếp BS-ĐD</span>
-            </div>
-          </div>
-
-          <!-- Rule 13 -->
-          <div class="rule-card">
-            <div class="rule-number">13</div>
-            <div class="rule-content">
-              <h4>Hiển thị Tem Thời Gian Dưới Chữ Ký Số</h4>
-              <p>Ghi rõ "Ký số lúc 14:05:22 ngày 27/09/2026 bởi ĐD Nguyễn Mai Hương" trực tiếp trên bản in và màn hình,
-                không giấu trong database.</p>
-              <span class="rule-tag">Thanh tra BHYT</span>
-            </div>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-action-sm" onclick="closeModal('doubleCheckModal')">Hủy</button>
+          <button type="button" class="btn-action-sm btn-action-primary"
+            style="background: #DC2626; border-color: #DC2626;" onclick="executeDoubleCheck()">
+            ✍️ Cả 2 Điều Dưỡng Cùng Ký & Tiêm
+          </button>
         </div>
       </div>
     </div>
-  </main>
 
-  <!-- MODAL: KÝ SỐ SMARTCA & LỊCH SỬ PHIÊN BẢN -->
-  <div class="modal-overlay" id="signatureModal">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <h3 id="signModalTitle">✍️ KÝ SỐ XÁC NHẬN HỒ SƠ ĐIỀU DƯỠNG</h3>
-        <button type="button" class="modal-close-btn" onclick="closeModal('signatureModal')">✕</button>
-      </div>
-      <div class="modal-body">
-        <div
-          style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
-          <div style="font-weight: 800; color: #1E40AF; font-size: 14px;">CHỨNG THƯ KÝ SỐ ĐIỆN TỬ BAN HÀNH</div>
-          <div style="font-size: 12.5px; color: #1E3A8A; margin-top: 4px;">
-            Người ký: <strong>ĐD. Nguyễn Mai Hương (Mã ĐD-1082)</strong> • Đơn vị: <strong>Bệnh viện Đại học Y Dược
-              TP.HCM</strong><br>
-            Thiết bị xác thực: <strong>SmartCA Cloud Token • Tiêu chuẩn FIPS 140-2 Level 3</strong>
-          </div>
+    <!-- MODAL: CHI TIẾT TƯƠNG TÁC BIỂU MẪU Y TẾ -->
+    <div class="modal-overlay" id="interactiveFormModal">
+      <div class="modal-dialog" style="max-width: 860px;">
+        <div class="modal-header">
+          <h3 id="interactiveFormTitle">📄 CHI TIẾT BIỂU MẪU ĐIỀU DƯỠNG</h3>
+          <button type="button" class="modal-close-btn" onclick="closeModal('interactiveFormModal')">✕</button>
         </div>
-
-        <div class="form-group" style="margin-bottom: 14px;">
-          <label>Nội dung ghi chú bổ sung (nếu có chỉnh sửa):</label>
-          <textarea class="form-control" rows="2"
-            placeholder="Ghi rõ lý do cập nhật hồ sơ (nếu chỉnh sửa sau khi đã ký lần trước)..."></textarea>
+        <div class="modal-body" id="interactiveFormBody">
+          <!-- Injected dynamically -->
         </div>
-
-        <!-- Version History Simulation -->
-        <div class="signature-history-box">
-          <div style="font-size: 12px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
-            📜 LỊCH SỬ CÁC LẦN KÝ SỐ & TRUY VẾT THỜI GIAN (NGUYÊN TẮC 1 & 13)
-          </div>
-          <div style="font-size: 12px; line-height: 1.6; color: var(--text-muted);">
-            <div>• <strong>Phiên bản 1 (Ký ban đầu):</strong> Lúc 14:05 ngày 27/09/2026 bởi ĐD. Nguyễn Mai Hương (Hash:
-              #8f92a1c)</div>
-            <div>• <strong>Phiên bản 2 (Bổ sung đáp ứng giảm đau):</strong> Lúc 14:35 ngày 27/09/2026 bởi ĐD. Nguyễn Mai
-              Hương (Hash: #3b71e9f)</div>
-            <div style="color: var(--success); font-weight: 700;">• <strong>Phiên bản hiện tại đang soạn thảo:</strong>
-              Lần ký thứ 3 - Tem thời gian thực sẽ được đóng dấu ngay dưới chữ ký</div>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-action-sm" onclick="closeModal('interactiveFormModal')">Đóng</button>
+          <button type="button" class="btn-action-sm"
+            onclick="showToast('Đã lưu bản nháp tạm thời vào bộ nhớ cục bộ!', 'success')">💾 Lưu nháp</button>
+          <button type="button" class="btn-action-sm btn-action-primary" onclick="submitFormWithSignature()">✍️ Ký số &
+            Hoàn tất</button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-action-sm" onclick="closeModal('signatureModal')">Hủy bỏ</button>
-        <button type="button" class="btn-action-sm btn-action-primary" onclick="executeDigitalSignature()">
-          🔐 Xác nhận Ký số Ngay
-        </button>
       </div>
     </div>
-  </div>
 
-  <!-- MODAL: DOUBLE-CHECK XÁC NHẬN THUỐC GÂY NGHIỆN (2 ĐIỀU DƯỠNG) -->
-  <div class="modal-overlay" id="doubleCheckModal">
-    <div class="modal-dialog" style="max-width: 600px;">
-      <div class="modal-header" style="background: #FEF2F2;">
-        <h3 style="color: #991B1B;">⚠️ XÁC THỰC DOUBLE-CHECK THUỐC GÂY NGHIỆN (NGUYÊN TẮC 6)</h3>
-        <button type="button" class="modal-close-btn" onclick="closeModal('doubleCheckModal')">✕</button>
-      </div>
-      <div class="modal-body">
-        <div
-          style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: #9F1239;">
-          Theo quy định an toàn thuốc gây nghiện và Thông tư 31/2021/TT-BYT, thuốc <strong>Morphin 10mg</strong> bắt
-          buộc phải có 02 Điều dưỡng cùng đối chiếu người bệnh, tên thuốc, liều dùng, đường dùng và cùng ký xác nhận
-          trên hệ thống.
+    <!-- MODAL: CODE BLUE ALERT -->
+    <div class="modal-overlay" id="codeBlueModal">
+      <div class="modal-dialog" style="max-width: 550px; border-color: #DC2626;">
+        <div class="modal-header" style="background: #991B1B; color: #FFFFFF;">
+          <h3>🚨 BÁO ĐỘNG CODE BLUE TOÀN VIỆN</h3>
+          <button type="button" class="modal-close-btn" style="color: #FFFFFF;"
+            onclick="closeModal('codeBlueModal')">✕</button>
         </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>ĐIỀU DƯỠNG THỰC HIỆN 1:</label>
-            <input type="text" class="form-control" value="ĐD. Nguyễn Mai Hương (ĐD-1082)" readonly>
-          </div>
-          <div class="form-group">
-            <label>ĐIỀU DƯỠNG CHỨNG KIẾN 2 (*):</label>
-            <select class="form-control" id="witnessNurse">
-              <option value="tuấn">ĐD. Trần Quốc Tuấn (Mã ĐD-1090)</option>
-              <option value="thảo">ĐD. Phan Thị Thanh Thảo (Mã ĐD-1102)</option>
-              <option value="hà">ĐD. Vũ Bích Hà (Mã ĐD-1044)</option>
-            </select>
+        <div class="modal-body" style="text-align: center; padding: 24px;">
+          <div style="font-size: 54px; margin-bottom: 12px; animation: alertGlow 1.5s infinite;">🫀</div>
+          <h4 style="font-size: 18px; font-weight: 800; color: #991B1B; margin-bottom: 8px;">CẤP CỨU NGỪNG TIM PHỔI KHẨN
+            CẤP</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
+            Bạn chuẩn bị kích hoạt còi báo động Code Blue cho Đội Cấp Cứu Phản Ứng Nhanh (RRT - Rapid Response Team)
+            toàn
+            viện đến hỗ trợ.
+          </p>
+          <div class="form-group" style="text-align: left; margin-bottom: 12px;">
+            <label>Vị trí buồng bệnh khẩn cấp:</label>
+            <input type="text" class="form-control" value="Khoa Tim Mạch Can Thiệp - Buồng 301, Giường G-301" readonly>
           </div>
         </div>
-
-        <div class="form-group" style="margin-bottom: 14px;">
-          <label>Mã PIN xác thực của Điều dưỡng 2:</label>
-          <input type="password" class="form-control" id="witnessPin" placeholder="Nhập mã PIN hoặc OTP SmartCA..."
-            value="••••••">
-        </div>
-
-        <div style="font-size: 12px; color: var(--text-muted);">
-          ☑️ Đã đối chiếu đúng 5 Đúng: Đúng người bệnh (Trần Đình Hùng) • Đúng thuốc (Morphin) • Đúng liều (5mg) • Đúng
-          đường dùng (SC) • Đúng thời gian.
+        <div class="modal-footer" style="justify-content: center;">
+          <button type="button" class="btn-action-sm" onclick="closeModal('codeBlueModal')">Hủy bỏ</button>
+          <button type="button" class="btn-action-sm btn-action-primary"
+            style="background: #DC2626; border-color: #DC2626; padding: 10px 20px; font-size: 14px;"
+            onclick="confirmCodeBlueBroadcast()">
+            📢 PHÁT LỆNH CODE BLUE NGAY
+          </button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-action-sm" onclick="closeModal('doubleCheckModal')">Hủy</button>
-        <button type="button" class="btn-action-sm btn-action-primary"
-          style="background: #DC2626; border-color: #DC2626;" onclick="executeDoubleCheck()">
-          ✍️ Cả 2 Điều Dưỡng Cùng Ký & Tiêm
-        </button>
-      </div>
     </div>
-  </div>
-
-  <!-- MODAL: CHI TIẾT TƯƠNG TÁC BIỂU MẪU Y TẾ -->
-  <div class="modal-overlay" id="interactiveFormModal">
-    <div class="modal-dialog" style="max-width: 860px;">
-      <div class="modal-header">
-        <h3 id="interactiveFormTitle">📄 CHI TIẾT BIỂU MẪU ĐIỀU DƯỠNG</h3>
-        <button type="button" class="modal-close-btn" onclick="closeModal('interactiveFormModal')">✕</button>
-      </div>
-      <div class="modal-body" id="interactiveFormBody">
-        <!-- Injected dynamically -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-action-sm" onclick="closeModal('interactiveFormModal')">Đóng</button>
-        <button type="button" class="btn-action-sm"
-          onclick="showToast('Đã lưu bản nháp tạm thời vào bộ nhớ cục bộ!', 'success')">💾 Lưu nháp</button>
-        <button type="button" class="btn-action-sm btn-action-primary" onclick="submitFormWithSignature()">✍️ Ký số &
-          Hoàn tất</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: CODE BLUE ALERT -->
-  <div class="modal-overlay" id="codeBlueModal">
-    <div class="modal-dialog" style="max-width: 550px; border-color: #DC2626;">
-      <div class="modal-header" style="background: #991B1B; color: #FFFFFF;">
-        <h3>🚨 BÁO ĐỘNG CODE BLUE TOÀN VIỆN</h3>
-        <button type="button" class="modal-close-btn" style="color: #FFFFFF;"
-          onclick="closeModal('codeBlueModal')">✕</button>
-      </div>
-      <div class="modal-body" style="text-align: center; padding: 24px;">
-        <div style="font-size: 54px; margin-bottom: 12px; animation: alertGlow 1.5s infinite;">🫀</div>
-        <h4 style="font-size: 18px; font-weight: 800; color: #991B1B; margin-bottom: 8px;">CẤP CỨU NGỪNG TIM PHỔI KHẨN
-          CẤP</h4>
-        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
-          Bạn chuẩn bị kích hoạt còi báo động Code Blue cho Đội Cấp Cứu Phản Ứng Nhanh (RRT - Rapid Response Team) toàn
-          viện đến hỗ trợ.
-        </p>
-        <div class="form-group" style="text-align: left; margin-bottom: 12px;">
-          <label>Vị trí buồng bệnh khẩn cấp:</label>
-          <input type="text" class="form-control" value="Khoa Tim Mạch Can Thiệp - Buồng 301, Giường G-301" readonly>
-        </div>
-      </div>
-      <div class="modal-footer" style="justify-content: center;">
-        <button type="button" class="btn-action-sm" onclick="closeModal('codeBlueModal')">Hủy bỏ</button>
-        <button type="button" class="btn-action-sm btn-action-primary"
-          style="background: #DC2626; border-color: #DC2626; padding: 10px 20px; font-size: 14px;"
-          onclick="confirmCodeBlueBroadcast()">
-          📢 PHÁT LỆNH CODE BLUE NGAY
-        </button>
-      </div>
-    </div>
-  </div>
 
   </div> <!-- /#appContainer -->
 
@@ -3761,7 +3563,7 @@
 
       // Set active nav button
       const navButtons = document.querySelectorAll('.nav-tab-btn');
-      const tabIndices = { 'dashboard': 0, 'forms-directory': 1, 'mar-station': 2, 'flowsheet-24h': 3, 'handover': 4, 'safety-shield': 5 };
+      const tabIndices = { 'dashboard': 0, 'forms-directory': 1, 'mar-station': 2, 'flowsheet-24h': 3, 'handover': 4 };
       if (navButtons[tabIndices[tabId]]) {
         navButtons[tabIndices[tabId]].classList.add('active');
       }
@@ -4058,7 +3860,7 @@
     }
 
     function openSignatureReviewModal() {
-      switchTab('safety-shield');
+      openShiftSignModal();
     }
 
     function openShiftSignModal() {
