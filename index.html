@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hệ thống Hồ sơ bệnh án điện tử và Điều hành Điều dưỡng - Bệnh viện Đại học Y Dược (UMC EMR Nursing Console)">
-  <title>Bảng Điều Hành & Hồ Sơ Điện Tử Điều Dưỡng — UMC EMR</title>
+  <meta name="description"
+    content="Hệ thống Hồ sơ bệnh án điện tử và Điều hành Điều dưỡng - Bệnh viện Nhân Dân Gia Định (Nursing Console TT 31/2021/TT-BYT)">
+  <title>Bảng Điều Hành & Hồ Sơ Điện Tử Điều Dưỡng — BV Nhân Dân Gia Định</title>
   <link rel="stylesheet" href="./design/tokens.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #0284C7;
@@ -41,7 +45,9 @@
       --font-mono: 'JetBrains Mono', monospace;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -133,8 +139,17 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.3); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+      }
     }
 
     .nav-actions {
@@ -235,8 +250,15 @@
     }
 
     @keyframes alertGlow {
-      0%, 100% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.4); }
-      50% { box-shadow: 0 0 22px rgba(239, 68, 68, 0.85); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(239, 68, 68, 0.85);
+      }
     }
 
     .view-mode-toggle {
@@ -397,10 +419,21 @@
       background: var(--primary);
     }
 
-    .kpi-card.kpi-danger::before { background: var(--danger); }
-    .kpi-card.kpi-warning::before { background: var(--warning); }
-    .kpi-card.kpi-success::before { background: var(--success); }
-    .kpi-card.kpi-info::before { background: var(--info); }
+    .kpi-card.kpi-danger::before {
+      background: var(--danger);
+    }
+
+    .kpi-card.kpi-warning::before {
+      background: var(--warning);
+    }
+
+    .kpi-card.kpi-success::before {
+      background: var(--success);
+    }
+
+    .kpi-card.kpi-info::before {
+      background: var(--info);
+    }
 
     .kpi-header {
       display: flex;
@@ -425,11 +458,30 @@
       font-size: 15px;
     }
 
-    .kpi-danger .kpi-icon { background: var(--danger-light); color: var(--danger); }
-    .kpi-warning .kpi-icon { background: var(--warning-light); color: var(--warning); }
-    .kpi-success .kpi-icon { background: var(--success-light); color: var(--success); }
-    .kpi-info .kpi-icon { background: var(--info-light); color: var(--info); }
-    .kpi-primary .kpi-icon { background: var(--primary-light); color: var(--primary-dark); }
+    .kpi-danger .kpi-icon {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .kpi-warning .kpi-icon {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .kpi-success .kpi-icon {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .kpi-info .kpi-icon {
+      background: var(--info-light);
+      color: var(--info);
+    }
+
+    .kpi-primary .kpi-icon {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
 
     .kpi-value-row {
       display: flex;
@@ -468,10 +520,25 @@
       font-weight: 700;
     }
 
-    .pill-danger { background: var(--danger-light); color: var(--danger); }
-    .pill-warning { background: var(--warning-light); color: var(--warning); }
-    .pill-success { background: var(--success-light); color: var(--success); }
-    .pill-info { background: var(--info-light); color: var(--info); }
+    .pill-danger {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .pill-warning {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .pill-success {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .pill-info {
+      background: var(--info-light);
+      color: var(--info);
+    }
 
     /* Tab Content Panes */
     .tab-pane {
@@ -484,8 +551,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Section Cards and Headers */
@@ -648,9 +722,20 @@
       letter-spacing: 0.3px;
     }
 
-    .tier-badge-1 { background: var(--danger-light); color: var(--danger); }
-    .tier-badge-2 { background: var(--warning-light); color: var(--warning); }
-    .tier-badge-3 { background: var(--success-light); color: var(--success); }
+    .tier-badge-1 {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .tier-badge-2 {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .tier-badge-3 {
+      background: var(--success-light);
+      color: var(--success);
+    }
 
     .allergy-alert-tag {
       background: #FEF2F2;
@@ -667,8 +752,15 @@
     }
 
     @keyframes pulseAlert {
-      0%, 100% { background-color: #FEF2F2; }
-      50% { background-color: #FEE2E2; }
+
+      0%,
+      100% {
+        background-color: #FEF2F2;
+      }
+
+      50% {
+        background-color: #FEE2E2;
+      }
     }
 
     .vitals-mini-table {
@@ -1121,7 +1213,8 @@
       white-space: nowrap;
     }
 
-    .flowsheet-table th, .flowsheet-table td {
+    .flowsheet-table th,
+    .flowsheet-table td {
       border: 1px solid var(--border);
       padding: 8px 10px;
       text-align: center;
@@ -1135,7 +1228,8 @@
       top: 0;
     }
 
-    .flowsheet-table th.param-col, .flowsheet-table td.param-col {
+    .flowsheet-table th.param-col,
+    .flowsheet-table td.param-col {
       text-align: left;
       font-weight: 700;
       position: sticky;
@@ -1310,8 +1404,15 @@
     }
 
     @keyframes modalSlideUp {
-      from { opacity: 0; transform: translateY(20px) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .modal-header {
@@ -1498,13 +1599,28 @@
       animation: toastIn 0.3s ease-out;
     }
 
-    .toast-card.success { border-left-color: var(--success); }
-    .toast-card.danger { border-left-color: var(--danger); }
-    .toast-card.warning { border-left-color: var(--warning); }
+    .toast-card.success {
+      border-left-color: var(--success);
+    }
+
+    .toast-card.danger {
+      border-left-color: var(--danger);
+    }
+
+    .toast-card.warning {
+      border-left-color: var(--warning);
+    }
 
     @keyframes toastIn {
-      from { transform: translateX(100%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     /* Responsive */
@@ -1514,72 +1630,569 @@
         align-items: stretch;
         gap: 12px;
       }
-      .brand-section, .nav-actions {
+
+      .brand-section,
+      .nav-actions {
         justify-content: space-between;
       }
+
       .forms-directory-container {
         grid-template-columns: 1fr;
       }
+
       .groups-sidebar {
         position: static;
         max-height: 250px;
       }
     }
+
+    /* ============================================================
+       CLINICAL SECURITY AUTH GATEWAY (LOCKSCREEN - PASS: 2809)
+       ============================================================ */
+    body.app-locked {
+      overflow: hidden !important;
+      height: 100vh !important;
+      background-color: #030812 !important;
+    }
+
+    body.app-locked #appContainer {
+      display: none !important;
+    }
+
+    body:not(.app-locked) #authGatewayOverlay {
+      display: none !important;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .auth-gateway-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: radial-gradient(circle at 50% 15%, #0F2D54 0%, #081930 55%, #030914 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .auth-card-backdrop {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(2, 132, 199, 0.18) 1px, transparent 1px),
+        radial-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .auth-card {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      background: #FFFFFF;
+      border-radius: 22px;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: authCardEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes authCardEnter {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .auth-card-header {
+      background: linear-gradient(135deg, #0369A1 0%, #0284C7 60%, #0EA5E9 100%);
+      color: #FFFFFF;
+      padding: 26px 24px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .auth-logo-wrapper {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 12px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .auth-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .auth-logo-fallback {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0284C7;
+    }
+
+    .auth-security-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .auth-hospital-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      color: #FFFFFF;
+    }
+
+    .auth-app-title {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #E0F2FE;
+      opacity: 0.95;
+    }
+
+    .auth-card-body {
+      padding: 24px 24px 20px;
+      background: #FFFFFF;
+    }
+
+    .auth-instruction {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+    }
+
+    .auth-instruction-icon {
+      font-size: 20px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .auth-instruction-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      color: #0369A1;
+      line-height: 1.45;
+    }
+
+    .auth-instruction-text strong {
+      font-size: 13px;
+      color: #0C4A6E;
+      margin-bottom: 2px;
+    }
+
+    .auth-input-group {
+      display: flex;
+      align-items: center;
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 4px 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .auth-input-group:focus-within {
+      background: #FFFFFF;
+      border-color: #0284C7;
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+    }
+
+    .auth-input-group.has-error {
+      border-color: #DC2626 !important;
+      background: #FFF1F2 !important;
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15) !important;
+    }
+
+    .auth-input-icon {
+      padding: 0 8px;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+    }
+
+    .auth-pass-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 22px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: 5px;
+      text-align: center;
+      padding: 10px 4px;
+    }
+
+    .auth-pass-input::placeholder {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: normal;
+      color: #94A3B8;
+    }
+
+    .auth-toggle-eye {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      font-size: 16px;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+
+    .auth-toggle-eye:hover {
+      opacity: 1;
+    }
+
+    .auth-error-alert {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #FEF2F2;
+      border: 1px solid #FECDD3;
+      color: #991B1B;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    @keyframes shakeAnimation {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    .shake-anim {
+      animation: shakeAnimation 0.35s ease-in-out;
+    }
+
+    /* Keypad Grid */
+    .auth-numpad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 18px 0 16px;
+    }
+
+    .auth-numpad-btn {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1E293B;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.12s ease;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      user-select: none;
+    }
+
+    .auth-numpad-btn:hover {
+      background: #E0F2FE;
+      border-color: #BAE6FD;
+      color: #0369A1;
+      transform: translateY(-1px);
+    }
+
+    .auth-numpad-btn:active {
+      transform: scale(0.96);
+      background: #BAE6FD;
+    }
+
+    .auth-numpad-btn.auth-fn-btn {
+      font-size: 14px;
+      font-weight: 800;
+      color: #64748B;
+      background: #F1F5F9;
+    }
+
+    .auth-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .auth-submit-btn:hover {
+      background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
+    }
+
+    .auth-submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .auth-submit-btn.is-success {
+      background: linear-gradient(135deg, #16A34A 0%, #15803D 100%) !important;
+      box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35) !important;
+    }
+
+    .auth-card-footer {
+      background: #F8FAFC;
+      border-top: 1px solid #F1F5F9;
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    .auth-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748B;
+    }
+
+    .btn-lock-console {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-lock-console:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
   </style>
 </head>
-<body id="appBody">
 
-  <!-- Top Global Header -->
-  <header class="top-navbar">
-    <div class="brand-section">
-      <div class="brand-logo-badge" aria-label="Logo Bệnh viện UMC">UMC</div>
-      <div class="brand-text">
-        <h1>BẢNG ĐIỀU HÀNH & HỒ SƠ ĐIỆN TỬ ĐIỀU DƯỠNG</h1>
-        <p>
-          <span>Bệnh viện Đại học Y Dược TP.HCM • Khung TT 31/2021/TT-BYT</span>
-          <span class="status-pill-online"><span class="status-dot"></span> Trực tuyến</span>
-        </p>
+<body id="appBody" class="app-locked">
+
+  <!-- ============================================================
+       AUTHENTICATION GATEWAY OVERLAY (PASSCODE GATE: 2809)
+       ============================================================ -->
+  <div id="authGatewayOverlay" class="auth-gateway-overlay" style="display: flex;">
+    <div class="auth-card-backdrop"></div>
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <div class="auth-logo-wrapper">
+          <img src="logo.jpg" alt="Logo Bệnh viện Nhân Dân Gia Định" class="auth-logo-img"
+            onerror="this.style.display='none'; document.getElementById('authLogoFallback').style.display='flex';">
+          <div id="authLogoFallback" class="auth-logo-fallback" style="display: none;">GĐ</div>
+        </div>
+        <div class="auth-security-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <span>BẢO MẬT HỒ SƠ Y TẾ • TT 31/2021/TT-BYT</span>
+        </div>
+        <h2 class="auth-hospital-title">BỆNH VIỆN NHÂN DÂN GIA ĐỊNH</h2>
+        <p class="auth-app-title">Hệ Thống Điều Hành & Bệnh Án Điện Tử Điều Dưỡng</p>
+      </div>
+
+      <div class="auth-card-body">
+        <div class="auth-instruction">
+          <div class="auth-instruction-icon">🔒</div>
+          <div class="auth-instruction-text">
+            <strong>Khu vực giới hạn an ninh lâm sàng</strong>
+            <span>Vui lòng nhập mã bảo mật nhân viên để mở khóa bệnh án:</span>
+          </div>
+        </div>
+
+        <form id="authPassForm" onsubmit="event.preventDefault(); handleAuthSubmit();" class="auth-form" autocomplete="off">
+          <div class="auth-input-group" id="authInputGroup">
+            <div class="auth-input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <input type="password" id="authPasscode" class="auth-pass-input" placeholder="Nhập pass (2809)" maxlength="16" autocomplete="off" autofocus>
+            <button type="button" class="auth-toggle-eye" onclick="togglePassVisibility()" title="Hiển thị / Ẩn mật khẩu">
+              <span id="authEyeIcon">👁️</span>
+            </button>
+          </div>
+
+          <div id="authErrorMessage" class="auth-error-alert" style="display: none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            <span>Mật khẩu không chính xác! Vui lòng thử lại.</span>
+          </div>
+
+          <!-- Numpad Keypad for Bedside Tablet / Touch / Mouse -->
+          <div class="auth-numpad-grid">
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('1')">1</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('2')">2</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('3')">3</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('4')">4</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('5')">5</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('6')">6</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('7')">7</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('8')">8</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('9')">9</button>
+            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="clearPin()" title="Xóa toàn bộ">C</button>
+            <button type="button" class="auth-numpad-btn" onclick="appendPin('0')">0</button>
+            <button type="button" class="auth-numpad-btn auth-fn-btn" onclick="backspacePin()" title="Xóa ký tự cuối">⌫</button>
+          </div>
+
+          <button type="submit" id="btnAuthSubmit" class="auth-submit-btn">
+            <span id="authBtnIcon">🔓</span>
+            <span id="authBtnText">Xác Thực & Mở Khóa</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="auth-card-footer">
+        <div class="auth-badge-row">
+          <span>🔒 Mã hóa 256-bit</span>
+          <span>•</span>
+          <span>✍️ Ký số SmartCA</span>
+          <span>•</span>
+          <span>📋 Audit Trail EMR</span>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="nav-actions">
-      <!-- Khoa phòng Dropdown -->
-      <select class="ward-selector" id="wardSelector" onchange="switchWard(this.value)" aria-label="Chọn khoa lâm sàng">
-        <option value="tim_mach">Khoa Tim Mạch Can Thiệp (Lầu 5A)</option>
-        <option value="hoi_suc">Khoa Hồi Sức Tích Cực - ICU (Lầu 3)</option>
-        <option value="ngoai_tong_hop">Khoa Ngoại Tổng Hợp (Lầu 7B)</option>
-        <option value="khoa_sanh">Khoa Sanh - Phụ Sản (Lầu 4)</option>
-        <option value="nhi">Khoa Nhi (Lầu 6)</option>
-        <option value="than_nhan_tao">Đơn Vị Thận Nhân Tạo (Lầu 2)</option>
-      </select>
+  <!-- MAIN APP CONTAINER (LOCKED UNTIL AUTHENTICATED) -->
+  <div id="appContainer" class="app-container">
 
-      <div class="shift-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span id="currentShiftText">Ca Chiều (14:00 - 21:00)</span>
-      </div>
-
-      <div class="user-profile-header">
-        <div class="nurse-avatar">MH</div>
-        <div class="nurse-info">
-          <div class="nurse-name">ĐD. Nguyễn Mai Hương</div>
-          <div class="nurse-role">ĐD Trưởng Ca • Mã ĐD-1082</div>
+    <!-- Top Global Header -->
+    <header class="top-navbar">
+      <div class="brand-section">
+        <div class="brand-logo-badge" aria-label="Logo Bệnh viện">
+          <img src="logo.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: #fff;" onerror="this.style.display='none'; this.parentElement.innerText='GĐ';">
+        </div>
+        <div class="brand-text">
+          <h1>BẢNG ĐIỀU HÀNH & HỒ SƠ ĐIỆN TỬ ĐIỀU DƯỠNG</h1>
+          <p>
+            <span>PHÒNG ĐIỀU DƯỠNG - BỆNH VIỆN NHÂN DÂN GIA ĐỊNH • Khung TT 31/2021/TT-BYT</span>
+            <span class="status-pill-online"><span class="status-dot"></span> Trực tuyến</span>
+          </p>
         </div>
       </div>
 
-      <!-- Code Blue Emergency Alarm Button -->
-      <button type="button" class="code-blue-btn" onclick="triggerCodeBlue()" aria-label="Báo động cấp cứu Code Blue">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
-        <span>CODE BLUE</span>
+      <div class="nav-actions">
+        <!-- Khoa phòng Dropdown -->
+        <select class="ward-selector" id="wardSelector" onchange="switchWard(this.value)" aria-label="Chọn khoa lâm sàng">
+          <option value="tim_mach">Khoa Tim Mạch Can Thiệp (Lầu 5A)</option>
+          <option value="hoi_suc">Khoa Hồi Sức Tích Cực - ICU (Lầu 3)</option>
+          <option value="ngoai_tong_hop">Khoa Ngoại Tổng Hợp (Lầu 7B)</option>
+          <option value="khoa_sanh">Khoa Sanh - Phụ Sản (Lầu 4)</option>
+          <option value="nhi">Khoa Nhi (Lầu 6)</option>
+          <option value="than_nhan_tao">Đơn Vị Thận Nhân Tạo (Lầu 2)</option>
+        </select>
+
+        <div class="shift-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span id="currentShiftText">Ca Chiều (14:00 - 21:00)</span>
+        </div>
+
+        <div class="user-profile-header">
+          <div class="nurse-avatar">MH</div>
+          <div class="nurse-info">
+            <div class="nurse-name">ĐD. Nguyễn Mai Hương</div>
+            <div class="nurse-role">ĐD Trưởng Ca • Mã ĐD-1082</div>
+          </div>
+        </div>
+
+        <!-- Lock Console Button -->
+        <button type="button" class="btn-lock-console" onclick="lockConsole()" title="Khóa màn hình an toàn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+          <span>Khóa</span>
+        </button>
+
+        <!-- Code Blue Emergency Alarm Button -->
+        <button type="button" class="code-blue-btn" onclick="triggerCodeBlue()" aria-label="Báo động cấp cứu Code Blue">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z" />
+          </svg>
+          <span>CODE BLUE</span>
       </button>
 
       <!-- Desktop vs Bedside Mode Switch -->
       <div class="view-mode-toggle">
         <button type="button" class="mode-btn active" id="btnDeskMode" onclick="toggleViewMode('desktop')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="20" height="14" x="2" y="3" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
           Trạm Console
         </button>
         <button type="button" class="mode-btn" id="btnBedsideMode" onclick="toggleViewMode('bedside')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="14" height="20" x="5" y="2" rx="2" />
+            <circle cx="12" cy="18" r="1" />
+          </svg>
           Giường bệnh
         </button>
       </div>
@@ -1590,37 +2203,57 @@
   <nav class="console-nav-strip">
     <div class="nav-tabs-group">
       <button type="button" class="nav-tab-btn active" onclick="switchTab('dashboard')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-        <span>Tổng Quan Trạm</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="7" height="9" x="3" y="3" rx="1" />
+          <rect width="7" height="5" x="14" y="3" rx="1" />
+          <rect width="7" height="9" x="14" y="12" rx="1" />
+          <rect width="7" height="5" x="3" y="16" rx="1" />
+        </svg>
+        <span>Tổng Quan</span>
         <span class="nav-tab-badge">24 BN</span>
       </button>
 
       <button type="button" class="nav-tab-btn" onclick="switchTab('forms-directory')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+          <path d="M6 6h10" />
+          <path d="M6 10h10" />
+        </svg>
         <span>Cây Thư Mục 46 Biểu Mẫu</span>
         <span class="nav-tab-badge">11 Nhóm</span>
       </button>
 
       <button type="button" class="nav-tab-btn" onclick="switchTab('mar-station')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
+          <path d="m8.5 8.5 7 7" />
+        </svg>
         <span>Thực Hiện Thuốc (MAR)</span>
         <span class="nav-tab-badge warning">6 Cữ cần tiêm</span>
       </button>
 
       <button type="button" class="nav-tab-btn" onclick="switchTab('flowsheet-24h')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3v18h18" />
+          <path d="m19 9-5 5-4-4-3 3" />
+        </svg>
         <span>Biểu Đồ 24 Cột Giờ & Xuất-Nhập</span>
         <span class="nav-tab-badge danger">3 Cảnh báo</span>
       </button>
 
       <button type="button" class="nav-tab-btn" onclick="switchTab('handover')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+          <path d="m15 5 4 4" />
+        </svg>
         <span>Bàn Giao Ca Trực</span>
         <span class="nav-tab-badge">Ca 2 / 3</span>
       </button>
 
       <button type="button" class="nav-tab-btn" onclick="switchTab('safety-shield')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
         <span>13 Cảnh Báo Bảo Vệ Điều Dưỡng</span>
         <span class="nav-tab-badge success">Audit-Active</span>
       </button>
@@ -1628,8 +2261,12 @@
 
     <!-- Quick Search Input -->
     <div class="console-search-box">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="search" id="globalSearchInput" placeholder="Tìm người bệnh, số giường, biểu mẫu..." oninput="handleGlobalSearch(this.value)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input type="search" id="globalSearchInput" placeholder="Tìm người bệnh, số giường, biểu mẫu..."
+        oninput="handleGlobalSearch(this.value)">
     </div>
   </nav>
 
@@ -1753,12 +2390,16 @@
 
             <!-- Allergy Alert Banner -->
             <div class="allergy-alert-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
               <span>DỊ ỨNG: Kháng sinh Penicillin & Thuốc cản quang</span>
             </div>
 
             <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Nhồi máu cơ tim cấp ST chênh lên ngày 2 sau can thiệp PCI • Đang thở Oxy kính 3L/phút
+              <strong>Chẩn đoán:</strong> Nhồi máu cơ tim cấp ST chênh lên ngày 2 sau can thiệp PCI • Đang thở Oxy kính
+              3L/phút
             </p>
 
             <!-- Realtime Vitals Mini Table -->
@@ -1789,7 +2430,8 @@
             </div>
 
             <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary" onclick="openCareForm(1, 'Trần Đình Hùng', 'G-301')">
+              <button type="button" class="btn-action-sm btn-action-primary"
+                onclick="openCareForm(1, 'Trần Đình Hùng', 'G-301')">
                 <span>📝 Phiếu Cấp 1 (24h)</span>
               </button>
               <button type="button" class="btn-action-sm" onclick="openMedicationForPatient('Trần Đình Hùng')">
@@ -1846,7 +2488,8 @@
             </div>
 
             <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary" onclick="openCareForm(2, 'Nguyễn Văn An', 'G-304')">
+              <button type="button" class="btn-action-sm btn-action-primary"
+                onclick="openCareForm(2, 'Nguyễn Văn An', 'G-304')">
                 <span>📝 Phiếu Cấp 2-3</span>
               </button>
               <button type="button" class="btn-action-sm" onclick="openCarePlanModal('Nguyễn Văn An')">
@@ -1872,7 +2515,10 @@
             </div>
 
             <div class="allergy-alert-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
               <span>DỊ ỨNG: NSAID (Aspirin, Ibuprofen)</span>
             </div>
 
@@ -1906,7 +2552,8 @@
             </div>
 
             <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary" onclick="openDialysisForm('Lê Thị Kim Oanh')">
+              <button type="button" class="btn-action-sm btn-action-primary"
+                onclick="openDialysisForm('Lê Thị Kim Oanh')">
                 <span>🩸 Theo dõi Lọc máu</span>
               </button>
               <button type="button" class="btn-action-sm" onclick="openCareForm(1, 'Lê Thị Kim Oanh', 'G-302')">
@@ -1932,7 +2579,8 @@
             </div>
 
             <p style="font-size: 12.5px; color: var(--text-muted);">
-              <strong>Chẩn đoán:</strong> Tăng huyết áp độ 2 • Rối loạn lipid máu • Tự phục vụ sinh hoạt cá nhân hoàn toàn
+              <strong>Chẩn đoán:</strong> Tăng huyết áp độ 2 • Rối loạn lipid máu • Tự phục vụ sinh hoạt cá nhân hoàn
+              toàn
             </p>
 
             <div class="vitals-mini-table">
@@ -1961,7 +2609,8 @@
             </div>
 
             <div class="card-actions-row">
-              <button type="button" class="btn-action-sm btn-action-primary" onclick="openCareForm(2, 'Hoàng Minh Trí', 'G-310')">
+              <button type="button" class="btn-action-sm btn-action-primary"
+                onclick="openCareForm(2, 'Hoàng Minh Trí', 'G-310')">
                 <span>📝 Phiếu Cấp 3</span>
               </button>
               <button type="button" class="btn-action-sm" onclick="openNutritionCounselModal('Hoàng Minh Trí')">
@@ -1981,7 +2630,8 @@
       <div class="forms-directory-container">
         <!-- Sidebar 11 Nhóm -->
         <aside class="groups-sidebar" aria-label="11 Nhóm Biểu Mẫu Điều Dưỡng">
-          <div style="font-size: 13px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+          <div
+            style="font-size: 13px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
             <span>DANH MỤC 11 NHÓM</span>
             <span class="pill-badge pill-info">46 Biểu mẫu</span>
           </div>
@@ -2052,7 +2702,8 @@
             <p>Áp dụng nguyên tắc 8 Đúng • Cảnh báo Dị ứng chéo • Double-Check thuốc gây nghiện/hướng thần</p>
           </div>
           <div style="display: flex; gap: 8px;">
-            <button type="button" class="btn-action-sm btn-action-primary" onclick="showToast('Đang đồng bộ y lệnh mới từ Bác sĩ...', 'info')">
+            <button type="button" class="btn-action-sm btn-action-primary"
+              onclick="showToast('Đang đồng bộ y lệnh mới từ Bác sĩ...', 'info')">
               🔄 Tải y lệnh mới nhất
             </button>
           </div>
@@ -2107,11 +2758,17 @@
             </div>
 
             <div class="med-actions-cluster">
-              <button type="button" class="btn-med-doublecheck" onclick="openDoubleCheckModal('Morphin 10mg', 'Trần Đình Hùng', 'order-morphine')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+              <button type="button" class="btn-med-doublecheck"
+                onclick="openDoubleCheckModal('Morphin 10mg', 'Trần Đình Hùng', 'order-morphine')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <polyline points="16 11 18 13 22 9" />
+                </svg>
                 <span>Xác nhận 2 Điều dưỡng (Double-Check)</span>
               </button>
-              <button type="button" class="btn-med-postpone" onclick="openPostponeModal('Morphin 10mg', 'Trần Đình Hùng')">
+              <button type="button" class="btn-med-postpone"
+                onclick="openPostponeModal('Morphin 10mg', 'Trần Đình Hùng')">
                 Hoãn tiêm...
               </button>
             </div>
@@ -2136,11 +2793,15 @@
             </div>
 
             <div class="med-actions-cluster">
-              <button type="button" class="btn-med-confirm" onclick="confirmMedication('order-cefazolin', 'Cefazolin 1g', 'Nguyễn Văn An')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <button type="button" class="btn-med-confirm"
+                onclick="confirmMedication('order-cefazolin', 'Cefazolin 1g', 'Nguyễn Văn An')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 <span>Xác nhận Đã Tiêm</span>
               </button>
-              <button type="button" class="btn-med-postpone" onclick="openPostponeModal('Cefazolin 1g', 'Nguyễn Văn An')">
+              <button type="button" class="btn-med-postpone"
+                onclick="openPostponeModal('Cefazolin 1g', 'Nguyễn Văn An')">
                 Hoãn / Từ chối
               </button>
             </div>
@@ -2166,8 +2827,11 @@
             </div>
 
             <div class="med-actions-cluster">
-              <button type="button" class="btn-med-confirm" onclick="confirmMedication('order-nacl', 'Natri Clorid 0.9%', 'Hoàng Minh Trí')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <button type="button" class="btn-med-confirm"
+                onclick="confirmMedication('order-nacl', 'Natri Clorid 0.9%', 'Hoàng Minh Trí')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 <span>Xác nhận Cắm truyền</span>
               </button>
             </div>
@@ -2186,7 +2850,8 @@
           </div>
           <div style="display: flex; align-items: center; gap: 10px;">
             <span style="font-size: 13px; font-weight: 700;">Người bệnh:</span>
-            <select class="form-control" style="font-weight: 700; min-width: 220px;" onchange="changeFlowsheetPatient(this.value)">
+            <select class="form-control" style="font-weight: 700; min-width: 220px;"
+              onchange="changeFlowsheetPatient(this.value)">
               <option value="hung">Trần Đình Hùng (G-301 • Hậu phẫu PCI)</option>
               <option value="oanh">Lê Thị Kim Oanh (G-302 • Lọc máu CRRT)</option>
             </select>
@@ -2382,13 +3047,15 @@
           </table>
         </div>
 
-        <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div
+          style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
           <div style="display: flex; gap: 12px; font-size: 12px; color: var(--text-muted);">
             <span>🔴 <strong>Ô màu đỏ:</strong> Chỉ số vượt ngưỡng an toàn</span>
             <span>🔵 <strong>Cột màu xanh:</strong> Cột giờ ca hiện tại</span>
             <span>💾 Tự động lưu biểu đồ sau mỗi lượt nhập</span>
           </div>
-          <button type="button" class="btn-action-sm btn-action-primary" onclick="openSignatureModal('Phiếu Chăm Sóc Cấp 1 (Giờ 14:00)', 'Trần Đình Hùng')">
+          <button type="button" class="btn-action-sm btn-action-primary"
+            onclick="openSignatureModal('Phiếu Chăm Sóc Cấp 1 (Giờ 14:00)', 'Trần Đình Hùng')">
             ✍️ Ký số xác nhận ca trực (SmartCA)
           </button>
         </div>
@@ -2421,21 +3088,24 @@
             <div class="handover-patient-item severe">
               <div style="font-weight: 800; color: #991B1B;">G-301: Trần Đình Hùng (64T) - Chăm sóc Cấp I</div>
               <div style="font-size: 12px; margin-top: 2px;">
-                HA dao động 165-170 mmHg, SpO2 93% với oxy 3L. Vừa cho tiêm Morphin 5mg SC lúc 14:15. Theo dõi sát tần số thở và VAS đau lúc 15:00.
+                HA dao động 165-170 mmHg, SpO2 93% với oxy 3L. Vừa cho tiêm Morphin 5mg SC lúc 14:15. Theo dõi sát tần
+                số thở và VAS đau lúc 15:00.
               </div>
             </div>
 
             <div class="handover-patient-item severe">
               <div style="font-weight: 800; color: #991B1B;">G-302: Lê Thị Kim Oanh (72T) - Chăm sóc Cấp I</div>
               <div style="font-size: 12px; margin-top: 2px;">
-                Đang chạy lọc máu CRRT giờ thứ 18. Dịch vào/ra dương +610ml. ACT cần kiểm tra lúc 16:00. Đã chuẩn bị 1 khối hồng cầu lắng dự trù.
+                Đang chạy lọc máu CRRT giờ thứ 18. Dịch vào/ra dương +610ml. ACT cần kiểm tra lúc 16:00. Đã chuẩn bị 1
+                khối hồng cầu lắng dự trù.
               </div>
             </div>
 
             <div class="handover-patient-item" style="border-left-color: var(--warning);">
               <div style="font-weight: 800; color: #92400E;">G-304: Nguyễn Văn An (58T) - Hậu phẫu ruột thừa N1</div>
               <div style="font-size: 12px; margin-top: 2px;">
-                Dẫn lưu ổ bụng thấm gạc ít dịch hồng. Đã rút sonde tiểu lúc 10h. Nhắc theo dõi tự đi tiểu trước 16:00, nếu bí tiểu báo BS.
+                Dẫn lưu ổ bụng thấm gạc ít dịch hồng. Đã rút sonde tiểu lúc 10h. Nhắc theo dõi tự đi tiểu trước 16:00,
+                nếu bí tiểu báo BS.
               </div>
             </div>
           </div>
@@ -2468,14 +3138,17 @@
 
             <div class="handover-sign-strip">
               <div>
-                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD BÀN GIAO (CA CHIỀU)</div>
+                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD
+                  BÀN GIAO (CA CHIỀU)</div>
                 <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Nguyễn Mai Hương</div>
                 <span class="signature-stamp">✓ Đã ký số lúc 14:30</span>
               </div>
               <div>
-                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD NHẬN CA (CA ĐÊM)</div>
+                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">ĐD
+                  NHẬN CA (CA ĐÊM)</div>
                 <div style="font-weight: 800; color: var(--text-main); margin-top: 2px;">ĐD. Trần Quốc Tuấn</div>
-                <button type="button" class="btn-action-sm btn-action-primary" style="margin-top: 4px;" onclick="signHandoverReceive()">
+                <button type="button" class="btn-action-sm btn-action-primary" style="margin-top: 4px;"
+                  onclick="signHandoverReceive()">
                   ✍️ Xác nhận nhận ca
                 </button>
               </div>
@@ -2491,7 +3164,8 @@
         <div class="section-card-header">
           <div class="section-card-title">
             <h2>13 NGUYÊN TẮC HỆ THỐNG CẢNH BÁO & KHÓA AN TOÀN — BẢO VỆ ĐIỀU DƯỠNG</h2>
-            <p>Thiết kế hệ thống thông minh, vừa hỗ trợ nghiệp vụ vừa bảo vệ pháp lý và an toàn tối đa cho điều dưỡng</p>
+            <p>Thiết kế hệ thống thông minh, vừa hỗ trợ nghiệp vụ vừa bảo vệ pháp lý và an toàn tối đa cho điều dưỡng
+            </p>
           </div>
           <button type="button" class="btn-action-sm btn-action-primary" onclick="openAuditTrailDemo()">
             🔍 Xem Nhật ký Kiểm toán (Audit Trail Log)
@@ -2504,7 +3178,8 @@
             <div class="rule-number">01</div>
             <div class="rule-content">
               <h4>Ký số đa phiên bản (Không khóa cứng)</h4>
-              <p>Cho phép sửa/bổ sung sau ký. Hệ thống luôn hiển thị giờ ký mới nhất ngay dưới chữ ký và lưu toàn bộ lịch sử các lần ký/sửa trước đó để truy vết.</p>
+              <p>Cho phép sửa/bổ sung sau ký. Hệ thống luôn hiển thị giờ ký mới nhất ngay dưới chữ ký và lưu toàn bộ
+                lịch sử các lần ký/sửa trước đó để truy vết.</p>
               <span class="rule-tag">Pháp lý hồ sơ</span>
             </div>
           </div>
@@ -2514,7 +3189,8 @@
             <div class="rule-number">02</div>
             <div class="rule-content">
               <h4>Ghi Log đầy đủ (Audit Trail 100%)</h4>
-              <p>Lưu vết chính xác: Ai, lúc nào, từ thiết bị nào thực hiện thao tác tạo, sửa, xóa, ký duyệt để làm bằng chứng khách quan khi có tranh chấp.</p>
+              <p>Lưu vết chính xác: Ai, lúc nào, từ thiết bị nào thực hiện thao tác tạo, sửa, xóa, ký duyệt để làm bằng
+                chứng khách quan khi có tranh chấp.</p>
               <span class="rule-tag">Bảo vệ cá nhân</span>
             </div>
           </div>
@@ -2524,7 +3200,8 @@
             <div class="rule-number">03</div>
             <div class="rule-content">
               <h4>Cảnh báo Real-time Nguy cơ Then chốt</h4>
-              <p>Phát hiện tức thì trùng dị ứng thuốc, quá liều, tương tác nguy hiểm, chỉ số NEWS2 tăng vọt ngay tại thời điểm thao tác trên màn hình.</p>
+              <p>Phát hiện tức thì trùng dị ứng thuốc, quá liều, tương tác nguy hiểm, chỉ số NEWS2 tăng vọt ngay tại
+                thời điểm thao tác trên màn hình.</p>
               <span class="rule-tag">An toàn người bệnh</span>
             </div>
           </div>
@@ -2534,7 +3211,8 @@
             <div class="rule-number">04</div>
             <div class="rule-content">
               <h4>Cảnh báo Quá hạn theo Mốc thời gian</h4>
-              <p>Đếm ngược 24h Nhận định ban đầu, tần suất đo sinh hiệu (3 lần/ngày cấp II, 2 lần/ngày cấp III), nhắc ký số cuối ca trực.</p>
+              <p>Đếm ngược 24h Nhận định ban đầu, tần suất đo sinh hiệu (3 lần/ngày cấp II, 2 lần/ngày cấp III), nhắc ký
+                số cuối ca trực.</p>
               <span class="rule-tag">Quy định Bộ Y Tế</span>
             </div>
           </div>
@@ -2544,7 +3222,8 @@
             <div class="rule-number">05</div>
             <div class="rule-content">
               <h4>Giờ Y lệnh vs Giờ Thực hiện Song song</h4>
-              <p>Cho phép xác nhận linh hoạt nhưng hệ thống luôn hiển thị rõ Giờ thực tế bên cạnh Giờ dự kiến của bác sĩ, chống quy chụp sai giờ.</p>
+              <p>Cho phép xác nhận linh hoạt nhưng hệ thống luôn hiển thị rõ Giờ thực tế bên cạnh Giờ dự kiến của bác
+                sĩ, chống quy chụp sai giờ.</p>
               <span class="rule-tag">Minh bạch MAR</span>
             </div>
           </div>
@@ -2554,7 +3233,8 @@
             <div class="rule-number">06</div>
             <div class="rule-content">
               <h4>Cơ chế 2 người xác nhận (Double-Check)</h4>
-              <p>Bắt buộc có đủ 02 chữ ký của 2 điều dưỡng đối với thuốc gây nghiện, hướng thần, truyền máu và chế phẩm máu trước khi tiêm/truyền.</p>
+              <p>Bắt buộc có đủ 02 chữ ký của 2 điều dưỡng đối với thuốc gây nghiện, hướng thần, truyền máu và chế phẩm
+                máu trước khi tiêm/truyền.</p>
               <span class="rule-tag">Nguy cơ cao</span>
             </div>
           </div>
@@ -2564,7 +3244,8 @@
             <div class="rule-number">07</div>
             <div class="rule-content">
               <h4>Phân quyền chặt chẽ theo Khoa phòng</h4>
-              <p>Điều dưỡng chỉ truy cập và thao tác trên người bệnh thuộc khoa/phân khu mình phụ trách, ngăn chặn nhập nhầm sang bệnh nhân khác.</p>
+              <p>Điều dưỡng chỉ truy cập và thao tác trên người bệnh thuộc khoa/phân khu mình phụ trách, ngăn chặn nhập
+                nhầm sang bệnh nhân khác.</p>
               <span class="rule-tag">Bảo mật dữ liệu</span>
             </div>
           </div>
@@ -2574,7 +3255,8 @@
             <div class="rule-number">08</div>
             <div class="rule-content">
               <h4>Chặn chuyển bước khi thiếu điều kiện</h4>
-              <p>Khóa cứng không cho tạo lệnh chuyển mổ nếu bảng kiểm thiếu mục đạt; không cho xuất viện tự ý nếu chưa có giấy cam kết ký tên.</p>
+              <p>Khóa cứng không cho tạo lệnh chuyển mổ nếu bảng kiểm thiếu mục đạt; không cho xuất viện tự ý nếu chưa
+                có giấy cam kết ký tên.</p>
               <span class="rule-tag">Quy trình rào chắn</span>
             </div>
           </div>
@@ -2584,7 +3266,8 @@
             <div class="rule-number">09</div>
             <div class="rule-content">
               <h4>Chế độ Ngoại tuyến (Offline-Ready)</h4>
-              <p>Khi mạng chập chờn hoặc mất kết nối, hệ thống tự lưu tạm cục bộ trên tablet và tự đồng bộ khi có mạng, không bao giờ mất dữ liệu.</p>
+              <p>Khi mạng chập chờn hoặc mất kết nối, hệ thống tự lưu tạm cục bộ trên tablet và tự đồng bộ khi có mạng,
+                không bao giờ mất dữ liệu.</p>
               <span class="rule-tag">Tin cậy hệ thống</span>
             </div>
           </div>
@@ -2594,7 +3277,8 @@
             <div class="rule-number">10</div>
             <div class="rule-content">
               <h4>Giao diện Tối ưu Nhập tại Giường</h4>
-              <p>Chế độ Bedside chuyên biệt cho tablet/di động, nút bấm to, chọn nhanh các thang điểm VAS/Glasgow giảm gõ phím trong ca bận rộn.</p>
+              <p>Chế độ Bedside chuyên biệt cho tablet/di động, nút bấm to, chọn nhanh các thang điểm VAS/Glasgow giảm
+                gõ phím trong ca bận rộn.</p>
               <span class="rule-tag">Trải nghiệm ĐD</span>
             </div>
           </div>
@@ -2604,7 +3288,8 @@
             <div class="rule-number">11</div>
             <div class="rule-content">
               <h4>Chặn chèn Y lệnh Hồi tố (Backdating)</h4>
-              <p>Chặn tuyệt đối tạo y lệnh có mốc giờ sớm hơn y lệnh đã ký liền trước, bảo đảm trình tự thời gian pháp lý chuẩn xác không thể xuyên tạc.</p>
+              <p>Chặn tuyệt đối tạo y lệnh có mốc giờ sớm hơn y lệnh đã ký liền trước, bảo đảm trình tự thời gian pháp
+                lý chuẩn xác không thể xuyên tạc.</p>
               <span class="rule-tag">Tính toàn vẹn EMR</span>
             </div>
           </div>
@@ -2614,7 +3299,8 @@
             <div class="rule-number">12</div>
             <div class="rule-content">
               <h4>Nổi bật Y lệnh Bác sĩ Chưa Thực Hiện</h4>
-              <p>Đánh dấu màu cam rực rỡ khi có y lệnh mới, y lệnh đổi liều hoặc thuốc mới kê để ĐD không bao giờ bỏ sót cữ thuốc.</p>
+              <p>Đánh dấu màu cam rực rỡ khi có y lệnh mới, y lệnh đổi liều hoặc thuốc mới kê để ĐD không bao giờ bỏ sót
+                cữ thuốc.</p>
               <span class="rule-tag">Giao tiếp BS-ĐD</span>
             </div>
           </div>
@@ -2624,7 +3310,8 @@
             <div class="rule-number">13</div>
             <div class="rule-content">
               <h4>Hiển thị Tem Thời Gian Dưới Chữ Ký Số</h4>
-              <p>Ghi rõ "Ký số lúc 14:05:22 ngày 27/09/2026 bởi ĐD Nguyễn Mai Hương" trực tiếp trên bản in và màn hình, không giấu trong database.</p>
+              <p>Ghi rõ "Ký số lúc 14:05:22 ngày 27/09/2026 bởi ĐD Nguyễn Mai Hương" trực tiếp trên bản in và màn hình,
+                không giấu trong database.</p>
               <span class="rule-tag">Thanh tra BHYT</span>
             </div>
           </div>
@@ -2641,17 +3328,20 @@
         <button type="button" class="modal-close-btn" onclick="closeModal('signatureModal')">✕</button>
       </div>
       <div class="modal-body">
-        <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+        <div
+          style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
           <div style="font-weight: 800; color: #1E40AF; font-size: 14px;">CHỨNG THƯ KÝ SỐ ĐIỆN TỬ BAN HÀNH</div>
           <div style="font-size: 12.5px; color: #1E3A8A; margin-top: 4px;">
-            Người ký: <strong>ĐD. Nguyễn Mai Hương (Mã ĐD-1082)</strong> • Đơn vị: <strong>Bệnh viện Đại học Y Dược TP.HCM</strong><br>
+            Người ký: <strong>ĐD. Nguyễn Mai Hương (Mã ĐD-1082)</strong> • Đơn vị: <strong>Bệnh viện Đại học Y Dược
+              TP.HCM</strong><br>
             Thiết bị xác thực: <strong>SmartCA Cloud Token • Tiêu chuẩn FIPS 140-2 Level 3</strong>
           </div>
         </div>
 
         <div class="form-group" style="margin-bottom: 14px;">
           <label>Nội dung ghi chú bổ sung (nếu có chỉnh sửa):</label>
-          <textarea class="form-control" rows="2" placeholder="Ghi rõ lý do cập nhật hồ sơ (nếu chỉnh sửa sau khi đã ký lần trước)..."></textarea>
+          <textarea class="form-control" rows="2"
+            placeholder="Ghi rõ lý do cập nhật hồ sơ (nếu chỉnh sửa sau khi đã ký lần trước)..."></textarea>
         </div>
 
         <!-- Version History Simulation -->
@@ -2660,9 +3350,12 @@
             📜 LỊCH SỬ CÁC LẦN KÝ SỐ & TRUY VẾT THỜI GIAN (NGUYÊN TẮC 1 & 13)
           </div>
           <div style="font-size: 12px; line-height: 1.6; color: var(--text-muted);">
-            <div>• <strong>Phiên bản 1 (Ký ban đầu):</strong> Lúc 14:05 ngày 27/09/2026 bởi ĐD. Nguyễn Mai Hương (Hash: #8f92a1c)</div>
-            <div>• <strong>Phiên bản 2 (Bổ sung đáp ứng giảm đau):</strong> Lúc 14:35 ngày 27/09/2026 bởi ĐD. Nguyễn Mai Hương (Hash: #3b71e9f)</div>
-            <div style="color: var(--success); font-weight: 700;">• <strong>Phiên bản hiện tại đang soạn thảo:</strong> Lần ký thứ 3 - Tem thời gian thực sẽ được đóng dấu ngay dưới chữ ký</div>
+            <div>• <strong>Phiên bản 1 (Ký ban đầu):</strong> Lúc 14:05 ngày 27/09/2026 bởi ĐD. Nguyễn Mai Hương (Hash:
+              #8f92a1c)</div>
+            <div>• <strong>Phiên bản 2 (Bổ sung đáp ứng giảm đau):</strong> Lúc 14:35 ngày 27/09/2026 bởi ĐD. Nguyễn Mai
+              Hương (Hash: #3b71e9f)</div>
+            <div style="color: var(--success); font-weight: 700;">• <strong>Phiên bản hiện tại đang soạn thảo:</strong>
+              Lần ký thứ 3 - Tem thời gian thực sẽ được đóng dấu ngay dưới chữ ký</div>
           </div>
         </div>
       </div>
@@ -2683,8 +3376,11 @@
         <button type="button" class="modal-close-btn" onclick="closeModal('doubleCheckModal')">✕</button>
       </div>
       <div class="modal-body">
-        <div style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: #9F1239;">
-          Theo quy định an toàn thuốc gây nghiện và Thông tư 31/2021/TT-BYT, thuốc <strong>Morphin 10mg</strong> bắt buộc phải có 02 Điều dưỡng cùng đối chiếu người bệnh, tên thuốc, liều dùng, đường dùng và cùng ký xác nhận trên hệ thống.
+        <div
+          style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: #9F1239;">
+          Theo quy định an toàn thuốc gây nghiện và Thông tư 31/2021/TT-BYT, thuốc <strong>Morphin 10mg</strong> bắt
+          buộc phải có 02 Điều dưỡng cùng đối chiếu người bệnh, tên thuốc, liều dùng, đường dùng và cùng ký xác nhận
+          trên hệ thống.
         </div>
 
         <div class="form-row">
@@ -2704,16 +3400,19 @@
 
         <div class="form-group" style="margin-bottom: 14px;">
           <label>Mã PIN xác thực của Điều dưỡng 2:</label>
-          <input type="password" class="form-control" id="witnessPin" placeholder="Nhập mã PIN hoặc OTP SmartCA..." value="••••••">
+          <input type="password" class="form-control" id="witnessPin" placeholder="Nhập mã PIN hoặc OTP SmartCA..."
+            value="••••••">
         </div>
 
         <div style="font-size: 12px; color: var(--text-muted);">
-          ☑️ Đã đối chiếu đúng 5 Đúng: Đúng người bệnh (Trần Đình Hùng) • Đúng thuốc (Morphin) • Đúng liều (5mg) • Đúng đường dùng (SC) • Đúng thời gian.
+          ☑️ Đã đối chiếu đúng 5 Đúng: Đúng người bệnh (Trần Đình Hùng) • Đúng thuốc (Morphin) • Đúng liều (5mg) • Đúng
+          đường dùng (SC) • Đúng thời gian.
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-action-sm" onclick="closeModal('doubleCheckModal')">Hủy</button>
-        <button type="button" class="btn-action-sm btn-action-primary" style="background: #DC2626; border-color: #DC2626;" onclick="executeDoubleCheck()">
+        <button type="button" class="btn-action-sm btn-action-primary"
+          style="background: #DC2626; border-color: #DC2626;" onclick="executeDoubleCheck()">
           ✍️ Cả 2 Điều Dưỡng Cùng Ký & Tiêm
         </button>
       </div>
@@ -2732,8 +3431,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-action-sm" onclick="closeModal('interactiveFormModal')">Đóng</button>
-        <button type="button" class="btn-action-sm" onclick="showToast('Đã lưu bản nháp tạm thời vào bộ nhớ cục bộ!', 'success')">💾 Lưu nháp</button>
-        <button type="button" class="btn-action-sm btn-action-primary" onclick="submitFormWithSignature()">✍️ Ký số & Hoàn tất</button>
+        <button type="button" class="btn-action-sm"
+          onclick="showToast('Đã lưu bản nháp tạm thời vào bộ nhớ cục bộ!', 'success')">💾 Lưu nháp</button>
+        <button type="button" class="btn-action-sm btn-action-primary" onclick="submitFormWithSignature()">✍️ Ký số &
+          Hoàn tất</button>
       </div>
     </div>
   </div>
@@ -2743,13 +3444,16 @@
     <div class="modal-dialog" style="max-width: 550px; border-color: #DC2626;">
       <div class="modal-header" style="background: #991B1B; color: #FFFFFF;">
         <h3>🚨 BÁO ĐỘNG CODE BLUE TOÀN VIỆN</h3>
-        <button type="button" class="modal-close-btn" style="color: #FFFFFF;" onclick="closeModal('codeBlueModal')">✕</button>
+        <button type="button" class="modal-close-btn" style="color: #FFFFFF;"
+          onclick="closeModal('codeBlueModal')">✕</button>
       </div>
       <div class="modal-body" style="text-align: center; padding: 24px;">
         <div style="font-size: 54px; margin-bottom: 12px; animation: alertGlow 1.5s infinite;">🫀</div>
-        <h4 style="font-size: 18px; font-weight: 800; color: #991B1B; margin-bottom: 8px;">CẤP CỨU NGỪNG TIM PHỔI KHẨN CẤP</h4>
+        <h4 style="font-size: 18px; font-weight: 800; color: #991B1B; margin-bottom: 8px;">CẤP CỨU NGỪNG TIM PHỔI KHẨN
+          CẤP</h4>
         <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
-          Bạn chuẩn bị kích hoạt còi báo động Code Blue cho Đội Cấp Cứu Phản Ứng Nhanh (RRT - Rapid Response Team) toàn viện đến hỗ trợ.
+          Bạn chuẩn bị kích hoạt còi báo động Code Blue cho Đội Cấp Cứu Phản Ứng Nhanh (RRT - Rapid Response Team) toàn
+          viện đến hỗ trợ.
         </p>
         <div class="form-group" style="text-align: left; margin-bottom: 12px;">
           <label>Vị trí buồng bệnh khẩn cấp:</label>
@@ -2758,18 +3462,154 @@
       </div>
       <div class="modal-footer" style="justify-content: center;">
         <button type="button" class="btn-action-sm" onclick="closeModal('codeBlueModal')">Hủy bỏ</button>
-        <button type="button" class="btn-action-sm btn-action-primary" style="background: #DC2626; border-color: #DC2626; padding: 10px 20px; font-size: 14px;" onclick="confirmCodeBlueBroadcast()">
+        <button type="button" class="btn-action-sm btn-action-primary"
+          style="background: #DC2626; border-color: #DC2626; padding: 10px 20px; font-size: 14px;"
+          onclick="confirmCodeBlueBroadcast()">
           📢 PHÁT LỆNH CODE BLUE NGAY
         </button>
       </div>
     </div>
   </div>
 
-  <!-- TOAST CONTAINER -->
+  </div> <!-- /#appContainer -->
+
+  <!-- TOAST CONTAINER (GLOBAL) -->
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    // ============================================================
+    // CLINICAL SECURITY AUTHENTICATION LAYER (PASSCODE: 2809)
+    // ============================================================
+    const AUTH_STORAGE_KEY = 'umc_emr_nursing_auth';
+    const AUTH_CORRECT_PASS = '2809';
+
+    function checkAuthOnLoad() {
+      const stored = sessionStorage.getItem(AUTH_STORAGE_KEY);
+      if (stored === AUTH_CORRECT_PASS) {
+        unlockConsole(false);
+      } else {
+        lockConsole(false);
+      }
+    }
+
+    function handleAuthSubmit() {
+      const inputEl = document.getElementById('authPasscode');
+      const errEl = document.getElementById('authErrorMessage');
+      const groupEl = document.getElementById('authInputGroup');
+      const btn = document.getElementById('btnAuthSubmit');
+      const val = inputEl ? inputEl.value.trim() : '';
+
+      if (val === AUTH_CORRECT_PASS) {
+        // Success
+        if (errEl) errEl.style.display = 'none';
+        if (groupEl) groupEl.classList.remove('has-error', 'shake-anim');
+        if (btn) btn.classList.add('is-success');
+        const icon = document.getElementById('authBtnIcon');
+        const txt = document.getElementById('authBtnText');
+        if (icon) icon.innerText = '✅';
+        if (txt) txt.innerText = 'Chính xác! Đang mở khóa...';
+
+        sessionStorage.setItem(AUTH_STORAGE_KEY, AUTH_CORRECT_PASS);
+
+        setTimeout(() => {
+          unlockConsole(true);
+          if (btn) btn.classList.remove('is-success');
+          if (icon) icon.innerText = '🔓';
+          if (txt) txt.innerText = 'Xác Thực & Mở Khóa';
+        }, 350);
+      } else {
+        // Failure
+        if (errEl) errEl.style.display = 'flex';
+        if (groupEl) {
+          groupEl.classList.add('has-error');
+          groupEl.classList.remove('shake-anim');
+          void groupEl.offsetWidth; // trigger reflow
+          groupEl.classList.add('shake-anim');
+        }
+        if (inputEl) {
+          inputEl.value = '';
+          inputEl.focus();
+        }
+      }
+    }
+
+    function unlockConsole(showWelcome = false) {
+      const overlay = document.getElementById('authGatewayOverlay');
+      const body = document.getElementById('appBody');
+      if (overlay) overlay.style.display = 'none';
+      if (body) body.classList.remove('app-locked');
+      if (showWelcome && typeof showToast === 'function') {
+        showToast('Xác thực bảo mật thành công! Chào mừng Điều dưỡng.', 'success');
+      }
+    }
+
+    function lockConsole(notify = true) {
+      sessionStorage.removeItem(AUTH_STORAGE_KEY);
+      const overlay = document.getElementById('authGatewayOverlay');
+      const body = document.getElementById('appBody');
+      const inputEl = document.getElementById('authPasscode');
+      const errEl = document.getElementById('authErrorMessage');
+      const groupEl = document.getElementById('authInputGroup');
+
+      if (body) body.classList.add('app-locked');
+      if (overlay) overlay.style.display = 'flex';
+      if (errEl) errEl.style.display = 'none';
+      if (groupEl) groupEl.classList.remove('has-error', 'shake-anim');
+      if (inputEl) {
+        inputEl.value = '';
+        setTimeout(() => inputEl.focus(), 100);
+      }
+      if (notify && typeof showToast === 'function') {
+        showToast('Đã khóa màn hình hồ sơ điều dưỡng an toàn.', 'info');
+      }
+    }
+
+    function appendPin(digit) {
+      const inputEl = document.getElementById('authPasscode');
+      const errEl = document.getElementById('authErrorMessage');
+      const groupEl = document.getElementById('authInputGroup');
+      if (errEl) errEl.style.display = 'none';
+      if (groupEl) groupEl.classList.remove('has-error');
+      if (inputEl) {
+        inputEl.value += digit;
+        inputEl.focus();
+      }
+    }
+
+    function clearPin() {
+      const inputEl = document.getElementById('authPasscode');
+      const errEl = document.getElementById('authErrorMessage');
+      const groupEl = document.getElementById('authInputGroup');
+      if (errEl) errEl.style.display = 'none';
+      if (groupEl) groupEl.classList.remove('has-error');
+      if (inputEl) {
+        inputEl.value = '';
+        inputEl.focus();
+      }
+    }
+
+    function backspacePin() {
+      const inputEl = document.getElementById('authPasscode');
+      if (inputEl) {
+        inputEl.value = inputEl.value.slice(0, -1);
+        inputEl.focus();
+      }
+    }
+
+    function togglePassVisibility() {
+      const inputEl = document.getElementById('authPasscode');
+      const icon = document.getElementById('authEyeIcon');
+      if (!inputEl) return;
+      if (inputEl.type === 'password') {
+        inputEl.type = 'text';
+        if (icon) icon.innerText = '🙈';
+      } else {
+        inputEl.type = 'password';
+        if (icon) icon.innerText = '👁️';
+      }
+    }
+
     // 46 FORMS DATA ACCORDING TO DOCUMENT
     const FORMS_DATA = [
       // NHÓM I
@@ -3231,11 +4071,11 @@
 
     function openAuditTrailDemo() {
       alert("NHẬT KÝ KIỂM TOÁN (AUDIT TRAIL LOG REALTIME):\n" +
-            "[14:00:15] ĐD Nguyễn Mai Hương đăng nhập từ Trạm điều dưỡng Lầu 5A (IP 192.168.1.45)\n" +
-            "[14:05:22] Lập Phiếu chăm sóc Cấp 1 cho BN Trần Đình Hùng (G-301)\n" +
-            "[14:15:40] Xác thực Double-Check thuốc Morphin 10mg: ĐD Nguyễn Mai Hương + ĐD Trần Quốc Tuấn\n" +
-            "[14:20:00] Cảnh báo hệ thống: SpO2 93% vượt ngưỡng an toàn -> Gửi thông báo đến Bác sĩ điều trị\n" +
-            "[14:30:10] Ký số SmartCA Phiếu Bàn Giao Ca Chiều (Mã băm: #8f92a1c)");
+        "[14:00:15] ĐD Nguyễn Mai Hương đăng nhập từ Trạm điều dưỡng Lầu 5A (IP 192.168.1.45)\n" +
+        "[14:05:22] Lập Phiếu chăm sóc Cấp 1 cho BN Trần Đình Hùng (G-301)\n" +
+        "[14:15:40] Xác thực Double-Check thuốc Morphin 10mg: ĐD Nguyễn Mai Hương + ĐD Trần Quốc Tuấn\n" +
+        "[14:20:00] Cảnh báo hệ thống: SpO2 93% vượt ngưỡng an toàn -> Gửi thông báo đến Bác sĩ điều trị\n" +
+        "[14:30:10] Ký số SmartCA Phiếu Bàn Giao Ca Chiều (Mã băm: #8f92a1c)");
     }
 
     function switchWard(wardKey) {
@@ -3258,8 +4098,10 @@
 
     // INIT
     window.addEventListener('DOMContentLoaded', () => {
+      checkAuthOnLoad();
       renderFormsDirectory();
     });
   </script>
 </body>
+
 </html>
